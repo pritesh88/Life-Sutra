@@ -1,0 +1,191 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * LIFE SUTRA design system
+ * Academic + Indian + Contemporary + Sober + Premium
+ * Ivory/parchment surfaces, charcoal type, earth browns,
+ * muted saffron accent, subtle green, restrained gold.
+ * All colors in oklch. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-display: "Spectral", ui-serif, Georgia, serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-parchment: var(--parchment);
+  --color-ink: var(--ink);
+  --color-earth: var(--earth);
+  --color-earth-foreground: var(--earth-foreground);
+  --color-saffron: var(--saffron);
+  --color-leaf: var(--leaf);
+  --color-gold: var(--gold);
+  --color-rule: var(--rule);
+
+  --shadow-card: 0 1px 2px oklch(0.24 0.012 60 / 0.04), 0 8px 24px -16px oklch(0.24 0.012 60 / 0.18);
+  --shadow-raised:
+    0 1px 2px oklch(0.24 0.012 60 / 0.05), 0 18px 44px -22px oklch(0.24 0.012 60 / 0.28);
+}
+
+:root {
+  --radius: 0.375rem;
+
+  --background: oklch(0.978 0.011 85);
+  --foreground: oklch(0.245 0.014 60);
+  --card: oklch(0.993 0.006 88);
+  --card-foreground: oklch(0.245 0.014 60);
+  --popover: oklch(0.993 0.006 88);
+  --popover-foreground: oklch(0.245 0.014 60);
+
+  --primary: oklch(0.63 0.128 60);
+  --primary-foreground: oklch(0.985 0.008 88);
+  --secondary: oklch(0.945 0.016 84);
+  --secondary-foreground: oklch(0.33 0.03 58);
+  --muted: oklch(0.948 0.013 85);
+  --muted-foreground: oklch(0.505 0.021 62);
+  --accent: oklch(0.44 0.055 150);
+  --accent-foreground: oklch(0.98 0.01 120);
+  --destructive: oklch(0.505 0.17 27);
+  --destructive-foreground: oklch(0.985 0.008 88);
+  --border: oklch(0.888 0.017 82);
+  --input: oklch(0.888 0.017 82);
+  --ring: oklch(0.63 0.128 60);
+
+  --parchment: oklch(0.955 0.019 84);
+  --ink: oklch(0.215 0.015 58);
+  --earth: oklch(0.335 0.035 55);
+  --earth-foreground: oklch(0.965 0.015 85);
+  --saffron: oklch(0.68 0.135 62);
+  --leaf: oklch(0.47 0.06 152);
+  --gold: oklch(0.76 0.085 84);
+  --rule: oklch(0.85 0.022 80);
+}
+
+.dark {
+  --background: oklch(0.19 0.012 58);
+  --foreground: oklch(0.955 0.012 85);
+  --card: oklch(0.235 0.014 57);
+  --card-foreground: oklch(0.955 0.012 85);
+  --popover: oklch(0.235 0.014 57);
+  --popover-foreground: oklch(0.955 0.012 85);
+  --primary: oklch(0.7 0.13 62);
+  --primary-foreground: oklch(0.2 0.014 58);
+  --secondary: oklch(0.28 0.018 57);
+  --secondary-foreground: oklch(0.955 0.012 85);
+  --muted: oklch(0.28 0.018 57);
+  --muted-foreground: oklch(0.72 0.02 78);
+  --accent: oklch(0.6 0.075 152);
+  --accent-foreground: oklch(0.16 0.01 150);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.7 0.13 62);
+  --parchment: oklch(0.26 0.016 57);
+  --ink: oklch(0.96 0.01 85);
+  --earth: oklch(0.3 0.03 55);
+  --earth-foreground: oklch(0.96 0.014 85);
+  --saffron: oklch(0.72 0.13 62);
+  --leaf: oklch(0.62 0.07 152);
+  --gold: oklch(0.78 0.08 84);
+  --rule: oklch(1 0 0 / 14%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "kern", "liga";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.011em;
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--saffron) 30%, transparent);
+  }
+}
+
+/* Fine Indian geometric detail: repeating jaali lattice, very low contrast */
+@utility jaali {
+  background-image:
+    linear-gradient(45deg, color-mix(in oklab, var(--earth) 7%, transparent) 25%, transparent 25%),
+    linear-gradient(-45deg, color-mix(in oklab, var(--earth) 7%, transparent) 25%, transparent 25%);
+  background-size: 22px 22px;
+  background-position: 0 0;
+}
+
+/* Hairline gold/saffron divider used between major sections */
+@utility rule-ornament {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--gold) 70%, transparent) 22%,
+    color-mix(in oklab, var(--saffron) 55%, transparent) 50%,
+    color-mix(in oklab, var(--gold) 70%, transparent) 78%,
+    transparent
+  );
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--earth) 78%, var(--foreground));
+}
+
+@utility link-underline {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.25s ease;
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
