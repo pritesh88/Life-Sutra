@@ -4,14 +4,7 @@
  * repointed at a live source without component changes.
  */
 
-import matrutvaPaper from "@/assets/papers/emotions-foundation-reflective-enquiry-on-matrutva-bhav.docx.asset.json";
-import bhavaSutraPaper from "@/assets/papers/bhav-sutra-paper-mbcc.docx.asset.json";
-import tqePaper from "@/assets/papers/tqe-mindlab-conference-paper-lohar-mbcc2026.docx.asset.json";
-import aeqPaper from "@/assets/papers/aeq-full-paper.docx.asset.json";
-import vedantaPaper from "@/assets/papers/research-paper-on-an-integrative-vedanta-islf-framework.docx.asset.json";
-import qefmPaper from "@/assets/papers/research-paper-on-a-collective-emotional-field-model-qefm.docx.asset.json";
-import bccaPaper from "@/assets/papers/bhava-centric-communication-architecture.docx.asset.json";
-import qesPaper from "@/assets/papers/quantum-emotional-semiconductors.docx.asset.json";
+const paperUrl = (filename: string) => `/research-papers/${encodeURIComponent(filename)}`;
 
 export type Paper = {
   id: string;
@@ -170,7 +163,7 @@ export const papers: Paper[] = [
       "neuromorphic computing",
       "affective AI",
     ],
-    downloadUrl: qesPaper.url,
+    downloadUrl: paperUrl("quantum-emotional-semiconductors.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -201,7 +194,7 @@ export const papers: Paper[] = [
       "Digital Self",
       "Bhāva Vector Model",
     ],
-    downloadUrl: bccaPaper.url,
+    downloadUrl: paperUrl("bhava-centric-communication-architecture.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -218,7 +211,7 @@ export const papers: Paper[] = [
     abstract:
       "The Collective Emotional Field Model reframes emotion as a field-based phenomenon emerging from consciousness, Antahkarana configuration, Samskara density, observer awareness and digital influence. The paper supplies a mathematical representation and Structural Equation Modeling pathway for empirical validation.",
     keywords: ["collective emotion", "Antahkarana", "Samskara", "Digital Self", "SEM"],
-    downloadUrl: qefmPaper.url,
+    downloadUrl: paperUrl("collective-emotional-field-model-qefm.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -234,7 +227,7 @@ export const papers: Paper[] = [
     abstract:
       "This study connects Advaita Vedānta constructs of Tādātmya, Chidābhāsa and Sākṣī with sustainability orientation, translating them into measurable variables, a mathematical model and a Structural Equation Modeling framework for empirical study.",
     keywords: ["Vedānta", "consciousness", "Sākṣī", "sustainability", "SEM"],
-    downloadUrl: vedantaPaper.url,
+    downloadUrl: paperUrl("integrative-vedanta-islf-framework.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -250,7 +243,7 @@ export const papers: Paper[] = [
     abstract:
       "The paper introduces Astrological Emotional Quotient, a proposed multidimensional measure combining six Jyotish natal-chart parameters with contemporary emotional-intelligence categories. It frames emotional predispositions probabilistically and outlines mixed-method validation against established measures.",
     keywords: ["AEQ", "emotional intelligence", "Jyotish", "psychometrics", "emotional baseline"],
-    downloadUrl: aeqPaper.url,
+    downloadUrl: paperUrl("astrological-emotional-quotient-aeq.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -266,7 +259,7 @@ export const papers: Paper[] = [
     abstract:
       "The Theory of Quantum Emotion proposes emotion as a field-based phenomenon arising from consciousness. It brings together Antahkarana, Spanda and Rasa with quantum-consciousness literature, introduces the AMPING methodology and examines collective consciousness and the Digital Self.",
     keywords: ["quantum emotion", "Antahkarana", "Spanda", "Digital Self", "AMPING"],
-    downloadUrl: tqePaper.url,
+    downloadUrl: paperUrl("theory-of-quantum-emotion-tqe.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -282,7 +275,7 @@ export const papers: Paper[] = [
     abstract:
       "Bhava-Sutra interprets Goloka as a relational architecture of emotional consciousness and develops a layered model spanning emotional generation, modulation, transmission, ecology, participation, governance and communication, with applications to leadership and sustainability.",
     keywords: ["Bhava", "Bhakti ontology", "emotional intelligence", "systems theory", "ecology"],
-    downloadUrl: bhavaSutraPaper.url,
+    downloadUrl: paperUrl("bhava-sutra.docx"),
     status: "Submitted manuscript",
   },
   {
@@ -298,7 +291,7 @@ export const papers: Paper[] = [
     abstract:
       "Through Indian Knowledge Systems and reflective case inquiry, this paper proposes emotional fields as enduring orientations that influence cognition, relationships and action. A study of Matrutva develops an Emotional Field Formation framework using vrittis, samskaras and triguna dynamics.",
     keywords: ["emotional fields", "Vrittis", "Matrutva", "reflective inquiry", "consciousness"],
-    downloadUrl: matrutvaPaper.url,
+    downloadUrl: paperUrl("from-vrittis-to-emotional-fields.docx"),
     status: "Submitted manuscript",
   },
 ];
