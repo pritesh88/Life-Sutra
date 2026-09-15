@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -114,7 +114,7 @@ type ActionProps = VariantProps<typeof actionStyles> & {
 
 export function Action({ to, children, variant, size, className }: ActionProps) {
   return (
-    <Link to={to} className={cn(actionStyles({ variant, size }), className)}>
+    <Link href={to} className={cn(actionStyles({ variant, size }), className)}>
       {children}
     </Link>
   );
@@ -126,13 +126,15 @@ export function ActionButton({
   size,
   className,
   type = "button",
+  onClick,
 }: VariantProps<typeof actionStyles> & {
   children: ReactNode;
   className?: string;
   type?: "button" | "submit";
+  onClick?: () => void;
 }) {
   return (
-    <button type={type} className={cn(actionStyles({ variant, size }), className)}>
+    <button type={type} onClick={onClick} className={cn(actionStyles({ variant, size }), className)}>
       {children}
     </button>
   );
