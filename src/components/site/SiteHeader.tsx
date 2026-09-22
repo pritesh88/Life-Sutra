@@ -1,0 +1,30 @@
+import Link from "next/link";
+import { DesktopNav, HeaderActions } from "@/components/site/HeaderNav";
+import { Wordmark } from "@/components/site/Wordmark";
+import { Container } from "@/components/site/primitives";
+
+export function SiteHeader() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-border bg-background/92 backdrop-blur">
+      <div className="border-b border-rule/60 bg-earth text-earth-foreground">
+        <Container className="flex h-9 items-center justify-between text-[0.7rem] tracking-wide">
+          <p className="hidden sm:block">ISSN 2947-4412 · Peer-reviewed · Open abstracts</p>
+          <p className="flex items-center gap-4">
+            <span className="hidden md:inline">Vol. 6, Issue 2 — July 2026</span>
+            <Link href="/submit-research" className="link-underline font-semibold">
+              Call for Papers open
+            </Link>
+          </p>
+        </Container>
+      </div>
+
+      <div className="relative">
+        <Container className="flex h-18 items-center justify-between gap-6 py-3">
+          <Wordmark />
+          <HeaderActions />
+        </Container>
+        <DesktopNav />
+      </div>
+    </header>
+  );
+}
