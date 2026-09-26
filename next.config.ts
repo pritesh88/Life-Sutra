@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // The libSQL (Turso) driver loads native binaries at runtime; webpack must not bundle it.
+  serverExternalPackages: ["@prisma/adapter-libsql", "@libsql/client", "libsql"],
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
