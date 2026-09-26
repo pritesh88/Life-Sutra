@@ -337,27 +337,6 @@ export const editorialBoard: EditorialBoardMember[] = [
     linkedin: "https://www.linkedin.com/in/rajeev2000/",
     photo: "/assets/editorial/rajeev-gupta.jpg",
   },
-  {
-    id: "eb-shinde",
-    name: "Dr. Santosh M. Shinde",
-    editorialDesignation: "Editorial Board Member",
-    organization: "PCET's S. B. Patil Institute of Management, Akurdi, Pune",
-    academicDesignation: "Assistant Professor",
-    email: "santoshshinde@sbpatilmba.com",
-    linkedin: "https://www.linkedin.com/in/santosh-shinde-31a43419/",
-    website: "https://www.sbpatilmba.com/dr-santosh-shinde-details.php",
-    photo: "/assets/editorial/santosh-shinde.jpg",
-  },
-  {
-    id: "eb-pawar",
-    name: "Dr. Dileep Madhukar Pawar",
-    editorialDesignation: "Editorial Board Member",
-    organization: "PCET's S.B. Patil Institute of Management Pune",
-    academicDesignation: "Assistant Professor",
-    email: "dileep.pawar@sbpatilmba.com",
-    linkedin: "https://www.linkedin.com/in/dr-dileep-pawar-206a2769/",
-    photo: "/assets/editorial/dileep-pawar.jpg",
-  },
 ];
 
 export const editorialPrinciples = [

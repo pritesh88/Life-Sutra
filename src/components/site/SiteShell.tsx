@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteChrome } from "@/components/site/SiteChrome";
-import { SiteFooter } from "@/components/site/SiteFooter";
-import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/Footer";
+import { SiteHeader } from "@/components/site/Navbar";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (

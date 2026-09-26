@@ -10,7 +10,7 @@ export function SiteHeader() {
         <Container className="flex h-9 items-center justify-between text-[0.7rem] tracking-wide">
           <p className="hidden sm:block">ISSN: Coming Soon · Peer-reviewed · Open abstracts</p>
           <p className="flex items-center gap-4">
-            <span className="hidden md:inline">Vol. 6, Issue 2 — July 2026</span>
+            <span className="hidden md:inline">First Issue — 11 October 2026 · On the 80th Birthday of Dr. Vijay Bhatkar</span>
             <Link href="/submit-research" className="link-underline font-semibold">
               Call for Papers open
             </Link>
