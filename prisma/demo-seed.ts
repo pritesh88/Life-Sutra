@@ -1,4 +1,5 @@
-import { PrismaClient, type ArticleStatus } from "@prisma/client";
+import type { ArticleStatus } from "@prisma/client";
+import { createPrismaClient } from "../src/lib/prisma-client";
 import { hashPassword } from "../src/lib/auth/crypto";
 import { ROLES, type RoleCode } from "../src/lib/auth/rbac/catalog";
 
@@ -16,7 +17,7 @@ import { ROLES, type RoleCode } from "../src/lib/auth/rbac/catalog";
 const PASSWORD = "Demo-Passw0rd-2026";
 const DOMAIN = "demo.lifesutra.test";
 
-const prisma = new PrismaClient();
+const prisma = createPrismaClient();
 
 const PEOPLE: { key: string; role: RoleCode; name: string }[] = [
   { key: "superadmin", role: "SUPER_ADMIN", name: "Dr. Mahesh Lohar" },
@@ -40,8 +41,9 @@ const email = (key: string) => `${key}@${DOMAIN}`;
 function assertSafe() {
   if (process.env.NODE_ENV === "production")
     throw new Error("Refusing to seed demo data in production.");
-  const url = new URL(process.env["DATABASE_URL"] ?? "postgresql://none");
-  const local = ["localhost", "127.0.0.1", "::1", "[::1]"].includes(url.hostname);
+  const url = new URL(process.env["DATABASE_URL"] ?? "libsql://none");
+  const local =
+    url.protocol === "file:" || ["localhost", "127.0.0.1", "::1", "[::1]"].includes(url.hostname);
   if (!local && !process.argv.includes("--allow-remote"))
     throw new Error(`Refusing: DATABASE_URL points at ${url.hostname}, not this machine.`);
 }

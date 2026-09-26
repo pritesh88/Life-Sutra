@@ -10,43 +10,47 @@ export function limitKey(scope: string, ...parts: string[]) {
   return `${scope}:${digest}`;
 }
 
-type Row = { count: number; retry_after: number };
-
 /**
- * Atomically counts one event in a fixed window. A single upsert keeps the
- * counter correct under concurrent requests and across server instances.
+ * Counts one event in a fixed window. Clearing an expired window and upserting
+ * the counter run in one transaction; SQLite/libSQL serialises writers, so the
+ * counter stays correct under concurrent requests and across server instances.
  */
 export async function hit(key: string, { limit, windowSeconds }: Throttle): Promise<HitResult> {
-  const rows = await prisma.$queryRaw<Row[]>`
-    INSERT INTO "RateLimit" ("key", "count", "windowStart", "expiresAt")
-    VALUES (${key}, 1, timezone('utc', now()), timezone('utc', now()) + make_interval(secs => ${windowSeconds}::float8))
-    ON CONFLICT ("key") DO UPDATE SET
-      "count" = CASE WHEN "RateLimit"."expiresAt" <= timezone('utc', now()) THEN 1 ELSE "RateLimit"."count" + 1 END,
-      "windowStart" = CASE WHEN "RateLimit"."expiresAt" <= timezone('utc', now()) THEN timezone('utc', now()) ELSE "RateLimit"."windowStart" END,
-      "expiresAt" = CASE WHEN "RateLimit"."expiresAt" <= timezone('utc', now()) THEN timezone('utc', now()) + make_interval(secs => ${windowSeconds}::float8) ELSE "RateLimit"."expiresAt" END
-    RETURNING "count", EXTRACT(EPOCH FROM ("expiresAt" - timezone('utc', now())))::float8 AS "retry_after"`;
-  const row = rows[0];
-  if (!row) throw new Error("rate limit upsert returned no row");
+  const now = new Date();
+  const [, row] = await prisma.$transaction([
+    prisma.rateLimit.deleteMany({ where: { key, expiresAt: { lte: now } } }),
+    prisma.rateLimit.upsert({
+      where: { key },
+      create: {
+        key,
+        count: 1,
+        windowStart: now,
+        expiresAt: new Date(now.getTime() + windowSeconds * 1000),
+      },
+      update: { count: { increment: 1 } },
+    }),
+  ]);
   return {
     allowed: row.count <= limit,
     count: row.count,
-    retryAfterSeconds: Math.max(1, Math.ceil(row.retry_after)),
+    retryAfterSeconds: retryAfter(row.expiresAt, now),
   };
 }
 
 /** Read-only check: is this key already over its limit in the current window? */
 export async function peek(key: string, { limit }: Throttle): Promise<HitResult> {
-  const rows = await prisma.$queryRaw<Row[]>`
-    SELECT "count", EXTRACT(EPOCH FROM ("expiresAt" - timezone('utc', now())))::float8 AS "retry_after"
-    FROM "RateLimit"
-    WHERE "key" = ${key} AND "expiresAt" > timezone('utc', now())`;
-  const row = rows[0];
+  const now = new Date();
+  const row = await prisma.rateLimit.findFirst({ where: { key, expiresAt: { gt: now } } });
   if (!row) return { allowed: true, count: 0, retryAfterSeconds: 0 };
   return {
     allowed: row.count < limit,
     count: row.count,
-    retryAfterSeconds: Math.max(1, Math.ceil(row.retry_after)),
+    retryAfterSeconds: retryAfter(row.expiresAt, now),
   };
+}
+
+function retryAfter(expiresAt: Date, now: Date) {
+  return Math.max(1, Math.ceil((expiresAt.getTime() - now.getTime()) / 1000));
 }
 
 export async function reset(key: string) {

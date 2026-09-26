@@ -132,9 +132,9 @@ export async function listAdminSubmissions(
         ? [
             {
               OR: [
-                { title: { contains: options.q, mode: "insensitive" as const } },
+                { title: { contains: options.q } },
                 ...(identities
-                  ? [{ author: { name: { contains: options.q, mode: "insensitive" as const } } }]
+                  ? [{ author: { name: { contains: options.q } } }]
                   : []),
               ],
             },
@@ -199,9 +199,9 @@ export async function listAdminReviews(
     ...(options.q
       ? {
           OR: [
-            { article: { title: { contains: options.q, mode: "insensitive" as const } } },
+            { article: { title: { contains: options.q } } },
             ...(identities
-              ? [{ reviewer: { name: { contains: options.q, mode: "insensitive" as const } } }]
+              ? [{ reviewer: { name: { contains: options.q } } }]
               : []),
           ],
         }

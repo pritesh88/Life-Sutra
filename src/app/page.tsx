@@ -81,45 +81,7 @@ export default function HomePage() {
         </Container>
       </div>
 
-      <Section>
-        <Container className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div>
-            <Eyebrow>About</Eyebrow>
-            <h2 className="mt-3 text-2xl leading-snug sm:text-3xl">
-              Global Research &amp; Knowledge Platform for Indian Knowledge Systems (IKS)
-            </h2>
-            <p className="mt-5 text-[0.98rem] leading-relaxed text-muted-foreground">
-              Life Sutra Synthesis is an academic e-journal and future research platform focused on
-              documenting, publishing, connecting and synthesizing research related to Indian
-              Knowledge Systems. The initial website establishes a professional, credible academic
-              identity, and will evolve into a fully dynamic research platform.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Image
-              src="/assets/gallery-heritage.jpg"
-              alt="Carved stone pillars of an ancient Indian temple, reflecting the heritage Indian Knowledge Systems draw on"
-              width={600}
-              height={800}
-              className="row-span-2 h-full w-full rounded-md border border-border object-cover shadow-card"
-            />
-            <Image
-              src="/assets/gallery-manuscripts.jpg"
-              alt="Archival manuscript pages, representing textual sources for research"
-              width={600}
-              height={500}
-              className="h-full w-full rounded-md border border-border object-cover shadow-card"
-            />
-            <Image
-              src="/assets/gallery-collaboration.jpg"
-              alt="Researchers collaborating around a table with laptops"
-              width={600}
-              height={500}
-              className="h-full w-full rounded-md border border-border object-cover shadow-card"
-            />
-          </div>
-        </Container>
-      </Section>
+
 
       <ChiefPatron />
 
@@ -138,7 +100,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      <GlobalAdvisory/>
+      <GlobalAdvisory />
 
       <Section>
         <Container>
@@ -311,6 +273,45 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      <Section>
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div>
+            <Eyebrow>About</Eyebrow>
+            <h2 className="mt-3 text-2xl leading-snug sm:text-3xl">
+              Global Research &amp; Knowledge Platform for Indian Knowledge Systems (IKS)
+            </h2>
+            <p className="mt-5 text-[0.98rem] leading-relaxed text-muted-foreground">
+              Life Sutra Synthesis is an academic e-journal and future research platform focused on
+              documenting, publishing, connecting and synthesizing research related to Indian
+              Knowledge Systems. The initial website establishes a professional, credible academic
+              identity, and will evolve into a fully dynamic research platform.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/assets/gallery-heritage.jpg"
+              alt="Carved stone pillars of an ancient Indian temple, reflecting the heritage Indian Knowledge Systems draw on"
+              width={600}
+              height={800}
+              className="row-span-2 h-full w-full rounded-md border border-border object-cover shadow-card"
+            />
+            <Image
+              src="/assets/gallery-manuscripts.jpg"
+              alt="Archival manuscript pages, representing textual sources for research"
+              width={600}
+              height={500}
+              className="h-full w-full rounded-md border border-border object-cover shadow-card"
+            />
+            <Image
+              src="/assets/gallery-collaboration.jpg"
+              alt="Researchers collaborating around a table with laptops"
+              width={600}
+              height={500}
+              className="h-full w-full rounded-md border border-border object-cover shadow-card"
+            />
+          </div>
+        </Container>
+      </Section>
       <Section tone="parchment">
         <Container>
           <div className="rounded-md border border-border bg-card p-8 text-center sm:p-12">

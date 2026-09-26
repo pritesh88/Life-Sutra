@@ -2,6 +2,7 @@
   "name": "life-sutra",
   "private": true,
   "sideEffects": false,
+  "postinstall": "prisma generate",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,9 +10,10 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
+    "postinstall": "prisma generate",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "db:deploy": "prisma migrate deploy",
+    "db:deploy": "tsx prisma/migrate-turso.ts",
     "db:seed": "tsx prisma/seed.ts",
     "db:assign-role": "tsx prisma/assign-role.ts",
     "db:cleanup": "tsx prisma/cleanup.ts",
@@ -21,7 +23,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@prisma/adapter-pg": "^6.16.2",
+    "@libsql/client": "^0.18.0",
+    "@prisma/adapter-libsql": "^6.19.3",
     "@prisma/client": "^6.19.3",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -88,5 +91,10 @@
     "tsx": "^4.23.13",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1"
+  },
+  "allowScripts": {
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "prisma@6.19.3": true
   }
 }

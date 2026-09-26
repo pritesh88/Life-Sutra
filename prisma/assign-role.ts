@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../src/lib/prisma-client";
 import { isRoleCode } from "../src/lib/auth/rbac/catalog";
 
-const prisma = new PrismaClient();
+const prisma = createPrismaClient();
 const [email, roleCode] = process.argv.slice(2);
 
 /**

@@ -2,9 +2,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Runtime traffic goes to Turso (libSQL) through @prisma/adapter-libsql, see
+// src/lib/prisma-client.ts. The Prisma CLI cannot talk to libsql:// URLs, so this
+// URL is only a local SQLite file used for generating migrations; they are
+// applied to Turso with `npm run db:deploy` (prisma/migrate-turso.ts).
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 // ---------------------------------------------------------------------------
