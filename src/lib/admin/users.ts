@@ -80,7 +80,7 @@ export async function listUsers(actor: AuthUser, options: UserListOptions) {
     and.push({
       OR: [
         { email: { contains: options.q.toLowerCase() } },
-        { name: { contains: options.q, mode: "insensitive" } },
+        { name: { contains: options.q } },
       ],
     });
   if (options.role) and.push({ roles: { some: { role: { code: options.role } } } });
@@ -158,7 +158,9 @@ type Tx = Prisma.TransactionClient;
 
 /** Serialises decisions that could remove the last SUPER_ADMIN. */
 async function lockSuperAdminRole(tx: Tx) {
-  await tx.$queryRaw`SELECT "id" FROM "Role" WHERE "code" = ${SUPER_ADMIN} FOR UPDATE`;
+  // SQLite has no row locks: a no-op write takes the database write lock up front,
+  // so concurrent decisions queue instead of racing on the count below.
+  await tx.$executeRaw`UPDATE "Role" SET "code" = "code" WHERE "code" = ${SUPER_ADMIN}`;
 }
 
 async function activeSuperAdminCount(tx: Tx) {

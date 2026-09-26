@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../src/lib/prisma-client";
 import { syncRbac } from "../src/lib/auth/rbac/sync";
 
-const prisma = new PrismaClient();
+const prisma = createPrismaClient();
 
 /**
  * Mirrors src/lib/auth/rbac/catalog.ts into the database. Safe to run any

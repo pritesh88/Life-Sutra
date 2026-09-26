@@ -1,6 +1,6 @@
 import { randomBytes } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { PrismaClient } from "@prisma/client";
+import { createPrismaClient } from "../../src/lib/prisma-client";
 import { hashPassword } from "../../src/lib/auth/crypto";
 import type { RoleCode } from "../../src/lib/auth/rbac/catalog";
 import { Client } from "./http";
@@ -11,7 +11,7 @@ if (!databaseUrl || !/_test\b/.test(new URL(databaseUrl).pathname)) {
 }
 
 /** Direct DB access for fixtures and assertions (the app under test uses its own connection). */
-export const db = new PrismaClient();
+export const db = createPrismaClient();
 
 export const PASSWORD = "Correct-Horse-Battery-9";
 let passwordHash: Promise<string> | undefined;

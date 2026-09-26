@@ -39,3 +39,7 @@ out
 # Integration test artefacts
 .next-test
 tests/.server.log
+
+# Local SQLite file used by the Prisma CLI to generate migrations
+prisma/dev.db
+prisma/dev.db-journal

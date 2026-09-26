@@ -158,11 +158,14 @@ export async function submitReview(
   client: ClientInfo,
 ) {
   await prisma.$transaction(async (tx) => {
-    // Own assignment only; the row is locked so a double-submit cannot slip through.
-    const rows = await tx.$queryRaw<{ id: string; status: string; articleId: string }[]>`
-      SELECT "id", "status"::text AS "status", "articleId" FROM "ReviewAssignment"
-      WHERE "id" = ${assignmentId} AND "reviewerId" = ${user.id} FOR UPDATE`;
-    const assignment = rows[0];
+    // Own assignment only. A no-op write takes the SQLite write lock first, so a
+    // double-submit waits for this transaction instead of slipping through.
+    await tx.$executeRaw`UPDATE "ReviewAssignment" SET "id" = "id"
+      WHERE "id" = ${assignmentId} AND "reviewerId" = ${user.id}`;
+    const assignment = await tx.reviewAssignment.findFirst({
+      where: { id: assignmentId, reviewerId: user.id },
+      select: { id: true, status: true, articleId: true },
+    });
     if (!assignment) throw notFound();
     if (assignment.status !== "PENDING")
       throw new HttpError(409, "This review has already been submitted.");
