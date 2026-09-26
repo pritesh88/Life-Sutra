@@ -45,7 +45,7 @@ export function AssessmentWidget() {
   return (
     <section
       aria-label="5P Harmony Quick Check"
-      className="w-full rounded-md border border-earth-foreground/15 bg-earth-foreground/[0.04] p-6 text-earth-foreground"
+      className="flex h-full w-full flex-col justify-center rounded-md border border-earth-foreground/15 bg-earth-foreground/[0.04] p-6 text-earth-foreground"
     >
       {step === "intro" && (
         <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-end">

@@ -60,7 +60,7 @@ export function SiteFooter() {
             </p>
             <p className="mt-5 text-xs tracking-wide text-earth-foreground/60">ismart@manasyog.com</p>
           </div>
-          <div className="md:col-span-3 md:col-start-1 md:row-start-2 md:self-start">
+          <div className="md:col-span-3 md:col-start-1 md:row-start-2 md:self-stretch">
             <AssessmentWidget />
           </div>
         </div>
