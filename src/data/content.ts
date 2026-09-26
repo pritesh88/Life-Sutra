@@ -328,6 +328,16 @@ export const editorialBoard: EditorialBoardMember[] = [
     photo: "/assets/editorial/vinayak-shitole.jpg",
   },
   {
+    id: "eb-gupta",
+    name: "Dr. Rajeev Gupta",
+    editorialDesignation: "International Editorial Board Member",
+    organization: "Barnsley Hospital NHS Foundation Trust",
+    academicDesignation: "Consultant Paediatrician",
+    email: "Rajeev.gupta@nhs.net",
+    linkedin: "https://www.linkedin.com/in/rajeev2000/",
+    photo: "/assets/editorial/rajeev-gupta.jpg",
+  },
+  {
     id: "eb-shinde",
     name: "Dr. Santosh M. Shinde",
     editorialDesignation: "Editorial Board Member",
