@@ -13,8 +13,9 @@ export {
   Tag,
 } from "./primitives";
 export { SiteShell } from "./SiteShell";
-export { SiteHeader } from "./SiteHeader";
-export { SiteFooter } from "./SiteFooter";
+export { SiteHeader } from "./Navbar";
+export { SiteFooter } from "./Footer";
 export { PaperCard } from "./PaperCard";
 export { EditorialBoardCard } from "./EditorialBoardCard";
 export { ComingSoon } from "./ComingSoon";
+export { ChiefPatron } from "./ChiefPatron";

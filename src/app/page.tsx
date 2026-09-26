@@ -13,6 +13,8 @@ import {
 import { editorialBoard, editorialPrinciples, papers } from "@/data/content";
 import { homeContent, homeMeta } from "@/data/pages";
 import { ASSETS } from "@/lib/site";
+import GlobalAdvisory from "@/components/site/GlobalAdvisory";
+import ChiefPatron from "@/components/site/ChiefPatron";
 
 export const metadata = homeMeta;
 
@@ -119,6 +121,8 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      <ChiefPatron />
+
       <Section id="editorial-board" tone="parchment" className="scroll-mt-24">
         <Container>
           <SectionHeading
@@ -133,6 +137,8 @@ export default function HomePage() {
           </ul>
         </Container>
       </Section>
+
+      <GlobalAdvisory/>
 
       <Section>
         <Container>

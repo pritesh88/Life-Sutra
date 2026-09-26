@@ -14,4 +14,5 @@ export const ASSETS = {
   logo: "/assets/life-sutra-logo.png",
   hero: "/assets/hero-reading-room.jpg",
   favicon: "/favicon.png",
+  ismartlifelogo: "/assets/ismartlifelogo.jpeg",
 } as const;
