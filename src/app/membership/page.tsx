@@ -22,7 +22,7 @@ export default function MembershipPage() {
         eyebrow="Research community"
         title="Membership"
         lede="Membership funds open abstracts, review honoraria and the shared infrastructure. Abstracts and white papers stay free for everyone, always."
-        meta={["1,240 members", "27 countries", "Cancel any time"]}
+        meta={["Cancel any time"]}
       />
 
       <Section>

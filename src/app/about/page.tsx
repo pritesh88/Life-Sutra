@@ -6,9 +6,8 @@ import {
   PageHero,
   Section,
   SectionHeading,
-  Stat,
 } from "@/components/site/primitives";
-import { editorialPrinciples, journalStats } from "@/data/content";
+import { editorialPrinciples } from "@/data/content";
 import { aboutMeta, aboutRoadmap } from "@/data/pages";
 
 export const metadata = aboutMeta;
@@ -19,8 +18,8 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About the platform"
         title="Building credible research infrastructure for Indian Knowledge Systems"
-        lede="Life Sutra exists because the study of Indian intellectual traditions has abundant sources and scattered scholarship. We publish rigorous research and, over time, connect it into an ecosystem that can be searched, synthesised and measured."
-        meta={["Founded 2021", "Quarterly", "ISSN 2947-4412", "Double-anonymous review"]}
+        lede="Life Sutra Synthesis exists because the study of Indian intellectual traditions has abundant sources and scattered scholarship. We publish rigorous research and, over time, connect it into an ecosystem that can be searched, synthesised and measured."
+        meta={["Founded 2021", "Quarterly", "ISSN: Coming Soon", "Double-anonymous review"]}
       />
 
       <Section>
@@ -30,9 +29,10 @@ export default function AboutPage() {
             <div className="grid gap-5 text-[0.98rem] leading-relaxed text-muted-foreground">
               <p>
                 Indian Knowledge Systems research sits between disciplines: philology, history,
-                anthropology, clinical science, mathematics, architecture and policy. Life Sutra is
-                built for that overlap. We accept work from any of these traditions provided the
-                knowledge claim is stated precisely and matched to an appropriate evidence standard.
+                anthropology, clinical science, mathematics, architecture and policy. Life Sutra
+                Synthesis is built for that overlap. We accept work from any of these traditions
+                provided the knowledge claim is stated precisely and matched to an appropriate
+                evidence standard.
               </p>
               <p>
                 We are a secular academic publication. Sources may be classical, devotional or oral;
@@ -47,17 +47,20 @@ export default function AboutPage() {
             </div>
           </div>
           <aside className="rounded-md border border-border bg-parchment p-7">
-            <p className="eyebrow">At a glance</p>
-            <dl className="mt-6 grid gap-6">
-              {journalStats.map((s) => (
-                <Stat key={s.label} label={s.label} value={s.value} />
-              ))}
-            </dl>
+            <p className="eyebrow">Governance</p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              Our Editorial Board sets review standards and editorial policy. See the current board
+              on the homepage.
+            </p>
             <Ornament className="my-7" />
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Editorial council of 18 members across 9 countries. All review decisions are recorded
-              with a public summary of their basis.
+              All review decisions are recorded with a public summary of their basis.
             </p>
+            <div className="mt-6">
+              <Action to="/#editorial-board" variant="outline" size="sm">
+                View Editorial Board
+              </Action>
+            </div>
           </aside>
         </Container>
       </Section>

@@ -2,12 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Clock, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { actionNav, primaryNav } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 import { Action, Container } from "./primitives";
+
+function SoonBadge({ className }: { className?: string }) {
+  return (
+    <Clock
+      className={cn("size-3 shrink-0 text-leaf", className)}
+      aria-label="Coming soon"
+      role="img"
+    />
+  );
+}
 
 export function HeaderActions() {
   const [open, setOpen] = useState(false);
@@ -17,26 +27,16 @@ export function HeaderActions() {
   return (
     <>
       <div className="flex items-center gap-2">
-        <Action to="/membership" variant="outline" size="sm" className="hidden sm:inline-flex">
-          Membership
+        <Action to="/membership" variant="saffron" size="sm" className="hidden sm:inline-flex">
+          Upgrade
         </Action>
         <Action to="/submit-research" variant="primary" size="sm" className="hidden sm:inline-flex">
           Submit Research
         </Action>
         {!loading && !user ? (
-          <>
-            <Action to="/auth/login" variant="ghost" size="sm" className="hidden sm:inline-flex">
-              Sign in
-            </Action>
-            <Action
-              to="/auth/register"
-              variant="outline"
-              size="sm"
-              className="hidden sm:inline-flex"
-            >
-              Register
-            </Action>
-          </>
+          <Action to="/auth/login" variant="outline" size="sm" className="hidden sm:inline-flex">
+            Get Started
+          </Action>
         ) : null}
         {!loading && user ? (
           <>
@@ -83,13 +83,48 @@ export function HeaderActions() {
                     active && "bg-muted",
                   )}
                 >
-                  <span className="text-sm font-semibold">{item.label}</span>
+                  <span className="flex items-center gap-2">
+                    <span className="text-sm font-semibold">{item.label}</span>
+                    {item.comingSoon ? <SoonBadge /> : null}
+                  </span>
                   {item.description ? (
                     <span className="text-xs text-muted-foreground">{item.description}</span>
                   ) : null}
                 </Link>
               );
             })}
+            <div className="mt-2 border-t border-border pt-3">
+              {!loading && !user ? (
+                <Link
+                  href="/auth/login"
+                  onClick={() => setOpen(false)}
+                  className="flex flex-col rounded-md px-3 py-2.5 transition-colors hover:bg-muted"
+                >
+                  <span className="text-sm font-semibold">Get Started</span>
+                </Link>
+              ) : null}
+              {!loading && user ? (
+                <>
+                  <Link
+                    href="/profile"
+                    onClick={() => setOpen(false)}
+                    className="flex flex-col rounded-md px-3 py-2.5 transition-colors hover:bg-muted"
+                  >
+                    <span className="text-sm font-semibold">Profile</span>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpen(false);
+                      void logout();
+                    }}
+                    className="flex w-full flex-col rounded-md px-3 py-2.5 text-left transition-colors hover:bg-muted"
+                  >
+                    <span className="text-sm font-semibold">Sign out</span>
+                  </button>
+                </>
+              ) : null}
+            </div>
           </Container>
         </nav>
       ) : null}
@@ -111,12 +146,13 @@ export function DesktopNav() {
                 <Link
                   href={item.to}
                   className={cn(
-                    "link-underline text-muted-foreground transition-colors hover:text-foreground",
+                    "link-underline inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground",
                     active && "text-primary",
                   )}
                   aria-current={active ? "page" : undefined}
                 >
                   {item.label}
+                  {item.comingSoon ? <SoonBadge /> : null}
                 </Link>
               </li>
             );

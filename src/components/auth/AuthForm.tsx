@@ -110,7 +110,7 @@ export function AuthForm({ mode, next }: { mode: Mode; next?: string | undefined
         </p>
       ) : null}
       <p className="text-sm text-muted-foreground">
-        {register ? "Already registered?" : "New to Life Sutra?"}{" "}
+        {register ? "Already registered?" : "New to Life Sutra Synthesis?"}{" "}
         <Link
           className="link-underline font-semibold text-primary"
           href={register ? "/auth/login" : "/auth/register"}

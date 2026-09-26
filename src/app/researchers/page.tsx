@@ -1,12 +1,5 @@
-import { ResearcherCard } from "@/components/site/ResearcherCard";
-import {
-  Action,
-  Container,
-  PageHero,
-  Section,
-  SectionHeading,
-} from "@/components/site/primitives";
-import { researchers } from "@/data/content";
+import { ComingSoon } from "@/components/site/ComingSoon";
+import { Container, PageHero, Section } from "@/components/site/primitives";
 import { researchersMeta } from "@/data/pages";
 
 export const metadata = researchersMeta;
@@ -17,22 +10,19 @@ export default function ResearchersPage() {
       <PageHero
         eyebrow="Community"
         title="Researchers"
-        lede="Contributing scholars across twelve domains and twenty-seven countries. Profiles will later link directly to publications, reviews and synthesis threads."
-        meta={[`${researchers.length} profiles shown`, "1,240 contributors", "Verified affiliations"]}
-      >
-        <Action to="/membership" variant="primary" size="sm">
-          Claim a researcher profile
-        </Action>
-      </PageHero>
+        lede="A directory of contributing scholars, linked to their publications, reviews and synthesis threads. This section is being prepared by the editorial team."
+        meta={["In preparation"]}
+      />
 
       <Section>
         <Container>
-          <SectionHeading eyebrow="Directory" title="Featured contributors" />
-          <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {researchers.map((r) => (
-              <ResearcherCard key={r.id} researcher={r} />
-            ))}
-          </ul>
+          <ComingSoon
+            title="The researcher directory is in preparation"
+            purpose={[
+              "Verified scholar profiles will appear here as researchers publish or join the review pool.",
+              "Each profile will link to that researcher's published work and domains of focus.",
+            ]}
+          />
         </Container>
       </Section>
     </>

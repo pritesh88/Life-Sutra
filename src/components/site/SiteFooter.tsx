@@ -14,13 +14,13 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Image
               src={ASSETS.logo}
-              alt="Life Sutra — Journal of Mind, Consciousness Studies, and Synthesis of Indian Knowledge Systems"
+              alt="Life Sutra Synthesis — Journal of Mind, Consciousness Studies, and Synthesis of Indian Knowledge Systems"
               className="h-28 w-auto rounded-md bg-white/95 p-2"
               width={280}
               height={280}
             />
             <p className="mt-3 text-sm leading-relaxed text-earth-foreground/75">
-              A global research and knowledge platform for Indian Knowledge Systems — publishing
+              A scholarly research publication for Indian Knowledge Systems — publishing
               peer-reviewed scholarship and building the infrastructure that connects it.
             </p>
             <p className="mt-5 text-xs tracking-wide text-earth-foreground/60">{SITE_EMAIL}</p>
@@ -45,7 +45,7 @@ export function SiteFooter() {
         </div>
         <Ornament className="my-10 opacity-60" />
         <div className="flex flex-col gap-3 text-xs text-earth-foreground/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Life Sutra. Published quarterly. ISSN 2947-4412.</p>
+          <p>© {year} Life Sutra Synthesis. Published quarterly. ISSN: Coming Soon.</p>
           <p>Open abstracts · Double-anonymous peer review · Content licensed CC BY-NC 4.0</p>
         </div>
       </Container>

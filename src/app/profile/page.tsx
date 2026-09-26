@@ -11,7 +11,7 @@ export default async function ProfilePage() {
       <PageHero
         eyebrow="Member profile"
         title={user.name}
-        lede="Your account and access details are managed securely by Life Sutra."
+        lede="Your account and access details are managed securely by Life Sutra Synthesis."
       />
       <Section>
         <Container className="max-w-3xl">

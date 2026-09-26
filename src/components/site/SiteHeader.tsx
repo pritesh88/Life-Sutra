@@ -8,7 +8,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/92 backdrop-blur">
       <div className="border-b border-rule/60 bg-earth text-earth-foreground">
         <Container className="flex h-9 items-center justify-between text-[0.7rem] tracking-wide">
-          <p className="hidden sm:block">ISSN 2947-4412 · Peer-reviewed · Open abstracts</p>
+          <p className="hidden sm:block">ISSN: Coming Soon · Peer-reviewed · Open abstracts</p>
           <p className="flex items-center gap-4">
             <span className="hidden md:inline">Vol. 6, Issue 2 — July 2026</span>
             <Link href="/submit-research" className="link-underline font-semibold">

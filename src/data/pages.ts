@@ -3,102 +3,102 @@ import { pageMeta } from "@/lib/seo";
 
 export const homeMeta: Metadata = pageMeta({
   title: "Home",
-  absoluteTitle: "Life Sutra — Discover, Research, Synthesize, Connect",
+  absoluteTitle: "Life Sutra Synthesis — Discover, Research, Synthesize, Connect",
   description:
-    "Life Sutra is a global scholarly research and knowledge platform for Indian Knowledge Systems, connecting research, knowledge, methodology, researchers, institutions and synthesis.",
+    "Life Sutra Synthesis is a scholarly research publication for Indian Knowledge Systems, connecting research, knowledge, methodology and researchers.",
   path: "/",
-  ogTitle: "Life Sutra — Discover, Research, Synthesize, Connect",
+  ogTitle: "Life Sutra Synthesis — Discover, Research, Synthesize, Connect",
 });
 
 export const aboutMeta: Metadata = pageMeta({
   title: "About",
   description:
-    "Life Sutra's mission, editorial standards, review process and governance for Indian Knowledge Systems research.",
+    "Life Sutra Synthesis's mission, editorial standards, review process and governance for Indian Knowledge Systems research.",
   path: "/about",
-  ogTitle: "About Life Sutra",
+  ogTitle: "About Life Sutra Synthesis",
 });
 
 export const researchMeta: Metadata = pageMeta({
-  title: "Research Papers",
+  title: "Research Publications",
   description:
-    "Peer-reviewed research papers on Indian Knowledge Systems: textual studies, field studies, reviews and methodology notes.",
+    "Peer-reviewed research publications on Indian Knowledge Systems: textual studies, field studies, reviews and methodology notes.",
   path: "/research",
 });
 
 export const abstractsMeta: Metadata = pageMeta({
   title: "Research Abstracts",
   description:
-    "Openly indexed abstracts of Indian Knowledge Systems research under review, accepted and published at Life Sutra.",
+    "Research Abstracts is in preparation. Submissions will be indexed here as they clear desk review.",
   path: "/research-abstracts",
 });
 
 export const conferencesMeta: Metadata = pageMeta({
   title: "Conferences & Calls for Papers",
   description:
-    "Congresses, symposia and methodology colloquia on Indian Knowledge Systems, with calls for papers and registration details.",
+    "Conferences and calls for papers on Indian Knowledge Systems is in preparation — listings will appear here as they are confirmed.",
   path: "/conferences",
 });
 
 export const dialogueMeta: Metadata = pageMeta({
   title: "IKS Dialogue",
   description:
-    "Commentary, responses, interviews and roundtables debating methods and evidence standards in Indian Knowledge Systems research.",
+    "IKS Dialogue, a moderated space for commentary and debate on Indian Knowledge Systems research, is in preparation.",
   path: "/iks-dialogue",
 });
 
 export const whitePapersMeta: Metadata = pageMeta({
   title: "White Papers",
   description:
-    "Life Sutra white papers on research integrity, metadata standards, policy frameworks and evidence rubrics for Indian Knowledge Systems.",
+    "Life Sutra Synthesis white papers on research integrity, metadata standards and policy frameworks are in preparation.",
   path: "/white-papers",
 });
 
 export const opportunitiesMeta: Metadata = pageMeta({
   title: "Research Opportunities",
   description:
-    "Fellowships, grants, doctoral positions and calls for chapters in Indian Knowledge Systems research, with funding and deadline details.",
+    "Fellowships, grants, doctoral positions and calls for chapters in Indian Knowledge Systems research — this listing is in preparation.",
   path: "/research-opportunities",
 });
 
 export const methodologyMeta: Metadata = pageMeta({
   title: "Research Methodology",
   description:
-    "The Life Sutra methodology framework: source identification, claim classification, evidence design, translation transparency, peer review and synthesis.",
+    "The Life Sutra Synthesis methodology framework and editorial principles for Indian Knowledge Systems research.",
   path: "/methodology",
 });
 
 export const researchersMeta: Metadata = pageMeta({
   title: "Researcher Directory",
   description:
-    "Directory of scholars publishing Indian Knowledge Systems research with Life Sutra, listed by domain, institution and research focus.",
+    "A directory of scholars publishing Indian Knowledge Systems research with Life Sutra Synthesis is in preparation.",
   path: "/researchers",
 });
 
 export const institutionsMeta: Metadata = pageMeta({
   title: "Partner Institutions",
   description:
-    "Universities, research centres, archives and policy institutes collaborating with Life Sutra on Indian Knowledge Systems research.",
+    "A directory of universities, research centres, archives and policy institutes collaborating with Life Sutra Synthesis is in preparation.",
   path: "/institutions",
 });
 
 export const impactMeta: Metadata = pageMeta({
   title: "Research Impact & Observatory",
   description:
-    "Indicators, synthesis threads and the planned Life Sutra research observatory for measuring progress in Indian Knowledge Systems scholarship.",
+    "The planned Life Sutra Synthesis research observatory for measuring progress in Indian Knowledge Systems scholarship.",
   path: "/research-impact",
 });
 
 export const submitMeta: Metadata = pageMeta({
   title: "Submit Research",
   description:
-    "Submission requirements, review timeline and author guidance for publishing Indian Knowledge Systems research with Life Sutra.",
+    "Submission requirements, review timeline and author guidance for publishing Indian Knowledge Systems research with Life Sutra Synthesis.",
   path: "/submit-research",
 });
 
 export const membershipMeta: Metadata = pageMeta({
   title: "Membership",
   description:
-    "Reader, researcher and institutional membership options for the Life Sutra Indian Knowledge Systems research community.",
+    "Reader, researcher and institutional membership options for the Life Sutra Synthesis Indian Knowledge Systems research community.",
   path: "/membership",
 });
 
@@ -163,13 +163,6 @@ export const homeContent = {
     "Publication",
     "Synthesis",
   ],
-  observatoryMetrics: [
-    { label: "Researchers", value: "1,240" },
-    { label: "Institutions", value: "68" },
-    { label: "Projects", value: "94" },
-    { label: "Publications", value: "486" },
-    { label: "Conferences", value: "31" },
-  ],
   trustItems: [
     "Double-anonymous external peer review",
     "Open access",
@@ -194,25 +187,6 @@ export const aboutRoadmap = [
     phase: "Later",
     title: "Research observatory",
     body: "Synthesis threads, evidence chains and indicators that measure how the field is progressing.",
-  },
-] as const;
-
-export const claimClasses = [
-  {
-    name: "Textual",
-    body: "What a source says. Requires recension detail, variant readings and a translation log.",
-  },
-  {
-    name: "Historical",
-    body: "What happened. Requires dated material, epigraphic or archival corroboration.",
-  },
-  {
-    name: "Experimental",
-    body: "What can be reproduced. Requires protocol, sample description and pre-registration.",
-  },
-  {
-    name: "Interpretive",
-    body: "What a source means for us now. Requires explicit framework and stated alternatives.",
   },
 ] as const;
 
@@ -260,17 +234,11 @@ export const membershipFaqs = [
   },
   {
     q: "What does institutional access include?",
-    a: "Campus-wide full-text access, an institutional profile with a researcher roster, and access to the observatory dataset.",
+    a: "Campus-wide full-text access, an institutional profile with a researcher roster, and access to the observatory dataset once it is built.",
   },
 ] as const;
 
 export const impactContent = {
-  indicators: [
-    { label: "Citations recorded", value: "3,180" },
-    { label: "Cross-domain studies", value: "112" },
-    { label: "Datasets deposited", value: "74" },
-    { label: "Policy references", value: "23" },
-  ],
   observatory: [
     {
       title: "Evidence chains",

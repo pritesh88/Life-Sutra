@@ -5,13 +5,7 @@ import { cn } from "@/lib/utils";
 
 /* ---------- Layout ---------- */
 
-export function Container({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function Container({ children, className }: { children: ReactNode; className?: string }) {
   return <div className={cn("mx-auto w-full max-w-6xl px-5 sm:px-8", className)}>{children}</div>;
 }
 
@@ -19,13 +13,16 @@ export function Section({
   children,
   className,
   tone = "default",
+  id,
 }: {
   children: ReactNode;
   className?: string;
   tone?: "default" | "parchment" | "earth";
+  id?: string;
 }) {
   return (
     <section
+      id={id}
       className={cn(
         "py-16 sm:py-20",
         tone === "parchment" && "bg-parchment",
@@ -91,6 +88,7 @@ const actionStyles = cva(
         ink: "bg-ink text-background hover:bg-ink/88",
         outline: "border border-border bg-card text-foreground hover:border-primary hover:bg-muted",
         ghost: "text-foreground hover:bg-muted",
+        saffron: "bg-saffron text-primary-foreground hover:bg-saffron/90",
         onEarth:
           "border border-earth-foreground/30 text-earth-foreground hover:bg-earth-foreground/10",
         quiet: "text-primary hover:text-primary/80",
@@ -134,7 +132,11 @@ export function ActionButton({
   onClick?: () => void;
 }) {
   return (
-    <button type={type} onClick={onClick} className={cn(actionStyles({ variant, size }), className)}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={cn(actionStyles({ variant, size }), className)}
+    >
       {children}
     </button>
   );
@@ -191,7 +193,13 @@ export function Card({
   );
 }
 
-export function MetaRow({ items, className }: { items: (string | undefined)[]; className?: string }) {
+export function MetaRow({
+  items,
+  className,
+}: {
+  items: (string | undefined)[];
+  className?: string;
+}) {
   const clean = items.filter(Boolean) as string[];
   return (
     <p className={cn("text-xs tracking-wide text-muted-foreground", className)}>

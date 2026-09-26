@@ -54,7 +54,11 @@ export default function SubmitPage() {
         eyebrow="For authors"
         title="Submit Research"
         lede="Submissions are accepted year-round in every domain. Read the methodology framework first — most desk rejections are for an unclassified claim, not for weak scholarship."
-        meta={["No submission fee for members", "Double-anonymous review", "Open abstract on acceptance"]}
+        meta={[
+          "No submission fee for members",
+          "Double-anonymous review",
+          "Open abstract on acceptance",
+        ]}
       >
         <Action to="/methodology" variant="outline" size="sm">
           Methodology framework
@@ -67,7 +71,10 @@ export default function SubmitPage() {
             <SectionHeading eyebrow="Requirements" title="What a submission must include" />
             <ul className="grid gap-3">
               {submitContent.requirements.map((r) => (
-                <li key={r} className="flex gap-3 border-b border-rule pb-3 text-sm leading-relaxed">
+                <li
+                  key={r}
+                  className="flex gap-3 border-b border-rule pb-3 text-sm leading-relaxed"
+                >
                   <span
                     aria-hidden="true"
                     className="mt-2 size-1.5 shrink-0 rounded-full bg-saffron"

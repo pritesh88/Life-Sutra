@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import { Download, Eye } from "lucide-react";
 import type { Paper } from "@/data/content";
 import { Action, Card, MetaRow, Tag } from "@/components/site/primitives";
 
@@ -44,18 +44,31 @@ export function PaperCard({ paper, variant = "full" }: PaperCardProps) {
       <h3 className="mt-4 text-xl leading-snug sm:text-2xl">{paper.title}</h3>
       <p className="mt-2 text-sm font-semibold">{paper.authors.join(" · ")}</p>
       <MetaRow className="mt-1" items={[paper.affiliation]} />
-      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">{paper.abstract}</p>
+      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+        {paper.abstract}
+      </p>
       <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-4">
         <MetaRow items={[paper.date, `pp. ${paper.pages}`, paper.keywords.join(", ")]} />
         {paper.downloadUrl ? (
-          <a
-            href={paper.downloadUrl}
-            download
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-          >
-            <Download className="size-4" aria-hidden="true" />
-            Download paper
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href={paper.downloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+            >
+              <Eye className="size-4" aria-hidden="true" />
+              View
+            </a>
+            <a
+              href={paper.downloadUrl}
+              download
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+            >
+              <Download className="size-4" aria-hidden="true" />
+              Download
+            </a>
+          </div>
         ) : (
           <Action to="/membership" variant="quiet" size="none">
             Full text (members) →

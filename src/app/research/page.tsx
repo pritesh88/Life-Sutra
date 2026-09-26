@@ -1,11 +1,5 @@
 import { PaperCard } from "@/components/site/PaperCard";
-import {
-  Container,
-  PageHero,
-  Section,
-  SectionHeading,
-  Tag,
-} from "@/components/site/primitives";
+import { Container, PageHero, Section, SectionHeading, Tag } from "@/components/site/primitives";
 import { domains, papers } from "@/data/content";
 import { researchMeta } from "@/data/pages";
 
@@ -18,7 +12,7 @@ export default function ResearchPage() {
     <>
       <PageHero
         eyebrow="Peer-reviewed archive"
-        title="Research"
+        title="Research Publications"
         lede="Explore published studies and newly submitted manuscripts across Indian Knowledge Systems. Submission labels describe archive status and do not indicate peer-review acceptance."
         meta={[`${papers.length} papers shown`, `${issues.length} issues`, "Open abstracts"]}
       >

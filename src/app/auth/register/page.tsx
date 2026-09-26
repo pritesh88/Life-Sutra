@@ -9,7 +9,7 @@ export default function RegisterPage() {
     <>
       <PageHero
         eyebrow="Member access"
-        title="Create your Life Sutra account"
+        title="Create your Life Sutra Synthesis account"
         lede="Start with a secure researcher profile. Journal and administrative access is assigned by an administrator."
       />
       <Section>

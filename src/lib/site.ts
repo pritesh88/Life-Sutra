@@ -1,7 +1,7 @@
-export const SITE_NAME = "Life Sutra";
-export const SITE_TAGLINE = "Research Platform for Indian Knowledge Systems";
+export const SITE_NAME = "Life Sutra Synthesis";
+export const SITE_TAGLINE = "Scholarly Research Publication for Indian Knowledge Systems";
 export const SITE_DESCRIPTION =
-  "Life Sutra is a peer-reviewed e-journal and research platform for Indian Knowledge Systems.";
+  "Life Sutra Synthesis is a peer-reviewed scholarly research publication for Indian Knowledge Systems.";
 export const SITE_EMAIL = "editorial@lifesutra.org";
 
 /** Canonical origin used for metadata, sitemap, and robots. */

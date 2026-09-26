@@ -1,32 +1,16 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { ConferenceCard } from "@/components/site/ConferenceCard";
-import { InstitutionCard } from "@/components/site/InstitutionCard";
-import { WhitePaperCard } from "@/components/site/CatalogCards";
+import { EditorialBoardCard } from "@/components/site/EditorialBoardCard";
 import { PaperCard } from "@/components/site/PaperCard";
-import { ResearcherCard } from "@/components/site/ResearcherCard";
 import {
   Action,
   Card,
   Container,
   Eyebrow,
-  MetaRow,
-  Ornament,
   Section,
   SectionHeading,
-  Stat,
-  Tag,
 } from "@/components/site/primitives";
-import {
-  conferences,
-  editorialPrinciples,
-  institutions,
-  journalStats,
-  opportunities,
-  papers,
-  researchers,
-  whitePapers,
-} from "@/data/content";
+import { editorialBoard, editorialPrinciples, papers } from "@/data/content";
 import { homeContent, homeMeta } from "@/data/pages";
 import { ASSETS } from "@/lib/site";
 
@@ -34,7 +18,6 @@ export const metadata = homeMeta;
 
 export default function HomePage() {
   const latest = papers.slice(0, 4);
-  const gaps = whitePapers.slice(0, 3);
 
   return (
     <>
@@ -42,20 +25,24 @@ export default function HomePage() {
         <div className="jaali pointer-events-none absolute inset-0 opacity-30" aria-hidden="true" />
         <Container className="relative grid gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
           <div>
-            <Eyebrow>Global Research &amp; Knowledge Platform</Eyebrow>
-            <h1 className="mt-5 text-[2.1rem] leading-[1.12] sm:text-[3rem]">
+            <p className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+              Life Sutra Synthesis
+            </p>
+            <Eyebrow className="mt-3">
+              Global Research &amp; Knowledge Platform for Indian Knowledge Systems (IKS)
+            </Eyebrow>
+            <h1 className="mt-5 text-2xl leading-[1.15] sm:text-4xl">
               Discover. Research.
               <span className="block text-primary">Synthesize. Connect.</span>
             </h1>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-relaxed text-muted-foreground">
-              Life Sutra is a global scholarly platform for Indian Knowledge Systems and
-              contemporary interdisciplinary research. It connects studies, knowledge claims,
-              methodology, researchers and institutions so that scattered work becomes a shared
-              body of evidence.
+              Life Sutra Synthesis is a scholarly research publication for Indian Knowledge Systems
+              and contemporary interdisciplinary research. It connects studies, knowledge claims,
+              methodology and researchers so that scattered work becomes a shared body of evidence.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Action to="/research" variant="primary" size="lg">
-                Explore Research <ArrowRight className="size-4" />
+                Explore Research Publications <ArrowRight className="size-4" />
               </Action>
               <Action to="/iks-dialogue" variant="outline" size="lg">
                 Explore IKS Knowledge
@@ -69,35 +56,90 @@ export default function HomePage() {
           <figure className="relative">
             <Image
               src={ASSETS.hero}
-              alt="Palm-leaf manuscripts and research notebooks on a reading table beside a carved stone jaali screen"
+              alt="Scholars reviewing research materials in an academic library setting"
               width={1600}
               height={1104}
               priority
               className="h-auto w-full rounded-md border border-border object-cover shadow-raised"
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
-            <figcaption className="mt-3 text-xs text-muted-foreground">
-              Primary-source research room, Oriental Research Institute, Mysuru.
-            </figcaption>
           </figure>
         </Container>
-
-        <Container className="relative pb-14">
-          <Ornament className="mb-10" />
-          <dl className="grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {journalStats.map((s) => (
-              <Stat key={s.label} label={s.label} value={s.value} />
-            ))}
-          </dl>
-        </Container>
       </section>
+
+      <div className="border-y border-gold/30 bg-earth text-earth-foreground">
+        <Container className="flex h-20 flex-col items-center justify-center gap-1.5 text-center sm:flex-row sm:gap-4">
+          <span className="font-mono text-[0.7rem] tracking-[0.2em] text-earth-foreground/55 uppercase">
+            Journal identifier
+          </span>
+          <span className="hidden h-4 w-px bg-earth-foreground/25 sm:block" aria-hidden="true" />
+          <span className="text-base font-semibold tracking-[0.1em] text-gold uppercase sm:text-lg">
+            ISSN: Coming Soon
+          </span>
+        </Container>
+      </div>
+
+      <Section>
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+          <div>
+            <Eyebrow>About</Eyebrow>
+            <h2 className="mt-3 text-2xl leading-snug sm:text-3xl">
+              Global Research &amp; Knowledge Platform for Indian Knowledge Systems (IKS)
+            </h2>
+            <p className="mt-5 text-[0.98rem] leading-relaxed text-muted-foreground">
+              Life Sutra Synthesis is an academic e-journal and future research platform focused on
+              documenting, publishing, connecting and synthesizing research related to Indian
+              Knowledge Systems. The initial website establishes a professional, credible academic
+              identity, and will evolve into a fully dynamic research platform.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/assets/gallery-heritage.jpg"
+              alt="Carved stone pillars of an ancient Indian temple, reflecting the heritage Indian Knowledge Systems draw on"
+              width={600}
+              height={800}
+              className="row-span-2 h-full w-full rounded-md border border-border object-cover shadow-card"
+            />
+            <Image
+              src="/assets/gallery-manuscripts.jpg"
+              alt="Archival manuscript pages, representing textual sources for research"
+              width={600}
+              height={500}
+              className="h-full w-full rounded-md border border-border object-cover shadow-card"
+            />
+            <Image
+              src="/assets/gallery-collaboration.jpg"
+              alt="Researchers collaborating around a table with laptops"
+              width={600}
+              height={500}
+              className="h-full w-full rounded-md border border-border object-cover shadow-card"
+            />
+          </div>
+        </Container>
+      </Section>
+
+      <Section id="editorial-board" tone="parchment" className="scroll-mt-24">
+        <Container>
+          <SectionHeading
+            eyebrow="Governance"
+            title="Editorial Board"
+            description="The scholars and practitioners who set editorial policy and review standards for Life Sutra Synthesis."
+          />
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {editorialBoard.map((member) => (
+              <EditorialBoardCard key={member.id} member={member} />
+            ))}
+          </ul>
+        </Container>
+      </Section>
 
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="What is Life Sutra?"
+            eyebrow="What is Life Sutra Synthesis?"
             title="More than a journal — a research ecosystem"
-            description="Life Sutra publishes peer-reviewed scholarship, and also builds the connective infrastructure around it: the claims being studied, the methods used, the people doing the work, and the synthesis that follows."
+            description="Life Sutra Synthesis publishes peer-reviewed scholarship, and also builds the connective infrastructure around it: the claims being studied, the methods used, the people doing the work, and the synthesis that follows."
           />
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {homeContent.ecosystem.map((e) => (
@@ -114,12 +156,12 @@ export default function HomePage() {
       <Section tone="parchment">
         <Container>
           <SectionHeading
-            eyebrow="Vol. 6, Issue 2 — July 2026"
+            eyebrow="Latest submissions"
             title="Latest research"
             description="Double-anonymous peer-reviewed studies across textual, field and experimental methods."
             action={
               <Action to="/research" variant="outline" size="sm">
-                Explore Research
+                Explore Research Publications
               </Action>
             }
           />
@@ -134,7 +176,7 @@ export default function HomePage() {
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="The Life Sutra knowledge model"
+            eyebrow="The Life Sutra Synthesis knowledge model"
             title="Knowledge Claim → Evidence → Research → Synthesis"
             description="A knowledge claim carried by a text or a living practice can be documented on its own terms, then examined against the forms of evidence that are actually appropriate to it — and connected to the studies that already speak to it."
             action={
@@ -158,48 +200,17 @@ export default function HomePage() {
       </Section>
 
       <Section tone="parchment">
-        <Container>
-          <SectionHeading
-            eyebrow="From research gap to research project"
-            title="Research opportunities"
-            description="Open questions and white-paper topics that need investigators. Each gap is stated plainly so a scholar can judge whether it fits their work."
-            action={
-              <Action to="/research-opportunities" variant="outline" size="sm">
-                Explore Opportunities
-              </Action>
-            }
-          />
-          <ul className="grid gap-4 lg:grid-cols-3">
-            {gaps.map((w) => (
-              <WhitePaperCard key={w.id} paper={w} variant="gap" />
-            ))}
-          </ul>
-          <ul className="mt-10 divide-y divide-rule border-t border-rule">
-            {opportunities.slice(0, 3).map((o) => (
-              <li key={o.id} className="flex flex-wrap items-start justify-between gap-4 py-4">
-                <div>
-                  <h3 className="text-base leading-snug">{o.title}</h3>
-                  <MetaRow className="mt-1.5" items={[o.organisation, o.location, o.funding]} />
-                </div>
-                <Tag tone="saffron">{o.type}</Tag>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </Section>
-
-      <Section>
         <Container className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
             <Eyebrow>Research methodology</Eyebrow>
             <blockquote className="mt-5 border-l-2 border-primary pl-5 font-display text-2xl leading-snug text-ink sm:text-[1.75rem]">
-              “Method should respond to the nature of the knowledge claim.”
+              "Method should respond to the nature of the knowledge claim."
             </blockquote>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Life Sutra does not propose a single universal methodology. It works with a plural,
-              pramāṇa-sensitive approach: a textual claim, a historical claim and a clinical claim
-              call for different evidence and different designs. What is asked of every study is
-              that the reasoning behind the chosen method is stated openly.
+              Life Sutra Synthesis does not propose a single universal methodology. It works with a
+              plural, pramāṇa-sensitive approach: a textual claim, a historical claim and a clinical
+              claim call for different evidence and different designs. What is asked of every study
+              is that the reasoning behind the chosen method is stated openly.
             </p>
             <div className="mt-8">
               <Action to="/methodology" variant="outline">
@@ -226,8 +237,8 @@ export default function HomePage() {
               How a question becomes published research
             </h2>
             <p className="mt-3 text-[0.95rem] leading-relaxed text-earth-foreground/75">
-              The pathway Life Sutra is building, from an initial idea through to synthesis. Stages
-              beyond publication of opportunities are being developed.
+              The pathway Life Sutra Synthesis is building, from an initial idea through to
+              synthesis. Stages beyond publication are being developed.
             </p>
           </div>
           <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -248,68 +259,8 @@ export default function HomePage() {
               Explore Research Incubator
             </Action>
             <p className="text-xs text-earth-foreground/60">
-              Incubator tooling is in development; opportunities are live today.
+              Incubator tooling and opportunity listings are in development.
             </p>
-          </div>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <SectionHeading
-            eyebrow="Convenings &amp; community"
-            title="Conferences, researchers and institutions"
-            description="Where the work is presented, and who is doing it."
-          />
-          <div className="grid gap-6 lg:grid-cols-3">
-            <div>
-              <h3 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-                Conferences
-              </h3>
-              <ul className="mt-4 grid gap-4">
-                {conferences
-                  .filter((c) => c.status !== "Archived")
-                  .slice(0, 2)
-                  .map((c) => (
-                    <ConferenceCard key={c.id} conference={c} variant="summary" />
-                  ))}
-              </ul>
-              <div className="mt-4">
-                <Action to="/conferences" variant="quiet" size="none">
-                  All conferences →
-                </Action>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-                Researchers
-              </h3>
-              <ul className="mt-4 grid gap-4">
-                {researchers.slice(0, 2).map((r) => (
-                  <ResearcherCard key={r.id} researcher={r} variant="summary" />
-                ))}
-              </ul>
-              <div className="mt-4">
-                <Action to="/researchers" variant="quiet" size="none">
-                  Researcher directory →
-                </Action>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
-                Institutions
-              </h3>
-              <ul className="mt-4 grid gap-4">
-                {institutions.slice(0, 2).map((i) => (
-                  <InstitutionCard key={i.id} institution={i} variant="summary" />
-                ))}
-              </ul>
-              <div className="mt-4">
-                <Action to="/institutions" variant="quiet" size="none">
-                  All institutions →
-                </Action>
-              </div>
-            </div>
           </div>
         </Container>
       </Section>
@@ -318,31 +269,26 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="In development"
-            title="Life Sutra Research Observatory"
-            description="A long-term effort to map the IKS research ecosystem — who is working on what, where, and how the studies relate. The figures below describe the platform today; the observatory itself is still being built."
+            title="Life Sutra Synthesis Research Observatory"
+            description="A long-term effort to map the IKS research ecosystem — who is working on what, where, and how the studies relate. The observatory is still being built."
             action={
               <Action to="/research-impact" variant="outline" size="sm">
                 Explore Observatory
               </Action>
             }
           />
-          <dl className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {homeContent.observatoryMetrics.map((m) => (
-              <Stat key={m.label} label={m.label} value={m.value} />
-            ))}
-          </dl>
         </Container>
       </Section>
 
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="Life Sutra Journal"
+            eyebrow="Life Sutra Synthesis Journal"
             title="Open access · Peer reviewed · Interdisciplinary"
             description="The publishing standards the journal holds itself to."
             action={
               <Action to="/research" variant="outline" size="sm">
-                Explore Research
+                Explore Research Publications
               </Action>
             }
           />
@@ -362,7 +308,7 @@ export default function HomePage() {
       <Section tone="parchment">
         <Container>
           <div className="rounded-md border border-border bg-card p-8 text-center sm:p-12">
-            <Eyebrow className="justify-center">The Life Sutra pathway</Eyebrow>
+            <Eyebrow className="justify-center">The Life Sutra Synthesis pathway</Eyebrow>
             <h2 className="mx-auto mt-4 max-w-3xl text-2xl leading-snug sm:text-3xl">
               From knowledge claim → research → evidence → synthesis → new knowledge
             </h2>
@@ -371,7 +317,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <Action to="/research" variant="primary" size="lg">
-                Explore Research
+                Explore Research Publications
               </Action>
               <Action to="/submit-research" variant="ink" size="lg">
                 Submit Research

@@ -14,7 +14,7 @@ export default function ResetPasswordPage() {
       <PageHero
         eyebrow="Member access"
         title="Choose a new password"
-        lede="Set a new password for your Life Sutra account. All existing sessions will be signed out."
+        lede="Set a new password for your Life Sutra Synthesis account. All existing sessions will be signed out."
       />
       <Section>
         <Container className="max-w-xl">

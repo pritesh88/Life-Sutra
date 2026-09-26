@@ -16,7 +16,7 @@ export default async function LoginPage({
       <PageHero
         eyebrow="Member access"
         title="Welcome back"
-        lede="Sign in to access your Life Sutra profile and future researcher workspace."
+        lede="Sign in to access your Life Sutra Synthesis profile and future researcher workspace."
       />
       <Section>
         <Container className="max-w-xl">

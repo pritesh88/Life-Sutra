@@ -1,13 +1,5 @@
-import {
-  Card,
-  Container,
-  MetaRow,
-  PageHero,
-  Section,
-  SectionHeading,
-  Tag,
-} from "@/components/site/primitives";
-import { dialogues } from "@/data/content";
+import { ComingSoon } from "@/components/site/ComingSoon";
+import { Container, PageHero, Section } from "@/components/site/primitives";
 import { dialogueMeta } from "@/data/pages";
 
 export const metadata = dialogueMeta;
@@ -18,35 +10,20 @@ export default function DialoguePage() {
       <PageHero
         eyebrow="Discussion forum"
         title="IKS Dialogue"
-        lede="A moderated space for argument. Contributors respond to published work, contest method and set out positions that would be out of place in a research article."
-        meta={["Editorially moderated", "Signed contributions", "Responses invited"]}
+        lede="A moderated space for argument, where contributors respond to published work, contest method and set out positions. This section is being prepared by the editorial team."
+        meta={["In preparation"]}
       />
 
       <Section>
         <Container>
-          <SectionHeading
-            eyebrow="Current thread"
-            title="Commentary and responses"
-            description="Every entry is attributed. Responses are published alongside the piece they answer."
+          <ComingSoon
+            title="Dialogue is opening soon"
+            purpose={[
+              "Commentary, roundtables, responses and interviews will be published here as they are commissioned.",
+              "Every entry will be signed and attributed; responses will be published alongside the piece they answer.",
+              "Contributions will be editorially moderated before publication.",
+            ]}
           />
-          <ul className="grid gap-5 lg:grid-cols-2">
-            {dialogues.map((d) => (
-              <Card key={d.id} as="li" className="p-6 sm:p-7">
-                <div className="flex flex-wrap items-center gap-2">
-                  <Tag tone="gold">{d.format}</Tag>
-                  <MetaRow items={[d.readingTime, d.date]} />
-                </div>
-                <h3 className="mt-4 text-xl leading-snug">{d.title}</h3>
-                <blockquote className="mt-4 border-l-2 border-saffron/60 pl-4 text-sm leading-relaxed text-muted-foreground italic">
-                  {d.excerpt}
-                </blockquote>
-                <div className="mt-5 border-t border-rule pt-4">
-                  <p className="text-sm font-semibold">{d.contributor}</p>
-                  <p className="text-xs text-muted-foreground">{d.role}</p>
-                </div>
-              </Card>
-            ))}
-          </ul>
         </Container>
       </Section>
     </>

@@ -4,7 +4,11 @@ import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
-  const paths = new Set<string>(["/", ...primaryNav.map((n) => n.to), ...actionNav.map((n) => n.to)]);
+  const paths = new Set<string>([
+    "/",
+    ...primaryNav.map((n) => n.to),
+    ...actionNav.map((n) => n.to),
+  ]);
 
   return [...paths].map((path) => ({
     url: `${base}${path === "/" ? "" : path}`,
