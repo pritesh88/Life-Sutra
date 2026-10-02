@@ -9,6 +9,9 @@
  */
 import { FOUNDATION, LIFE_SUTRA_FIRST_ISSUE, foundationAddress } from "@/data/foundation";
 
+/** Life Sutra journal email. */
+export const IMPRINT_EMAIL = "ismart@manasyog.com";
+
 export const IMPRINT_STATUS = `First Issue — ${LIFE_SUTRA_FIRST_ISSUE}`;
 
 export const IMPRINT = {
@@ -26,8 +29,7 @@ export const IMPRINT = {
     format: null as string | null,
     language: null as string | null,
     firstPublicationDate: LIFE_SUTRA_FIRST_ISSUE as string | null,
-    /** Life Sutra journal email. */
-    editorialContact: "ismart@manasyog.com",
+    editorialContact: IMPRINT_EMAIL,
   },
 } as const;
 
@@ -68,6 +70,6 @@ export function imprintDetailRows(): [string, string][] {
     ["First publication", d.firstPublicationDate ?? NOT_ANNOUNCED],
     ["Publisher", IMPRINT.publisher],
     ["Publisher's address", foundationAddress()],
-    ["Contact", d.editorialContact],
+    ["Email", d.editorialContact],
   ];
 }

@@ -21,6 +21,7 @@ import {
   visionStrands,
 } from "@/data/foundation";
 import { JOURNAL, issueLabel, journalIssues } from "@/data/journal";
+import { IMPRINT_EMAIL } from "@/data/life-sutra";
 import { FOUNDATION_ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { AssessmentWidget } from "./AssessmentWidget";
@@ -485,6 +486,16 @@ export function ParticularsSection() {
                 ],
                 ["Type", imprintPub!.designation],
                 ["Status", imprintPub!.status],
+                [
+                  "Email",
+                  <a
+                    key="e"
+                    href={`mailto:${IMPRINT_EMAIL}`}
+                    className="text-islf-indigo underline-offset-4 hover:underline"
+                  >
+                    {IMPRINT_EMAIL}
+                  </a>,
+                ],
               ]}
             />
           </div>
