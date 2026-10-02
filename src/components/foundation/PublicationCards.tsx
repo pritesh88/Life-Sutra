@@ -120,6 +120,58 @@ function SutraOrnament({ id }: { id: string }) {
   );
 }
 
+/** Plum issue cover: soft sheen over the plum gradient, matt like printed card. */
+const ISSUE_PLUM =
+  "radial-gradient(110% 70% at 20% 10%, rgb(255 255 255 / 0.14), transparent 50%), linear-gradient(150deg, #6e3270 0%, #4f2259 50%, #321640 100%)";
+const GOLD = "#d9ae62";
+
+/**
+ * Life Sutra drawn as a journal issue — the same layout as the Life Sutra
+ * Synthesis cover (header rule, mark, title, footer rule), in Life Sutra's
+ * own plum and gold with the sutra ornament.
+ */
+export function LifeSutraCover({ className }: { className?: string | undefined }) {
+  return (
+    <div
+      className={cn(
+        "@container relative aspect-[3/4] w-full shadow-[0_28px_50px_-30px_rgb(30_12_40/0.7)]",
+        className,
+      )}
+      style={{ backgroundImage: ISSUE_PLUM }}
+      aria-hidden="true"
+    >
+      <div className="absolute inset-[4%] border" style={{ borderColor: `${GOLD}40` }} />
+      <div className="relative flex h-full flex-col p-[9%] text-[#f3e3c3]">
+        <div
+          className="flex items-center justify-between gap-2 border-b pb-[5%] text-[0.5rem] tracking-[0.1em] uppercase"
+          style={{ borderColor: GOLD, fontFamily: "var(--font-public-sans)" }}
+        >
+          <span className="font-bold whitespace-nowrap">Journal</span>
+          <span className="whitespace-nowrap @max-[13rem]:hidden">First Issue</span>
+        </div>
+        <div className="mt-[12%] w-[26%]">
+          <SutraOrnament id="foil-issue-cover" />
+        </div>
+        <p className={cn("mt-auto font-imprint-display text-[1.9rem] leading-[0.98] italic", FOIL)}>
+          Life
+          <br />
+          Sutra
+        </p>
+        <p className="mt-2 font-imprint-display text-[0.7rem] leading-snug text-[#e6cfa4]/85 italic @max-[13rem]:hidden">
+          A journal of {FOUNDATION.name}
+        </p>
+        <div
+          className="mt-[7%] flex items-center justify-between border-t pt-[4%] text-[0.5rem] tracking-[0.1em] uppercase"
+          style={{ borderColor: GOLD, fontFamily: "var(--font-public-sans)" }}
+        >
+          <span className="whitespace-nowrap">Diwali · November 2026</span>
+          <span className="@max-[13rem]:hidden">ISLF</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /**
  * Life Sutra drawn as a cloth-bound book: plum board with sheen, raised
  * spine bands, a gold-foil frame and the sutra ornament. No invented title —
@@ -206,8 +258,9 @@ export function BookCover({
 
 /**
  * The two publications presented as objects on one shelf: same structure,
- * different material — an issue in the journal's colours, a book in Life
- * Sutra's. Both sit side by side on the same baseline.
+ * different material — each an issue in its own colours: parchment for
+ * Life Sutra Synthesis, plum and gold for Life Sutra. Both sit side by side
+ * on the same baseline.
  */
 export function PublicationShelf({ headingLevel = "h3" }: { headingLevel?: "h2" | "h3" }) {
   const Heading = headingLevel;
@@ -235,7 +288,7 @@ export function PublicationShelf({ headingLevel = "h3" }: { headingLevel?: "h2" 
     },
     {
       pub: imprint,
-      object: <BookCover className="max-w-[12.5rem]" />,
+      object: <LifeSutraCover className="max-w-[15rem]" />,
       // Soft lavender ground that lets the plum binding and gold foil glow.
       stage: "bg-[radial-gradient(75%_65%_at_50%_30%,#fbf8fd,#e7def0_75%)]",
       frame: "border-[#5a2a63]/20",

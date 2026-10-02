@@ -66,7 +66,7 @@ export function SiteFooter() {
                 <Link href={IMPRINT_BASE} className="link-underline text-earth-foreground">
                   Life Sutra
                 </Link>
-                , a forthcoming book publication.
+                , its second journal.
               </p>
               <p className="mt-3 text-xs tracking-wide text-earth-foreground/60">
                 {FOUNDATION.contact.email} · {FOUNDATION.contact.phone} · {foundationAddress()}

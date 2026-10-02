@@ -34,13 +34,15 @@ export const metadata: Metadata = {
     template: `%s — ${FOUNDATION.name}`,
   },
   description: FOUNDATION.summary,
+  // I Smart Life Foundation icon; the Life Sutra Synthesis pages override this
+  // with the journal's own icon in (journal)/layout.tsx.
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.png", type: "image/png", sizes: "64x64" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/islf/favicon.svg", type: "image/svg+xml" },
+      { url: "/islf/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/islf/favicon.ico", sizes: "any" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/islf/apple-touch-icon.png",
   },
   openGraph: {
     siteName: FOUNDATION.name,

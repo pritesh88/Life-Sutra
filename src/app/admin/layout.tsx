@@ -3,12 +3,15 @@ import type { ReactNode } from "react";
 import { AdminShell } from "@/components/admin/AdminShell";
 import { ADMIN_ENTRY } from "@/lib/admin/sections";
 import { requirePageUser } from "@/lib/auth/guards";
+import { JOURNAL_ICONS } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: { default: "Administration", template: "%s — Administration" },
   robots: { index: false, follow: false },
+  // The admin area serves the journal (submissions, peer review).
+  icons: JOURNAL_ICONS,
 };
 
 /**

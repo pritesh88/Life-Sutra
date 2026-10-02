@@ -39,7 +39,7 @@ export function ImprintHeader() {
           <span className="font-imprint-display text-[1.9rem] leading-none whitespace-nowrap text-imprint-burgundy italic">
             Life Sutra
           </span>
-          <span className="islf-kicker text-[0.58rem] text-imprint-muted">Book Publication</span>
+          <span className="islf-kicker text-[0.58rem] text-imprint-muted">Journal</span>
         </Link>
         <nav aria-label="Life Sutra" className="-mx-2 overflow-x-auto">
           <ul className="flex items-center whitespace-nowrap">

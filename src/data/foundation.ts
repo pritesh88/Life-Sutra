@@ -292,13 +292,13 @@ export const publications: Publication[] = [
   {
     slug: "life-sutra",
     title: "Life Sutra",
-    category: "Book Publication",
-    designation: "Book Publication",
+    category: "Journal",
+    designation: "Journal",
     description:
-      "A publication initiative under I Smart Life Foundation, dedicated to developing and sharing knowledge through book-length publications.",
+      "A journal published by I Smart Life Foundation, dedicated to developing and sharing knowledge.",
     status: `First issue — ${LIFE_SUTRA_FIRST_ISSUE}`,
     href: IMPRINT_BASE,
-    cta: "Explore Publication",
+    cta: "Explore Journal",
   },
 ];
 
@@ -376,7 +376,7 @@ export const imagery = {
   manuscripts: {
     src: "/assets/gallery-manuscripts.jpg",
     alt: "Pages of old printed texts and manuscripts laid over one another",
-    caption: "Texts — the long conversation that books continue",
+    caption: "Texts — the long conversation that journals continue",
     width: 1200,
     height: 1800,
   },

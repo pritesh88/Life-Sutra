@@ -16,3 +16,13 @@ export const ASSETS = {
   favicon: "/favicon.png",
   ismartlifelogo: "/assets/ismartlifelogo.jpeg",
 } as const;
+
+/** Life Sutra Synthesis's own browser-tab icon (the foundation uses /islf/). */
+export const JOURNAL_ICONS = {
+  icon: [
+    { url: "/favicon.svg", type: "image/svg+xml" },
+    { url: "/favicon.png", type: "image/png", sizes: "64x64" },
+    { url: "/favicon.ico", sizes: "any" },
+  ],
+  apple: "/apple-touch-icon.png",
+};

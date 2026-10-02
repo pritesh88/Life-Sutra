@@ -24,7 +24,7 @@ import { JOURNAL, issueLabel, journalIssues } from "@/data/journal";
 import { FOUNDATION_ROUTES } from "@/lib/routes";
 import { cn } from "@/lib/utils";
 import { AssessmentWidget } from "./AssessmentWidget";
-import { BookCover, JournalCover, PublicationShelf } from "./PublicationCards";
+import { JournalCover, LifeSutraCover, PublicationShelf } from "./PublicationCards";
 import { TriadDiagram, TriadMark } from "./TriadDiagram";
 import { Wrap } from "./Wrap";
 
@@ -199,8 +199,8 @@ export function Hero() {
             {FOUNDATION.tagline}
           </p>
           <p className="mt-7 max-w-lg text-[1.05rem] leading-relaxed text-islf-ivory/80">
-            The publishing body of two publications — <em>Life Sutra Synthesis</em>, an
-            interdisciplinary research journal, and <em>Life Sutra</em>, a book publication.
+            The publishing body of two journals — <em>Life Sutra Synthesis</em>, an
+            interdisciplinary research journal, and <em>Life Sutra</em>.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
             <Link
@@ -217,10 +217,10 @@ export function Hero() {
 
         {/* The two publications, shown as the objects they are. */}
         <div className="lg:col-span-6">
-          <div className="grid grid-cols-2 items-end gap-6 sm:gap-10">
+          <div className="grid grid-cols-2 items-start gap-6 sm:gap-10">
             {[
               { pub: journal!, cover: <JournalCover />, tilt: "lg:-rotate-2" },
-              { pub: imprint!, cover: <BookCover />, tilt: "lg:rotate-2 lg:translate-y-6" },
+              { pub: imprint!, cover: <LifeSutraCover />, tilt: "lg:rotate-2" },
             ].map(({ pub, cover, tilt }) => (
               <Link key={pub.slug} href={pub.href} className="group block">
                 <div
@@ -360,7 +360,7 @@ export function PublicationsSection({ asPage = false }: { asPage?: boolean }) {
               id="publications-title"
               kicker="Publications"
               title="Our Publications"
-              lede="Two publications issued by I Smart Life Foundation: an interdisciplinary research journal and a book publication."
+              lede="Two journals published by I Smart Life Foundation: Life Sutra Synthesis, an interdisciplinary research journal, and Life Sutra."
               className="lg:col-span-7"
             />
             <div className="border-l-2 border-islf-magenta pl-5 lg:col-span-4 lg:col-start-9">
