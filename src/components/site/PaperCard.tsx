@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { Download, Eye } from "lucide-react";
 import type { Paper } from "@/data/content";
 import { Action, Card, MetaRow, Tag } from "@/components/site/primitives";
+import { JOURNAL, articlePath, getIssue, issueNumberLabel, issuePeriodLabel } from "@/data/journal";
 
 type PaperCardProps = {
   paper: Paper;
@@ -9,6 +11,14 @@ type PaperCardProps = {
 };
 
 export function PaperCard({ paper, variant = "full" }: PaperCardProps) {
+  const issue = getIssue(paper.issueId);
+  const issueMeta = issue ? [issueNumberLabel(issue), issuePeriodLabel(issue)] : [];
+  const titleLink = (
+    <Link href={articlePath(paper.id)} className="hover:text-primary hover:underline">
+      {paper.title}
+    </Link>
+  );
+
   if (variant === "summary") {
     return (
       <Card as="li" className="justify-between p-6">
@@ -17,11 +27,11 @@ export function PaperCard({ paper, variant = "full" }: PaperCardProps) {
             <Tag tone="saffron">{paper.type}</Tag>
             <Tag>{paper.domain}</Tag>
           </div>
-          <h3 className="mt-4 text-lg leading-snug">{paper.title}</h3>
+          <h3 className="mt-4 text-lg leading-snug">{titleLink}</h3>
           <p className="mt-3 text-sm text-muted-foreground">{paper.authors.join(", ")}</p>
         </div>
         <div className="mt-5 border-t border-rule pt-4">
-          <MetaRow items={[paper.date, paper.issue]} />
+          <MetaRow items={[JOURNAL.title, ...issueMeta]} />
           <div className="mt-3 flex flex-wrap gap-2">
             <Tag tone="leaf">Open access</Tag>
             <Tag tone="gold">Peer reviewed</Tag>
@@ -41,14 +51,14 @@ export function PaperCard({ paper, variant = "full" }: PaperCardProps) {
         ) : null}
         <span className="font-mono text-xs text-muted-foreground">{paper.id}</span>
       </div>
-      <h3 className="mt-4 text-xl leading-snug sm:text-2xl">{paper.title}</h3>
+      <h3 className="mt-4 text-xl leading-snug sm:text-2xl">{titleLink}</h3>
       <p className="mt-2 text-sm font-semibold">{paper.authors.join(" · ")}</p>
       <MetaRow className="mt-1" items={[paper.affiliation]} />
       <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
         {paper.abstract}
       </p>
       <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-4">
-        <MetaRow items={[paper.date, `pp. ${paper.pages}`, paper.keywords.join(", ")]} />
+        <MetaRow items={[...issueMeta, `pp. ${paper.pages}`, paper.keywords.join(", ")]} />
         {paper.downloadUrl ? (
           <div className="flex flex-wrap items-center gap-4">
             <a

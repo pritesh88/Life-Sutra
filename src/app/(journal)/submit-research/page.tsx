@@ -1,3 +1,4 @@
+import { journalPath } from "@/lib/routes";
 import {
   Action,
   ActionButton,
@@ -60,7 +61,7 @@ export default function SubmitPage() {
           "Open abstract on acceptance",
         ]}
       >
-        <Action to="/methodology" variant="outline" size="sm">
+        <Action to={journalPath("/methodology")} variant="outline" size="sm">
           Methodology framework
         </Action>
       </PageHero>

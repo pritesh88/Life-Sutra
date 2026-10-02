@@ -1,3 +1,4 @@
+import { journalPath } from "@/lib/routes";
 import { Check } from "lucide-react";
 import {
   Action,
@@ -92,7 +93,7 @@ export default function MembershipPage() {
               <Action to="/submit-research" variant="primary" size="sm">
                 Submit Research
               </Action>
-              <Action to="/institutions" variant="outline" size="sm">
+              <Action to={journalPath("/institutions")} variant="outline" size="sm">
                 Institutional partners
               </Action>
             </li>

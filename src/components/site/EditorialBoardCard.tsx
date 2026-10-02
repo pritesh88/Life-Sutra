@@ -30,11 +30,14 @@ export function EditorialBoardCard({ member }: { member: EditorialBoardMember })
 
         <div className="mt-4 grid gap-2 border-t border-rule pt-4">
           <Field label="Editorial Designation" value={member.editorialDesignation} />
-          {member.email ? <Field label="Institutional Email" value={member.email} /> : null}
-          <Field label="Organization" value={member.organization} />
           {member.academicDesignation ? (
-            <Field label="Academic Designation" value={member.academicDesignation} />
+            <Field label="Designation" value={member.academicDesignation} />
           ) : null}
+          {member.department ? <Field label="Department" value={member.department} /> : null}
+          <Field label="Institution" value={member.organization} />
+          {member.address ? <Field label="Institutional Address" value={member.address} /> : null}
+          <Field label="Country" value={member.country} />
+          {member.email ? <Field label="Official Email" value={member.email} /> : null}
         </div>
 
         {member.linkedin || member.website ? (

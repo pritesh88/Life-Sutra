@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Action } from "@/components/site/primitives";
+import { journalPath } from "@/lib/routes";
 
 export default function NotFound() {
   return (
@@ -17,7 +18,7 @@ export default function NotFound() {
             Go home
           </Action>
           <Link
-            href="/research"
+            href={journalPath("/research")}
             className="inline-flex h-9 items-center justify-center rounded-md border border-border bg-card px-3.5 text-sm font-semibold"
           >
             Browse research

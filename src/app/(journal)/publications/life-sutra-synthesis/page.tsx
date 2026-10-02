@@ -1,3 +1,4 @@
+import { journalPath } from "@/lib/routes";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { EditorialBoardCard } from "@/components/site/EditorialBoardCard";
@@ -15,6 +16,7 @@ import { homeContent, homeMeta } from "@/data/pages";
 import { ASSETS } from "@/lib/site";
 import GlobalAdvisory from "@/components/site/GlobalAdvisory";
 import ChiefPatron from "@/components/site/ChiefPatron";
+import JournalParticulars from "@/components/site/JournalParticulars";
 
 export const metadata = homeMeta;
 
@@ -43,13 +45,13 @@ export default function HomePage() {
               methodology and researchers so that scattered work becomes a shared body of evidence.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <Action to="/research" variant="primary" size="lg">
+              <Action to={journalPath("/research")} variant="primary" size="lg">
                 Explore Research Publications <ArrowRight className="size-4" />
               </Action>
-              <Action to="/iks-dialogue" variant="outline" size="lg">
+              <Action to={journalPath("/iks-dialogue")} variant="outline" size="lg">
                 Explore IKS Knowledge
               </Action>
-              <Action to="/research-opportunities" variant="ghost" size="lg">
+              <Action to={journalPath("/research-opportunities")} variant="ghost" size="lg">
                 Find Research Opportunities
               </Action>
             </div>
@@ -76,12 +78,12 @@ export default function HomePage() {
           </span>
           <span className="hidden h-4 w-px bg-earth-foreground/25 sm:block" aria-hidden="true" />
           <span className="text-base font-semibold tracking-[0.1em] text-gold uppercase sm:text-lg">
-            ISSN: Coming Soon
+            ISSN: To Be Issued
           </span>
         </Container>
       </div>
 
-
+      <JournalParticulars />
 
       <ChiefPatron />
 
@@ -128,7 +130,7 @@ export default function HomePage() {
             title="Latest research"
             description="Double-anonymous peer-reviewed studies across textual, field and experimental methods."
             action={
-              <Action to="/research" variant="outline" size="sm">
+              <Action to={journalPath("/research")} variant="outline" size="sm">
                 Explore Research Publications
               </Action>
             }
@@ -148,7 +150,7 @@ export default function HomePage() {
             title="Knowledge Claim → Evidence → Research → Synthesis"
             description="A knowledge claim carried by a text or a living practice can be documented on its own terms, then examined against the forms of evidence that are actually appropriate to it — and connected to the studies that already speak to it."
             action={
-              <Action to="/iks-dialogue" variant="outline" size="sm">
+              <Action to={journalPath("/iks-dialogue")} variant="outline" size="sm">
                 Explore IKS Knowledge
               </Action>
             }
@@ -181,7 +183,7 @@ export default function HomePage() {
               is that the reasoning behind the chosen method is stated openly.
             </p>
             <div className="mt-8">
-              <Action to="/methodology" variant="outline">
+              <Action to={journalPath("/methodology")} variant="outline">
                 Explore Methodology
               </Action>
             </div>
@@ -223,7 +225,7 @@ export default function HomePage() {
             ))}
           </ol>
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Action to="/research-opportunities" variant="onEarth" size="sm">
+            <Action to={journalPath("/research-opportunities")} variant="onEarth" size="sm">
               Explore Research Incubator
             </Action>
             <p className="text-xs text-earth-foreground/60">
@@ -240,7 +242,7 @@ export default function HomePage() {
             title="Life Sutra Synthesis Research Observatory"
             description="A long-term effort to map the IKS research ecosystem — who is working on what, where, and how the studies relate. The observatory is still being built."
             action={
-              <Action to="/research-impact" variant="outline" size="sm">
+              <Action to={journalPath("/research-impact")} variant="outline" size="sm">
                 Explore Observatory
               </Action>
             }
@@ -255,7 +257,7 @@ export default function HomePage() {
             title="Open access · Peer reviewed · Interdisciplinary"
             description="The publishing standards the journal holds itself to."
             action={
-              <Action to="/research" variant="outline" size="sm">
+              <Action to={journalPath("/research")} variant="outline" size="sm">
                 Explore Research Publications
               </Action>
             }
@@ -323,7 +325,7 @@ export default function HomePage() {
               Read what the field has established, or bring the question you are working on.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Action to="/research" variant="primary" size="lg">
+              <Action to={journalPath("/research")} variant="primary" size="lg">
                 Explore Research Publications
               </Action>
               <Action to="/submit-research" variant="ink" size="lg">

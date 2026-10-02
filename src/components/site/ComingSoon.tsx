@@ -12,7 +12,7 @@ export function ComingSoon({
     <Card className="mx-auto max-w-2xl items-center p-8 text-center sm:p-10">
       <Tag tone="gold">
         <Clock className="mr-1.5 size-3" aria-hidden="true" />
-        Coming soon
+        To Be Issued
       </Tag>
       <h3 className="mt-4 text-xl leading-snug">{title}</h3>
       <ul className="mt-5 grid gap-3 text-left">

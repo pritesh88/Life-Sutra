@@ -191,3 +191,234 @@
     background-size: 100% 1px;
   }
 }
+
+/* =====================================================================
+ * PUBLISHER & IMPRINT DESIGN SYSTEMS
+ * Everything above belongs to Life Sutra Synthesis and is never touched.
+ * Below, every token is declared only inside .theme-islf (I Smart Life
+ * Foundation) or .theme-imprint (Life Sutra), so nothing here can reach a
+ * journal page. Utilities are prefixed islf-/imprint- and unused by the journal.
+ * ===================================================================== */
+
+@theme inline {
+  /* I Smart Life Foundation */
+  --color-islf-ivory: var(--islf-ivory);
+  --color-islf-paper: var(--islf-paper);
+  --color-islf-ink: var(--islf-ink);
+  --color-islf-muted: var(--islf-muted);
+  --color-islf-indigo: var(--islf-indigo);
+  --color-islf-indigo-deep: var(--islf-indigo-deep);
+  --color-islf-magenta: var(--islf-magenta);
+  --color-islf-magenta-text: var(--islf-magenta-text);
+  --color-islf-glow: var(--islf-glow);
+  --color-islf-sky: var(--islf-sky);
+  --color-islf-mist: var(--islf-mist);
+  --color-islf-stone: var(--islf-stone);
+  --font-islf-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+  --font-islf-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Life Sutra */
+  --color-imprint-parchment: var(--imprint-parchment);
+  --color-imprint-paper: var(--imprint-paper);
+  --color-imprint-ink: var(--imprint-ink);
+  --color-imprint-muted: var(--imprint-muted);
+  --color-imprint-burgundy: var(--imprint-burgundy);
+  --color-imprint-burgundy-deep: var(--imprint-burgundy-deep);
+  --color-imprint-copper: var(--imprint-copper);
+  --color-imprint-copper-text: var(--imprint-copper-text);
+  --color-imprint-olive: var(--imprint-olive);
+  --color-imprint-line: var(--imprint-line);
+  --font-imprint-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-imprint-body: var(--font-newsreader), ui-serif, Georgia, serif;
+}
+
+/* Both palettes are available inside either scope, so the foundation can
+ * preview Life Sutra's cover and vice versa. Neither exists on :root. */
+:is(.theme-islf, .theme-imprint) {
+  /* Inspired by manasyog.life and the ISLF logo: deep indigo, magenta, sky. */
+  --islf-ivory: #f3f2fd;
+  --islf-paper: #fafaff;
+  --islf-ink: #211c3d;
+  /* Muted text, AA on ivory and paper. */
+  --islf-muted: #575672;
+  --islf-indigo: #2a2058;
+  --islf-indigo-deep: #171238;
+  --islf-magenta: #c2389f;
+  /* Magenta darkened for small text on light grounds (AA). */
+  --islf-magenta-text: #a32683;
+  /* Light magenta for text on indigo (AA). */
+  --islf-glow: #f2a6dc;
+  --islf-sky: #3a9bcf;
+  --islf-mist: #e9e7fb;
+  --islf-stone: #dcd8f1;
+
+  --imprint-parchment: #f5efe5;
+  --imprint-paper: #fcfaf6;
+  --imprint-ink: #392f2b;
+  --imprint-muted: #6a5d55;
+  --imprint-burgundy: #844b4a;
+  --imprint-burgundy-deep: #6b3a3a;
+  --imprint-copper: #b17b59;
+  --imprint-copper-text: #8a5636;
+  --imprint-olive: #85866c;
+  --imprint-line: #ded3c5;
+}
+
+.theme-islf {
+  --background: var(--islf-ivory);
+  --foreground: var(--islf-ink);
+  --card: var(--islf-paper);
+  --card-foreground: var(--islf-ink);
+  --popover: var(--islf-paper);
+  --popover-foreground: var(--islf-ink);
+  --primary: var(--islf-indigo);
+  --primary-foreground: var(--islf-paper);
+  --muted: var(--islf-mist);
+  --muted-foreground: var(--islf-muted);
+  --border: var(--islf-stone);
+  --input: var(--islf-stone);
+  --ring: var(--islf-magenta);
+  --ink: var(--islf-ink);
+  --rule: var(--islf-stone);
+  --color-border: var(--islf-stone);
+
+  background-color: var(--islf-ivory);
+  color: var(--islf-ink);
+  font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.theme-imprint {
+  --background: var(--imprint-paper);
+  --foreground: var(--imprint-ink);
+  --card: var(--imprint-paper);
+  --card-foreground: var(--imprint-ink);
+  --primary: var(--imprint-burgundy);
+  --primary-foreground: var(--imprint-paper);
+  --muted-foreground: var(--imprint-muted);
+  --border: var(--imprint-line);
+  --input: var(--imprint-line);
+  --ring: var(--imprint-burgundy);
+  --ink: var(--imprint-ink);
+  --rule: var(--imprint-line);
+  --color-border: var(--imprint-line);
+
+  background-color: var(--imprint-paper);
+  color: var(--imprint-ink);
+  font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  .theme-islf :is(h1, h2, h3, h4) {
+    font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+    font-weight: 300;
+    letter-spacing: -0.018em;
+    color: inherit;
+  }
+
+  .theme-imprint :is(h1, h2, h3, h4) {
+    font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: inherit;
+  }
+
+  .theme-islf :focus-visible,
+  .theme-imprint :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  .theme-islf ::selection {
+    background: color-mix(in oklab, var(--islf-magenta) 25%, transparent);
+  }
+
+  .theme-imprint ::selection {
+    background: color-mix(in oklab, var(--imprint-copper) 30%, transparent);
+  }
+}
+
+/* Small-caps label shared by both sites. */
+@utility islf-kicker {
+  font-family: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Laid-paper texture for Life Sutra: faint horizontal chain lines. */
+@utility imprint-laid {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--imprint-copper) 7%, transparent) 0 1px,
+    transparent 1px 7px
+  );
+}
+
+/* Cloth-bound book board: a fine diagonal weave. */
+@utility imprint-cloth {
+  background-image:
+    repeating-linear-gradient(45deg, rgb(255 255 255 / 0.035) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-45deg, rgb(0 0 0 / 0.05) 0 1px, transparent 1px 4px);
+}
+
+@keyframes islf-draw {
+  from {
+    stroke-dashoffset: var(--islf-dash, 1200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes islf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility islf-draw {
+  stroke-dasharray: var(--islf-dash, 1200);
+  animation: islf-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+@utility islf-rise {
+  animation: islf-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll reveal without JavaScript, only where scroll timelines exist. */
+@utility islf-reveal {
+  @supports (animation-timeline: view()) {
+    animation: islf-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .islf-draw,
+  .islf-rise,
+  .islf-reveal {
+    animation: none;
+  }
+}
+
+/* Hero ground: deep indigo with soft magenta and sky light, after the logo. */
+@utility islf-aurora {
+  background-color: var(--islf-indigo-deep);
+  background-image:
+    radial-gradient(60% 70% at 85% 20%, color-mix(in oklab, var(--islf-magenta) 34%, transparent), transparent 70%),
+    radial-gradient(65% 70% at 8% 100%, color-mix(in oklab, var(--islf-sky) 46%, transparent), transparent 70%),
+    radial-gradient(50% 55% at 45% 55%, color-mix(in oklab, #4a3fb0 30%, transparent), transparent 75%),
+    linear-gradient(160deg, var(--islf-indigo) 0%, var(--islf-indigo-deep) 70%);
+}
+
+/* Thin magenta-to-sky rule, used as an accent line. */
+@utility islf-spectrum {
+  background-image: linear-gradient(90deg, var(--islf-magenta), var(--islf-sky));
+}

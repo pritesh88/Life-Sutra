@@ -10,6 +10,8 @@ type PageMetaInput = {
   /** Bypass the root title template (home page). */
   absoluteTitle?: string;
   ogTitle?: string;
+  /** Defaults to the journal; foundation and imprint pages pass their own. */
+  siteName?: string;
 };
 
 export function pageMeta({
@@ -18,9 +20,10 @@ export function pageMeta({
   path = "/",
   absoluteTitle,
   ogTitle,
+  siteName = SITE_NAME,
 }: PageMetaInput): Metadata {
   const url = new URL(path, getSiteUrl()).toString();
-  const resolvedOgTitle = ogTitle ?? absoluteTitle ?? `${title} — ${SITE_NAME}`;
+  const resolvedOgTitle = ogTitle ?? absoluteTitle ?? `${title} — ${siteName}`;
 
   return {
     title: absoluteTitle ? { absolute: absoluteTitle } : title,
@@ -32,7 +35,7 @@ export function pageMeta({
       title: resolvedOgTitle,
       description,
       url,
-      siteName: SITE_NAME,
+      siteName,
       type: "website",
     },
     twitter: {

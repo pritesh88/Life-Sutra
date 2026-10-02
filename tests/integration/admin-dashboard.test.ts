@@ -865,10 +865,20 @@ describe("admin pages: server-side gating and chrome", () => {
   it("leaves the public website unchanged", async () => {
     const home = await page(new Client(), "/");
     assert.equal(home.status, 200);
-    const html = visibleHtml(home.text);
-    assert.ok(html.includes("Call for Papers open"), "public header still renders");
+    assert.ok(visibleHtml(home.text).includes("I Smart Life Foundation"), "publisher home renders");
+    const journal = await page(new Client(), "/publications/life-sutra-synthesis");
+    assert.equal(journal.status, 200);
+    const html = visibleHtml(journal.text);
+    assert.ok(html.includes("Call for Papers open"), "journal header still renders");
     assert.equal(html.includes('aria-label="Administration"'), false);
-    for (const path of ["/about", "/research", "/membership", "/submit-research", "/auth/login"])
+    for (const path of [
+      "/about",
+      "/publications/life-sutra-synthesis/research",
+      "/publications/life-sutra",
+      "/membership",
+      "/submit-research",
+      "/auth/login",
+    ])
       assert.equal((await page(new Client(), path)).status, 200, path);
     assert.equal((await page(new Client(), "/definitely-missing")).status, 404);
   });

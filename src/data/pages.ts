@@ -1,3 +1,4 @@
+import { journalPath } from "@/lib/routes";
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 
@@ -6,7 +7,7 @@ export const homeMeta: Metadata = pageMeta({
   absoluteTitle: "Life Sutra Synthesis — Discover, Research, Synthesize, Connect",
   description:
     "Life Sutra Synthesis is a scholarly research publication for Indian Knowledge Systems, connecting research, knowledge, methodology and researchers.",
-  path: "/",
+  path: journalPath(),
   ogTitle: "Life Sutra Synthesis — Discover, Research, Synthesize, Connect",
 });
 
@@ -14,7 +15,7 @@ export const aboutMeta: Metadata = pageMeta({
   title: "About",
   description:
     "Life Sutra Synthesis's mission, editorial standards, review process and governance for Indian Knowledge Systems research.",
-  path: "/about",
+  path: journalPath("/about"),
   ogTitle: "About Life Sutra Synthesis",
 });
 
@@ -22,70 +23,70 @@ export const researchMeta: Metadata = pageMeta({
   title: "Research Publications",
   description:
     "Peer-reviewed research publications on Indian Knowledge Systems: textual studies, field studies, reviews and methodology notes.",
-  path: "/research",
+  path: journalPath("/research"),
 });
 
 export const abstractsMeta: Metadata = pageMeta({
   title: "Research Abstracts",
   description:
     "Research Abstracts is in preparation. Submissions will be indexed here as they clear desk review.",
-  path: "/research-abstracts",
+  path: journalPath("/research-abstracts"),
 });
 
 export const conferencesMeta: Metadata = pageMeta({
   title: "Conferences & Calls for Papers",
   description:
     "Conferences and calls for papers on Indian Knowledge Systems is in preparation — listings will appear here as they are confirmed.",
-  path: "/conferences",
+  path: journalPath("/conferences"),
 });
 
 export const dialogueMeta: Metadata = pageMeta({
   title: "IKS Dialogue",
   description:
     "IKS Dialogue, a moderated space for commentary and debate on Indian Knowledge Systems research, is in preparation.",
-  path: "/iks-dialogue",
+  path: journalPath("/iks-dialogue"),
 });
 
 export const whitePapersMeta: Metadata = pageMeta({
   title: "White Papers",
   description:
     "Life Sutra Synthesis white papers on research integrity, metadata standards and policy frameworks are in preparation.",
-  path: "/white-papers",
+  path: journalPath("/white-papers"),
 });
 
 export const opportunitiesMeta: Metadata = pageMeta({
   title: "Research Opportunities",
   description:
     "Fellowships, grants, doctoral positions and calls for chapters in Indian Knowledge Systems research — this listing is in preparation.",
-  path: "/research-opportunities",
+  path: journalPath("/research-opportunities"),
 });
 
 export const methodologyMeta: Metadata = pageMeta({
   title: "Research Methodology",
   description:
     "The Life Sutra Synthesis methodology framework and editorial principles for Indian Knowledge Systems research.",
-  path: "/methodology",
+  path: journalPath("/methodology"),
 });
 
 export const researchersMeta: Metadata = pageMeta({
   title: "Researcher Directory",
   description:
     "A directory of scholars publishing Indian Knowledge Systems research with Life Sutra Synthesis is in preparation.",
-  path: "/researchers",
+  path: journalPath("/researchers"),
 });
 
 export const institutionsMeta: Metadata = pageMeta({
   title: "Partner Institutions",
   description:
     "A directory of universities, research centres, archives and policy institutes collaborating with Life Sutra Synthesis is in preparation.",
-  path: "/institutions",
+  path: journalPath("/institutions"),
 });
 
 export const impactMeta: Metadata = pageMeta({
   title: "Research Impact & Observatory",
   description:
     "The planned Life Sutra Synthesis research observatory for measuring progress in Indian Knowledge Systems scholarship.",
-  path: "/research-impact",
+  path: journalPath("/research-impact"),
 });
 
 export const submitMeta: Metadata = pageMeta({

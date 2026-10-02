@@ -1,3 +1,4 @@
+import { journalPath } from "@/lib/routes";
 import { ComingSoon } from "@/components/site/ComingSoon";
 import { Action, Container, PageHero, Section } from "@/components/site/primitives";
 import { whitePapersMeta } from "@/data/pages";
@@ -25,7 +26,7 @@ export default function WhitePapersPage() {
             ]}
           />
           <div className="mt-8 flex justify-center">
-            <Action to="/about" variant="outline" size="sm">
+            <Action to={journalPath("/about")} variant="outline" size="sm">
               About Life Sutra Synthesis
             </Action>
           </div>
