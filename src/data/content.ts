@@ -96,7 +96,7 @@ export const papers: Paper[] = [
       "affective AI",
     ],
     downloadUrl: paperUrl("quantum-emotional-semiconductors.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-008",
@@ -114,7 +114,7 @@ export const papers: Paper[] = [
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity · IIT Jodhpur",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–20",
+    pages: "14–33",
     type: "Research Article",
     abstract:
       "This paper reconceptualizes Bhāva in Indian Knowledge Systems as a field-based, relational and emergent process, and proposes a five-layer communication architecture spanning biological signals, Bhāva Encoding Chips, transmission networks, a Digital Self interface and consciousness integration, formalized through Bhāva Vector Models.",
@@ -126,7 +126,7 @@ export const papers: Paper[] = [
       "Bhāva Vector Model",
     ],
     downloadUrl: paperUrl("bhava-centric-communication-architecture.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-006",
@@ -136,13 +136,13 @@ export const papers: Paper[] = [
     affiliation: "Arihant Institute of Business Management · Savitribai Phule Pune University",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–14",
+    pages: "34–47",
     type: "Research Article",
     abstract:
       "The Collective Emotional Field Model reframes emotion as a field-based phenomenon emerging from consciousness, Antahkarana configuration, Samskara density, observer awareness and digital influence. The paper supplies a mathematical representation and Structural Equation Modeling pathway for empirical validation.",
     keywords: ["collective emotion", "Antahkarana", "Samskara", "Digital Self", "SEM"],
     downloadUrl: paperUrl("collective-emotional-field-model-qefm.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-005",
@@ -153,13 +153,13 @@ export const papers: Paper[] = [
       "I Smart Life Foundation · Mind Lab · Savitribai Phule Pune University · IIT Mandi",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–13",
+    pages: "48–60",
     type: "Research Article",
     abstract:
       "This study connects Advaita Vedānta constructs of Tādātmya, Chidābhāsa and Sākṣī with sustainability orientation, translating them into measurable variables, a mathematical model and a Structural Equation Modeling framework for empirical study.",
     keywords: ["Vedānta", "consciousness", "Sākṣī", "sustainability", "SEM"],
     downloadUrl: paperUrl("integrative-vedanta-islf-framework.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-004",
@@ -168,13 +168,13 @@ export const papers: Paper[] = [
     affiliation: "I Smart Life Foundation",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–19",
+    pages: "61–79",
     type: "Methodology Note",
     abstract:
       "The paper introduces Astrological Emotional Quotient, a proposed multidimensional measure combining six Jyotish natal-chart parameters with contemporary emotional-intelligence categories. It frames emotional predispositions probabilistically and outlines mixed-method validation against established measures.",
     keywords: ["AEQ", "emotional intelligence", "Jyotish", "psychometrics", "emotional baseline"],
     downloadUrl: paperUrl("astrological-emotional-quotient-aeq.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-003",
@@ -185,13 +185,13 @@ export const papers: Paper[] = [
       "I Smart Life Foundation · Mind Lab · Savitribai Phule Pune University · IIT Mandi",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–13",
+    pages: "80–92",
     type: "Research Article",
     abstract:
       "The Theory of Quantum Emotion proposes emotion as a field-based phenomenon arising from consciousness. It brings together Antahkarana, Spanda and Rasa with quantum-consciousness literature, introduces the AMPING methodology and examines collective consciousness and the Digital Self.",
     keywords: ["quantum emotion", "Antahkarana", "Spanda", "Digital Self", "AMPING"],
     downloadUrl: paperUrl("theory-of-quantum-emotion-tqe.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-002",
@@ -202,13 +202,13 @@ export const papers: Paper[] = [
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–16",
+    pages: "93–108",
     type: "Research Article",
     abstract:
       "Bhava-Sutra interprets Goloka as a relational architecture of emotional consciousness and develops a layered model spanning emotional generation, modulation, transmission, ecology, participation, governance and communication, with applications to leadership and sustainability.",
     keywords: ["Bhava", "Bhakti ontology", "emotional intelligence", "systems theory", "ecology"],
     downloadUrl: paperUrl("bhava-sutra.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
   {
     id: "ls-ms-2026-001",
@@ -225,13 +225,13 @@ export const papers: Paper[] = [
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity",
     domain: "Philosophy & Darśana",
     issueId: "v1-i1",
-    pages: "1–13",
+    pages: "109–121",
     type: "Research Article",
     abstract:
       "Through Indian Knowledge Systems and reflective case inquiry, this paper proposes emotional fields as enduring orientations that influence cognition, relationships and action. A study of Matrutva develops an Emotional Field Formation framework using vrittis, samskaras and triguna dynamics.",
     keywords: ["emotional fields", "Vrittis", "Matrutva", "reflective inquiry", "consciousness"],
     downloadUrl: paperUrl("from-vrittis-to-emotional-fields.pdf"),
-    status: "Submitted manuscript",
+    status: "Published",
   },
 ];
 
@@ -284,7 +284,7 @@ export const editorialBoard: EditorialBoardMember[] = [
   {
     id: "eb-lohar",
     name: "Dr. Mahesh Lohar",
-    editorialDesignation: "Chief Editor",
+    editorialDesignation: "Editor-in-Chief",
     organization: "I Smart Life Foundation",
     address: "4, Sanjog 1, Aundh, Pune 411007",
     department: "Research",
@@ -307,6 +307,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     academicDesignation: "Associate Professor",
     email: "shrikant@arihantacs.edu.in",
     linkedin: "https://www.linkedin.com/in/drshrikantwaghulkar/",
+    website: "https://arihantmbainstitute.ac.in/teaching-staff/",
     photo: "/assets/editorial/shrikant-waghulkar.jpg",
   },
   {
@@ -315,12 +316,13 @@ export const editorialBoard: EditorialBoardMember[] = [
     editorialDesignation: "Editorial Board Member",
     organization: "Neville Wadia Institute of Management Studies and Research, Pune",
     address:
-      "Ness Wadia College of Commerce, Nowrosjee Wadia College, Sangamvadi, Pune, Maharashtra 411001",
+      "Neville Wadia Institute of Management Studies and Research, 19, Late Prin. V.K. Joag Path, Wadia College Campus, Pune, Maharashtra 411001",
     department: "Director / Research",
     country: "India",
     academicDesignation: "Director and Professor",
     email: "director@nevillewadia.com",
     linkedin: "https://www.linkedin.com/in/dr-anandrao-dadas-b0499b1b/",
+    website: "https://nwimsr.mespune.org/faculty/dr-a-b-dadas/",
     photo: "/assets/editorial/anand-dadas.jpg",
   },
   {
@@ -335,6 +337,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     academicDesignation: "Assistant Professor",
     email: "vinayak@arihantacs.edu.in",
     linkedin: "https://www.linkedin.com/in/vinayak-shitole/",
+    website: "https://arihantmbainstitute.ac.in/teaching-staff/",
     photo: "/assets/editorial/vinayak-shitole.jpg",
   },
   {
@@ -343,11 +346,12 @@ export const editorialBoard: EditorialBoardMember[] = [
     editorialDesignation: "Editorial Board Member",
     organization: "Idealizeer Content Solutions Pvt. Ltd., Pune",
     department: "Manager / Content Writer",
-    address: "211, City Centre, Hinjwadi Phase 1, Pune, Maharashtra",
+    address: "211, City Centre, Hinjwadi Phase 1, Pune, Maharashtra 411057",
     country: "India",
     academicDesignation: "Director",
-    email: "arpita@idealizeer.in",
+    email: "arpita@idealizeer.com",
     linkedin: "https://www.linkedin.com/in/dr-arpita-kathane-8683461a1/",
+    website: "https://idealizeer.com/icsglobal/",
     photo: "/assets/editorial/arpita-kathane.jpg",
   },
   {
@@ -373,7 +377,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     country: "Germany",
     academicDesignation: "President",
     email: "dr.ulrich.berk@homatherapie.de",
-    website: "https://www.homatherapie.de/en",
+    website: "https://www.homatherapie.de/en/contact.html",
     photo: "/assets/editorial/ulrich-berk.jpg",
   },
 ];

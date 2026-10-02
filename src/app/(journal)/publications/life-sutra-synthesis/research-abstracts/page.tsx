@@ -19,7 +19,7 @@ export default function AbstractsPage() {
           <ComingSoon
             title="The abstract index is in preparation"
             purpose={[
-              "Submissions will be indexed here as soon as they clear desk review.",
+              "Submissions will be listed here as soon as they clear desk review.",
               "Status will reflect position in the review pipeline, not editorial endorsement.",
             ]}
           />

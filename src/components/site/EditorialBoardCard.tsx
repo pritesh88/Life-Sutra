@@ -50,7 +50,7 @@ export function EditorialBoardCard({ member }: { member: EditorialBoardMember })
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
               >
                 <ExternalLink className="size-3.5" aria-hidden="true" />
-                Professional Profile
+                Institutional Profile
               </a>
             ) : null}
             {member.linkedin ? (
