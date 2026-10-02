@@ -1,3 +1,4 @@
+import { BooksSection } from "@/components/foundation/BooksSection";
 import {
   AboutSection,
   ApproachSection,
@@ -16,7 +17,7 @@ import { foundationMeta } from "@/lib/foundation-meta";
 export const metadata = foundationMeta({
   title: "Home",
   absoluteTitle: `${FOUNDATION.name} — Publishing Body`,
-  description: `${FOUNDATION.publishingBody}: publisher of Life Sutra Synthesis, an interdisciplinary research journal, and Life Sutra, a book publication.`,
+  description: `${FOUNDATION.publishingBody}: publisher of two journals — Life Sutra Synthesis, an interdisciplinary research journal, and Life Sutra.`,
   path: "/",
 });
 
@@ -27,6 +28,7 @@ export default function FoundationHomePage() {
       <AboutSection />
       <PublicationsSection />
       <ParticularsSection />
+      <BooksSection />
       <VisionSection />
       <MissionSection />
       <CultureSection />

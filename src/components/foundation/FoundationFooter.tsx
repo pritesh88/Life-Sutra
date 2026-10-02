@@ -9,6 +9,7 @@ const FOUNDATION_LINKS = [
   { label: "About the Foundation", to: FOUNDATION_ROUTES.about },
   { label: "Vision & Mission", to: FOUNDATION_ROUTES.visionMission },
   { label: "Our Approach", to: FOUNDATION_ROUTES.approach },
+  { label: "Books", to: FOUNDATION_ROUTES.books },
   { label: "Smart Assessment", to: "/#assessment" },
   { label: "Contact", to: FOUNDATION_ROUTES.contact },
 ];

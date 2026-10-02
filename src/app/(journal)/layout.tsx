@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { SiteShell } from "@/components/site/SiteShell";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { JOURNAL_ICONS, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 /** Life Sutra Synthesis — the journal keeps its own header, footer and theme. */
 export const metadata: Metadata = {
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   openGraph: { siteName: SITE_NAME },
+  icons: JOURNAL_ICONS,
 };
 
 export default function JournalLayout({ children }: { children: ReactNode }) {

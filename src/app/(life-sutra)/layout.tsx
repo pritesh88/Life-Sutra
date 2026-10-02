@@ -4,10 +4,10 @@ import { ImprintFooter, ImprintHeader } from "@/components/imprint/ImprintChrome
 import { cormorant, newsreader, publicSans } from "@/lib/fonts";
 
 export const metadata: Metadata = {
-  title: { default: "Life Sutra — Book Publication", template: "%s — Life Sutra" },
+  title: { default: "Life Sutra — Journal", template: "%s — Life Sutra" },
 };
 
-/** Life Sutra — the book imprint's own chrome and theme. */
+/** Life Sutra — the second journal's own chrome and theme. */
 export default function ImprintLayout({ children }: { children: ReactNode }) {
   return (
     <div

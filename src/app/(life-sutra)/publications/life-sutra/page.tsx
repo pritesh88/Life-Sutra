@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
-import { BookCover } from "@/components/foundation/PublicationCards";
+import { BookCover, LifeSutraCover } from "@/components/foundation/PublicationCards";
 import { Wrap } from "@/components/foundation/Wrap";
 import { FOUNDATION, LIFE_SUTRA_FIRST_ISSUE, imagery } from "@/data/foundation";
 import {
@@ -18,8 +18,8 @@ import { ASSETS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata = pageMeta({
-  title: "Book Publication",
-  absoluteTitle: "Life Sutra — Book Publication of I Smart Life Foundation",
+  title: "Journal",
+  absoluteTitle: "Life Sutra — A Journal of I Smart Life Foundation",
   description: `${IMPRINT.summary} Status: ${IMPRINT.status}.`,
   path: IMPRINT_BASE,
   siteName: "Life Sutra",
@@ -103,7 +103,7 @@ export default function LifeSutraPage() {
                 href="#forthcoming"
                 className="group inline-flex items-center gap-2 border-b border-imprint-ink/30 pb-1 text-sm font-semibold hover:border-imprint-burgundy hover:text-imprint-burgundy"
               >
-                Forthcoming publications
+                First issue
                 <ArrowRight
                   className="size-4 transition-transform group-hover:translate-x-0.5"
                   aria-hidden="true"
@@ -112,7 +112,7 @@ export default function LifeSutraPage() {
             </div>
           </div>
 
-          {/* A book standing in front of a photographic plate. */}
+          {/* The journal cover in front of a photographic plate. */}
           <div className="relative mx-auto w-full max-w-lg lg:col-span-6 lg:max-w-none">
             <figure className="ml-auto w-[78%]">
               <div className="relative aspect-[4/5] overflow-hidden border-[10px] border-imprint-paper bg-imprint-line shadow-[0_30px_60px_-40px_rgb(57_47_43/0.6)]">
@@ -129,8 +129,8 @@ export default function LifeSutraPage() {
                 Plate I — {imagery.manuscripts.caption.split(" — ")[1]}
               </figcaption>
             </figure>
-            <div className="absolute bottom-10 left-0 w-[40%] max-w-[13rem] sm:left-[2%]">
-              <BookCover />
+            <div className="absolute bottom-10 left-0 w-[44%] max-w-[15rem] sm:left-[2%]">
+              <LifeSutraCover />
             </div>
           </div>
         </Wrap>
@@ -161,13 +161,13 @@ export default function LifeSutraPage() {
         <Wrap className="grid gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Chapter n="I." label="The Imprint" />
-            <Title id="imprint-title">Knowledge, at the length of a book</Title>
+            <Title id="imprint-title">A journal of I Smart Life Foundation</Title>
           </div>
           <div className="lg:col-span-7 lg:col-start-6">
             <div className="max-w-2xl font-imprint-body text-[1.25rem] leading-[1.8]">
               <p className="first-letter:float-left first-letter:mt-1.5 first-letter:mr-3 first-letter:font-imprint-display first-letter:text-[4.8rem] first-letter:leading-[0.75] first-letter:text-imprint-burgundy">
-                Life Sutra is the book publication of {FOUNDATION.name}. It is dedicated to
-                developing and sharing knowledge through book-length publications.
+                Life Sutra is a journal published by {FOUNDATION.name}. It is dedicated to
+                developing and sharing knowledge.
               </p>
               <p className="mt-6 text-imprint-muted">
                 It stands beside the foundation’s research journal,{" "}
@@ -183,7 +183,7 @@ export default function LifeSutraPage() {
               </p>
             </div>
             <blockquote className="mt-14 border-y border-imprint-line py-8 text-center font-imprint-display text-[1.9rem] leading-snug text-imprint-burgundy italic sm:text-[2.3rem]">
-              “Developing and sharing knowledge through book-length publications.”
+              “Developing and sharing knowledge.”
             </blockquote>
           </div>
         </Wrap>
@@ -198,8 +198,8 @@ export default function LifeSutraPage() {
         <Wrap>
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <Chapter n="II." label="Forthcoming" />
-              <Title id="forthcoming-title">Forthcoming publications</Title>
+              <Chapter n="II." label="First Issue" />
+              <Title id="forthcoming-title">First issue</Title>
             </div>
             <StatusStamp className="self-start sm:self-auto" />
           </div>
@@ -220,8 +220,6 @@ export default function LifeSutraPage() {
                     </p>
                   ) : null}
                   <dl className="mt-5 grid grid-cols-2 gap-2 border-t border-imprint-line pt-3 text-xs text-imprint-muted">
-                    <dt>ISBN</dt>
-                    <dd>{b.isbn ?? "Not yet assigned"}</dd>
                     <dt>Published</dt>
                     <dd>{b.publishedOn ?? NOT_ANNOUNCED}</dd>
                   </dl>
@@ -234,7 +232,7 @@ export default function LifeSutraPage() {
               <div className="lg:col-span-7">
                 <ul
                   className="grid grid-cols-3 items-end gap-3 border-b-2 border-imprint-ink/70 sm:gap-6"
-                  aria-label="Forthcoming titles (not yet announced)"
+                  aria-label="First-issue articles (not yet announced)"
                 >
                   {SHELF.map((s, i) => (
                     <li
@@ -251,7 +249,7 @@ export default function LifeSutraPage() {
                       <span>
                         <span className="block h-px w-8 bg-imprint-copper" aria-hidden="true" />
                         <span className="mt-3 block font-imprint-display text-[1.05rem] leading-tight sm:text-[1.6rem]">
-                          Title to be announced
+                          Article to be announced
                         </span>
                       </span>
                     </li>
@@ -259,8 +257,8 @@ export default function LifeSutraPage() {
                 </ul>
               </div>
               <p className="max-w-md font-imprint-body text-[1.15rem] leading-relaxed text-imprint-muted lg:col-span-4 lg:col-start-9">
-                The first issue will be released on {LIFE_SUTRA_FIRST_ISSUE}. Titles, authors and
-                formats will be listed here once they are confirmed by the publisher.
+                The first issue will be released on {LIFE_SUTRA_FIRST_ISSUE}. Its articles and
+                authors will be listed here once they are confirmed by the publisher.
               </p>
             </div>
           )}
@@ -328,7 +326,7 @@ export default function LifeSutraPage() {
           <Chapter n="IV." label="Particulars" />
           <Title id="details-title">Publication details</Title>
           <p className="mt-5 max-w-md font-imprint-body text-[1.05rem] text-imprint-muted italic">
-            Particulars not yet confirmed are marked as such. No ISBN has been assigned.
+            Particulars not yet confirmed are marked as such. ISSN: To Be Issued.
           </p>
           <table className="mt-14 w-full max-w-2xl border-collapse text-left">
             <caption className="sr-only">Life Sutra publication details</caption>

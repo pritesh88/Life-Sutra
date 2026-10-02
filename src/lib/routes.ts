@@ -20,5 +20,6 @@ export const FOUNDATION_ROUTES = {
   visionMission: "/vision-mission",
   approach: "/approach",
   publications: "/publications",
+  books: "/books",
   contact: "/contact",
 } as const;

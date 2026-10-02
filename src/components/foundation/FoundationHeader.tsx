@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { Wrap } from "./Wrap";
+import { type Book, publishedBooks, upcomingBooks } from "@/data/books";
 import { FOUNDATION, publications } from "@/data/foundation";
 import { FOUNDATION_ROUTES } from "@/lib/routes";
 import { ASSETS } from "@/lib/site";
@@ -52,11 +53,80 @@ export function FoundationLogo({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function PublicationsMenu({ pathname }: { pathname: string }) {
+/* ---------- Menu entries ---------- */
+
+type MenuItem = { key: string; href: string; title: string; meta: string; mark: ReactNode };
+
+const PUBLICATION_ITEMS: MenuItem[] = publications.map((p) => ({
+  key: p.slug,
+  href: p.href,
+  title: p.title,
+  meta: `${p.designation} · ${p.status}`,
+  mark: <PublicationMark slug={p.slug} />,
+}));
+
+function BookThumb({ book }: { book: Book }) {
+  return book.cover ? (
+    <Image
+      src={book.cover.src}
+      alt=""
+      width={book.cover.width}
+      height={book.cover.height}
+      className="h-12 w-8 shrink-0 object-cover shadow-sm"
+    />
+  ) : (
+    <span
+      className="islf-aurora grid h-12 w-8 shrink-0 place-items-center text-islf-glow"
+      aria-hidden="true"
+    >
+      <span className="size-1.5 rounded-full bg-current" />
+    </span>
+  );
+}
+
+const BOOK_ITEMS: MenuItem[] = [
+  ...publishedBooks.map((book) => ({ book, upcoming: false })),
+  ...upcomingBooks.map((book) => ({ book, upcoming: true })),
+].map(({ book, upcoming }) => ({
+  key: book.slug,
+  href: `${FOUNDATION_ROUTES.books}#${book.slug}`,
+  title: book.title,
+  meta: [upcoming ? "Upcoming" : "Published", book.subtitle].filter(Boolean).join(" · "),
+  mark: <BookThumb book={book} />,
+}));
+
+function MenuEntry({ item }: { item: MenuItem }) {
+  return (
+    <Link
+      href={item.href}
+      className="flex items-center gap-4 p-3 transition-colors hover:bg-islf-ivory"
+    >
+      {item.mark}
+      <span className="min-w-0">
+        <span className="block font-islf-serif text-lg leading-tight text-islf-ink">
+          {item.title}
+        </span>
+        <span className="mt-0.5 line-clamp-1 text-xs text-islf-muted">{item.meta}</span>
+      </span>
+    </Link>
+  );
+}
+
+type GroupProps = { label: string; items: MenuItem[]; allHref: string; allLabel: string };
+
+/** Desktop dropdown: Publications and Books. */
+function DropdownMenu({
+  pathname,
+  heading,
+  label,
+  items,
+  allHref,
+  allLabel,
+}: GroupProps & { pathname: string; heading: string }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
   const panelId = useId();
-  const active = isActive(pathname, FOUNDATION_ROUTES.publications);
+  const active = isActive(pathname, allHref);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -91,7 +161,7 @@ function PublicationsMenu({ pathname }: { pathname: string }) {
           (active || open) && "text-islf-ink",
         )}
       >
-        Publications
+        {label}
         <ChevronDown
           className={cn("size-3.5 transition-transform", open && "rotate-180")}
           aria-hidden="true"
@@ -100,42 +170,78 @@ function PublicationsMenu({ pathname }: { pathname: string }) {
       {open ? (
         <div
           id={panelId}
-          className="absolute top-full left-1/2 z-50 mt-3 w-[25rem] -translate-x-1/2 border border-islf-stone bg-islf-paper p-2 shadow-[0_24px_60px_-28px_rgb(38_68_58/0.45)]"
+          className="absolute top-full left-1/2 z-50 mt-3 max-h-[calc(100dvh-7rem)] w-[25rem] -translate-x-1/2 overflow-y-auto border border-islf-stone bg-islf-paper p-2 whitespace-normal shadow-[0_24px_60px_-28px_rgb(38_68_58/0.45)]"
         >
-          <p className="islf-kicker px-3 pt-2 pb-3 text-[0.62rem] text-islf-muted">
-            Issued by {FOUNDATION.name}
-          </p>
+          <p className="islf-kicker px-3 pt-2 pb-3 text-[0.62rem] text-islf-muted">{heading}</p>
           <ul>
-            {publications.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  href={p.href}
-                  className="flex items-start gap-4 p-3 transition-colors hover:bg-islf-ivory"
-                >
-                  <PublicationMark slug={p.slug} />
-                  <span className="min-w-0">
-                    <span className="block font-islf-serif text-lg leading-tight text-islf-ink">
-                      {p.title}
-                    </span>
-                    <span className="mt-0.5 block text-xs text-islf-muted">
-                      {p.designation} · {p.status}
-                    </span>
-                  </span>
-                </Link>
+            {items.map((item) => (
+              <li key={item.key}>
+                <MenuEntry item={item} />
               </li>
             ))}
           </ul>
           <Link
-            href={FOUNDATION_ROUTES.publications}
+            href={allHref}
             className="mt-1 flex items-center justify-between border-t border-islf-stone px-3 pt-3 pb-2 text-sm font-semibold text-islf-indigo hover:text-islf-ink"
           >
-            All publications <ArrowRight className="size-4" aria-hidden="true" />
+            {allLabel} <ArrowRight className="size-4" aria-hidden="true" />
           </Link>
         </div>
       ) : null}
     </li>
   );
 }
+
+/** Collapsible group in the mobile menu. */
+function MobileGroup({ label, items, allHref, allLabel }: GroupProps) {
+  // Open by default so the lists show as soon as the menu opens; tap to collapse.
+  const [open, setOpen] = useState(true);
+  const panelId = useId();
+  return (
+    <div className="border-t border-islf-stone">
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between px-1 py-3 font-islf-serif text-lg text-islf-ink"
+      >
+        {label}
+        <ChevronDown
+          className={cn("size-4 transition-transform", open && "rotate-180")}
+          aria-hidden="true"
+        />
+      </button>
+      {open ? (
+        <div id={panelId} className="pb-3">
+          {items.map((item) => (
+            <MenuEntry key={item.key} item={item} />
+          ))}
+          <Link
+            href={allHref}
+            className="flex items-center gap-2 px-3 pt-2 text-sm font-semibold text-islf-indigo"
+          >
+            {allLabel} <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+const PUBLICATIONS_GROUP: GroupProps = {
+  label: "Publications",
+  items: PUBLICATION_ITEMS,
+  allHref: FOUNDATION_ROUTES.publications,
+  allLabel: "All publications",
+};
+
+const BOOKS_GROUP: GroupProps = {
+  label: "Books",
+  items: BOOK_ITEMS,
+  allHref: FOUNDATION_ROUTES.books,
+  allLabel: "All books",
+};
 
 export function FoundationHeader() {
   const pathname = usePathname();
@@ -168,7 +274,12 @@ export function FoundationHeader() {
                 </li>
               );
             })}
-            <PublicationsMenu pathname={pathname} />
+            <DropdownMenu
+              pathname={pathname}
+              heading={`Issued by ${FOUNDATION.name}`}
+              {...PUBLICATIONS_GROUP}
+            />
+            <DropdownMenu pathname={pathname} heading="Published & upcoming" {...BOOKS_GROUP} />
             <li>
               <Link
                 href={FOUNDATION_ROUTES.contact}
@@ -218,23 +329,13 @@ export function FoundationHeader() {
                 {item.label}
               </Link>
             ))}
-            <p className="islf-kicker mt-4 border-t border-islf-stone px-1 pt-5 text-[0.62rem] text-islf-muted">
-              Publications
-            </p>
-            {publications.map((p) => (
-              <Link key={p.slug} href={p.href} className="flex items-center gap-3 px-1 py-2.5">
-                <PublicationMark slug={p.slug} />
-                <span>
-                  <span className="block font-islf-serif text-lg leading-tight">{p.title}</span>
-                  <span className="block text-xs text-islf-muted">
-                    {p.designation} · {p.status}
-                  </span>
-                </span>
-              </Link>
-            ))}
+            <div className="mt-2 border-b border-islf-stone">
+              <MobileGroup {...PUBLICATIONS_GROUP} />
+              <MobileGroup {...BOOKS_GROUP} />
+            </div>
             <Link
               href={FOUNDATION_ROUTES.publications}
-              className="mt-3 inline-flex h-11 items-center justify-center gap-2 bg-islf-indigo px-5 text-sm font-semibold text-islf-paper"
+              className="mt-4 inline-flex h-11 items-center justify-center gap-2 bg-islf-indigo px-5 text-sm font-semibold text-islf-paper"
             >
               Explore Publications <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
