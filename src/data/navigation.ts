@@ -26,7 +26,7 @@ export const primaryNav: NavItem[] = [
   {
     label: "Abstracts",
     to: journalPath("/research-abstracts"),
-    description: "Indexed abstracts across domains",
+    description: "Research abstracts across domains",
     comingSoon: true,
   },
   {

@@ -17,6 +17,7 @@ import { ASSETS } from "@/lib/site";
 import GlobalAdvisory from "@/components/site/GlobalAdvisory";
 import ChiefPatron from "@/components/site/ChiefPatron";
 import JournalParticulars from "@/components/site/JournalParticulars";
+import JournalAbout from "@/components/site/JournalAbout";
 
 export const metadata = homeMeta;
 
@@ -84,6 +85,8 @@ export default function HomePage() {
       </div>
 
       <JournalParticulars />
+
+      <JournalAbout />
 
       <ChiefPatron />
 

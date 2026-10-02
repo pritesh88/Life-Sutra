@@ -29,7 +29,7 @@ export const researchMeta: Metadata = pageMeta({
 export const abstractsMeta: Metadata = pageMeta({
   title: "Research Abstracts",
   description:
-    "Research Abstracts is in preparation. Submissions will be indexed here as they clear desk review.",
+    "Research Abstracts is in preparation. Submissions will be listed here as they clear desk review.",
   path: journalPath("/research-abstracts"),
 });
 
@@ -211,7 +211,7 @@ export const submitContent = {
     {
       step: "Publication",
       detail: "Next issue",
-      body: "Abstract indexed on acceptance; full text at issue release.",
+      body: "Abstract published on acceptance; full text at issue release.",
     },
   ],
   requirements: [
