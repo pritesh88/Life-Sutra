@@ -190,11 +190,20 @@ export function Hero() {
       </div>
       <Wrap className="relative grid gap-16 pt-16 pb-14 sm:pt-24 lg:grid-cols-12 lg:items-center lg:gap-8 lg:pb-20">
         <div className="islf-rise lg:col-span-6">
-          <p className="islf-kicker text-[0.66rem] text-islf-glow">
-            Publishing Body · {FOUNDATION.contact.locality}
+          <h1 className="text-[2.5rem] leading-[1.1] sm:text-[3.3rem]">
+            <a
+              href={FOUNDATION.legacyWebsite}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="decoration-islf-glow/60 decoration-1 underline-offset-8 hover:underline"
+            >
+              {FOUNDATION.name}
+            </a>
+          </h1>
+          <p className="mt-4 max-w-xl text-[1.02rem] leading-snug text-islf-glow">
+            {FOUNDATION.descriptor}
           </p>
-          <h1 className="mt-6 text-[2.5rem] leading-[1.1] sm:text-[3.3rem]">{FOUNDATION.name}</h1>
-          <p className="mt-4 flex items-center gap-3 font-islf-serif text-lg text-islf-ivory/80 italic">
+          <p className="mt-5 flex items-center gap-3 font-islf-serif text-lg text-islf-ivory/80 italic">
             <span className="islf-spectrum h-0.5 w-8" aria-hidden="true" />
             {FOUNDATION.tagline}
           </p>
@@ -366,7 +375,14 @@ export function PublicationsSection({ asPage = false }: { asPage?: boolean }) {
             <div className="border-l-2 border-islf-magenta pl-5 lg:col-span-4 lg:col-start-9">
               <p className="islf-kicker text-[0.56rem] text-islf-muted">Publishing Body</p>
               <p className="mt-2 font-islf-serif text-lg leading-snug">
-                {FOUNDATION.publishingBody}
+                <a
+                  href={FOUNDATION.legacyWebsite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 hover:text-islf-indigo hover:underline"
+                >
+                  {FOUNDATION.publishingBody}
+                </a>
               </p>
             </div>
           </div>

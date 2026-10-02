@@ -18,6 +18,9 @@ export const FOUNDATION = {
   /** Owner and founder of the publishing body. */
   owner: "Dr. Mahesh Lohar",
   tagline: "Synthesising Work, Life and Consciousness.",
+  /** What the foundation is, in its own words (shown under the name on the homepage). */
+  descriptor:
+    "Mind Cognition Intellect and Consciousness IKS integrating Study, Research Discussions and Publication Body",
   summary:
     "An interdisciplinary foundation exploring the intersections of Indian Knowledge Systems, scientific inquiry, conscious living, human development, and sustainability.",
   mahavakya: {
@@ -26,12 +29,13 @@ export const FOUNDATION = {
     source: "Upanishadic Mahavakya",
   },
   website: "https://lifesutra.co.in",
-  /** Earlier foundation site, still referenced from older material. */
-  legacyWebsite: "http://manasyog.life/",
+  /** The foundation's own website; the foundation's name links here. */
+  legacyWebsite: "https://manasyog.life/",
   contact: {
     person: "Mahesh Lohar",
     designation: "Principal Integrator",
-    email: "ismart@manasyog.com",
+    /** I Smart Life Foundation (publisher) email. */
+    email: "drmahesh@manasyog.life",
     phone: "+91 9422770563",
     /** tel: href form of `phone`. */
     phoneHref: "tel:+919422770563",

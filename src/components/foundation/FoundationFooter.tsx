@@ -24,7 +24,16 @@ export function FoundationFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1.2fr_1fr]">
           <div>
             <p className="islf-kicker text-[0.62rem] text-[var(--islf-glow)]">Publishing body</p>
-            <p className="mt-4 font-islf-serif text-2xl leading-snug">{FOUNDATION.name}</p>
+            <p className="mt-4 font-islf-serif text-2xl leading-snug">
+              <a
+                href={FOUNDATION.legacyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 hover:underline"
+              >
+                {FOUNDATION.name}
+              </a>
+            </p>
             <p className="mt-1 text-sm text-islf-ivory/70">
               ({FOUNDATION.shortName}), {FOUNDATION.country} · {FOUNDATION.legalForm}
             </p>
