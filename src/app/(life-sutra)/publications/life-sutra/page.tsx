@@ -7,6 +7,7 @@ import { Wrap } from "@/components/foundation/Wrap";
 import { FOUNDATION, LIFE_SUTRA_FIRST_ISSUE, imagery } from "@/data/foundation";
 import {
   IMPRINT,
+  IMPRINT_EMAIL,
   NOT_ANNOUNCED,
   imprintBooks,
   imprintDetailRows,
@@ -147,6 +148,15 @@ export default function LifeSutraPage() {
             <span>
               <span className="islf-kicker mr-2 text-[0.56rem]">Status</span>
               {IMPRINT.status}
+            </span>
+            <span>
+              <span className="islf-kicker mr-2 text-[0.56rem]">Email</span>
+              <a
+                href={`mailto:${IMPRINT_EMAIL}`}
+                className="underline decoration-imprint-copper underline-offset-4 hover:text-imprint-burgundy"
+              >
+                {IMPRINT_EMAIL}
+              </a>
             </span>
           </Wrap>
         </div>
@@ -340,7 +350,16 @@ export default function LifeSutraPage() {
                     {label}
                   </th>
                   <td className="border-l border-imprint-line py-3 pl-6 align-top font-imprint-body text-[1.08rem] break-words">
-                    {value}
+                    {value === IMPRINT_EMAIL ? (
+                      <a
+                        href={`mailto:${IMPRINT_EMAIL}`}
+                        className="underline decoration-imprint-copper underline-offset-4 hover:text-imprint-burgundy"
+                      >
+                        {IMPRINT_EMAIL}
+                      </a>
+                    ) : (
+                      value
+                    )}
                   </td>
                 </tr>
               ))}

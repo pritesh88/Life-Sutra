@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Wrap } from "@/components/foundation/Wrap";
 import { FOUNDATION } from "@/data/foundation";
-import { IMPRINT } from "@/data/life-sutra";
+import { IMPRINT, IMPRINT_EMAIL } from "@/data/life-sutra";
 import { FOUNDATION_ROUTES, IMPRINT_BASE, JOURNAL_BASE } from "@/lib/routes";
 
 export const IMPRINT_NAV = [
@@ -74,6 +74,14 @@ export function ImprintFooter() {
         </p>
         <p className="mt-5 font-imprint-body text-[1.02rem] text-imprint-muted">
           Published by {FOUNDATION.publishingBody}
+        </p>
+        <p className="mt-2 text-sm">
+          <a
+            href={`mailto:${IMPRINT_EMAIL}`}
+            className="underline decoration-imprint-copper underline-offset-4 hover:text-imprint-burgundy"
+          >
+            {IMPRINT_EMAIL}
+          </a>
         </p>
         <nav aria-label="Life Sutra and publisher" className="mt-8">
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">

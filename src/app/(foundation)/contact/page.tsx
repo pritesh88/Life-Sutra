@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Wrap } from "@/components/foundation/Wrap";
 import { ContactDetails, FSection, Kicker, PageIntro } from "@/components/foundation/sections";
 import { FOUNDATION } from "@/data/foundation";
+import { IMPRINT, IMPRINT_EMAIL } from "@/data/life-sutra";
 import { JOURNAL } from "@/data/journal";
 import { foundationMeta } from "@/lib/foundation-meta";
 import { IMPRINT_BASE, JOURNAL_BASE } from "@/lib/routes";
@@ -49,12 +50,9 @@ export default function ContactPage() {
                   </Link>
                 </dt>
                 <dd className="mt-1.5 text-sm text-islf-muted">
-                  To Be Issued. Enquiries go to the foundation at{" "}
-                  <a
-                    href={`mailto:${FOUNDATION.contact.email}`}
-                    className="text-islf-indigo hover:underline"
-                  >
-                    {FOUNDATION.contact.email}
+                  {IMPRINT.status}. Journal email:{" "}
+                  <a href={`mailto:${IMPRINT_EMAIL}`} className="text-islf-indigo hover:underline">
+                    {IMPRINT_EMAIL}
                   </a>
                   .
                 </dd>
