@@ -10,7 +10,7 @@ export type GlobalAdvisoryMember = {
   address: string;
   email?: string;
   country: string;
-  qualification: string;
+  qualification?: string;
   expertise: string;
   profileUrl?: string;
 };
@@ -48,7 +48,6 @@ export const globalAdvisory: GlobalAdvisoryMember[] = [
     organization: "Mahatma Phule Agriculture University, Rahuri, Ahilyanagar, Maharashtra, India",
     department: "Ajitdada Pawar Indigenous Cattle Research cum Training Center",
     address: "Division of Animal Husbandry and Dairy Science, College of Agriculture, Pune",
-    email: "apicrtcacp@gmail.com",
     country: "India",
     qualification: "PhD",
     expertise: "Animal Husbandry",
@@ -64,6 +63,16 @@ export const globalAdvisory: GlobalAdvisoryMember[] = [
     country: "India",
     qualification: "PhD",
     expertise: "Human Resource Management",
+  },
+  {
+    id: "shivang-mishra",
+    name: "Shivang Mishra",
+    designation: "Astrologer",
+    organization: "C.S.J.M. University, Kanpur",
+    department: "Deen Dayal Shodh Kendra",
+    address: "Kanpur",
+    country: "India",
+    expertise: "Astrology",
   },
 ];
 
@@ -91,7 +100,9 @@ export function GlobalAdvisoryCard({ member }: { member: GlobalAdvisoryMember })
         <Field label="Address" value={member.address} />
         {member.email ? <Field label="Institutional Email" value={member.email} /> : null}
         <Field label="Country" value={member.country} />
-        <Field label="Highest Qualification" value={member.qualification} />
+        {member.qualification ? (
+          <Field label="Highest Qualification" value={member.qualification} />
+        ) : null}
       </div>
 
       {member.profileUrl ? (

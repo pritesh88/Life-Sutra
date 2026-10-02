@@ -6,7 +6,7 @@ export const SITE_EMAIL = "editorial@lifesutra.org";
 
 /** Canonical origin used for metadata, sitemap, and robots. */
 export function getSiteUrl() {
-  return process.env["NEXT_PUBLIC_SITE_URL"]?.replace(/\/$/, "") ?? "https://lifesutra.org";
+  return process.env["NEXT_PUBLIC_SITE_URL"]?.replace(/\/$/, "") ?? "https://www.lifesutra.co.in";
 }
 
 export const ASSETS = {

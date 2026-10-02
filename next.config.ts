@@ -19,6 +19,24 @@ const securityHeaders = [
     : []),
 ];
 
+// Life Sutra Synthesis moved from the site root to /publications/life-sutra-synthesis
+// when I Smart Life Foundation became the root site. Keep every old URL working.
+// Mirrors JOURNAL_BASE in src/lib/routes.ts.
+const JOURNAL_BASE = "/publications/life-sutra-synthesis";
+const LEGACY_JOURNAL_SECTIONS = [
+  "research",
+  "archive",
+  "research-abstracts",
+  "conferences",
+  "iks-dialogue",
+  "white-papers",
+  "research-opportunities",
+  "methodology",
+  "institutions",
+  "research-impact",
+  "researchers",
+];
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -30,6 +48,19 @@ const nextConfig: NextConfig = {
   },
   // The libSQL (Turso) driver loads native binaries at runtime; webpack must not bundle it.
   serverExternalPackages: ["@prisma/adapter-libsql", "@libsql/client", "libsql"],
+  async redirects() {
+    return [
+      ...LEGACY_JOURNAL_SECTIONS.flatMap((section) => [
+        { source: `/${section}`, destination: `${JOURNAL_BASE}/${section}`, permanent: true },
+        {
+          source: `/${section}/:path*`,
+          destination: `${JOURNAL_BASE}/${section}/:path*`,
+          permanent: true,
+        },
+      ]),
+      { source: "/articles/:id", destination: `${JOURNAL_BASE}/research/:id`, permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },

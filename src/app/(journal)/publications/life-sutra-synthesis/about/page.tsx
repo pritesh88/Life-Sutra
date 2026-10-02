@@ -1,3 +1,4 @@
+import { journalPath } from "@/lib/routes";
 import {
   Action,
   Card,
@@ -8,6 +9,7 @@ import {
   SectionHeading,
 } from "@/components/site/primitives";
 import { editorialPrinciples } from "@/data/content";
+import { JOURNAL } from "@/data/journal";
 import { aboutMeta, aboutRoadmap } from "@/data/pages";
 
 export const metadata = aboutMeta;
@@ -19,7 +21,13 @@ export default function AboutPage() {
         eyebrow="About the platform"
         title="Building credible research infrastructure for Indian Knowledge Systems"
         lede="Life Sutra Synthesis exists because the study of Indian intellectual traditions has abundant sources and scattered scholarship. We publish rigorous research and, over time, connect it into an ecosystem that can be searched, synthesised and measured."
-        meta={["Founded 2021", "Quarterly", "ISSN: Coming Soon", "Double-anonymous review"]}
+        meta={[
+          `Since ${JOURNAL.startingYear}`,
+          JOURNAL.frequency,
+          `${JOURNAL.format} publication`,
+          "ISSN: To Be Issued",
+          "Double-anonymous review",
+        ]}
       />
 
       <Section>
@@ -57,7 +65,7 @@ export default function AboutPage() {
               All review decisions are recorded with a public summary of their basis.
             </p>
             <div className="mt-6">
-              <Action to="/#editorial-board" variant="outline" size="sm">
+              <Action to={journalPath("#editorial-board")} variant="outline" size="sm">
                 View Editorial Board
               </Action>
             </div>
@@ -89,7 +97,7 @@ export default function AboutPage() {
             title="From journal to research ecosystem"
             description="Each stage is additive: the journal remains the foundation as the connected layers are built on top of it."
             action={
-              <Action to="/research-impact" variant="outline" size="sm">
+              <Action to={journalPath("/research-impact")} variant="outline" size="sm">
                 See the observatory
               </Action>
             }

@@ -13,7 +13,7 @@ function SoonBadge({ className }: { className?: string }) {
   return (
     <Clock
       className={cn("size-3 shrink-0 text-leaf", className)}
-      aria-label="Coming soon"
+      aria-label="To be issued"
       role="img"
     />
   );

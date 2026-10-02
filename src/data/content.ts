@@ -12,8 +12,8 @@ export type Paper = {
   authors: string[];
   affiliation: string;
   domain: string;
-  issue: string;
-  date: string;
+  /** Journal issue this article belongs to — see `journalIssues` in `@/data/journal`. */
+  issueId: string;
   pages: string;
   type: "Research Article" | "Review" | "Field Study" | "Textual Study" | "Methodology Note";
   abstract: string;
@@ -33,6 +33,9 @@ export type EditorialBoardMember = {
   name: string;
   editorialDesignation: string;
   organization: string;
+  department?: string;
+  address?: string;
+  country: string;
   academicDesignation?: string;
   email?: string;
   linkedin?: string;
@@ -80,8 +83,7 @@ export const papers: Paper[] = [
     affiliation:
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity · IIT Ropar · Atharva College of Engineering",
     domain: "Metallurgy & Material Science",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–13",
     type: "Research Article",
     abstract:
@@ -111,8 +113,7 @@ export const papers: Paper[] = [
     affiliation:
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity · IIT Jodhpur",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–20",
     type: "Research Article",
     abstract:
@@ -134,8 +135,7 @@ export const papers: Paper[] = [
     authors: ["Dr. Shrikant Waghulkar", "Dr. Vinayak Chandrakant Shitole", "Dr. Swapnali Bhosale"],
     affiliation: "Arihant Institute of Business Management · Savitribai Phule Pune University",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–14",
     type: "Research Article",
     abstract:
@@ -152,8 +152,7 @@ export const papers: Paper[] = [
     affiliation:
       "I Smart Life Foundation · Mind Lab · Savitribai Phule Pune University · IIT Mandi",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–13",
     type: "Research Article",
     abstract:
@@ -168,8 +167,7 @@ export const papers: Paper[] = [
     authors: ["I Smart Life Foundation Research Team"],
     affiliation: "I Smart Life Foundation",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–19",
     type: "Methodology Note",
     abstract:
@@ -186,8 +184,7 @@ export const papers: Paper[] = [
     affiliation:
       "I Smart Life Foundation · Mind Lab · Savitribai Phule Pune University · IIT Mandi",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–13",
     type: "Research Article",
     abstract:
@@ -204,8 +201,7 @@ export const papers: Paper[] = [
     affiliation:
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–16",
     type: "Research Article",
     abstract:
@@ -228,8 +224,7 @@ export const papers: Paper[] = [
     affiliation:
       "I Smart Life Foundation · IIT Mandi · Savitribai Phule Pune University · Multiversity",
     domain: "Philosophy & Darśana",
-    issue: "Submitted Research · 2026",
-    date: "2026",
+    issueId: "v1-i1",
     pages: "1–13",
     type: "Research Article",
     abstract:
@@ -291,7 +286,10 @@ export const editorialBoard: EditorialBoardMember[] = [
     name: "Dr. Mahesh Lohar",
     editorialDesignation: "Chief Editor",
     organization: "I Smart Life Foundation",
-    academicDesignation: "Founder, Consciousness Scientist",
+    address: "4, Sanjog 1, Aundh, Pune 411007",
+    department: "Research",
+    country: "India",
+    academicDesignation: "Chairman; Founder, Consciousness Scientist",
     email: "ismart@manasyog.com",
     linkedin: "https://www.linkedin.com/in/dr-mahesh-lohar-316407a/",
     website: "https://manasyog.life/#absolute",
@@ -302,6 +300,10 @@ export const editorialBoard: EditorialBoardMember[] = [
     name: "Dr. Shrikant Waghulkar",
     editorialDesignation: "Editorial Board Member",
     organization: "Arihant Institute of Business Management, Pune",
+    address:
+      "Arihant Institute of Business Management, Sr. No. 276/1/2, 277/1/2, 278/2, Mumbai Highway, near Crystal Honda Showroom, Uttam Nagar, Bhunde Vasti, Bavdhan, Pune, Maharashtra 411021",
+    department: "Marketing & Research",
+    country: "India",
     academicDesignation: "Associate Professor",
     email: "shrikant@arihantacs.edu.in",
     linkedin: "https://www.linkedin.com/in/drshrikantwaghulkar/",
@@ -312,8 +314,12 @@ export const editorialBoard: EditorialBoardMember[] = [
     name: "Dr. Anand B. Dadas",
     editorialDesignation: "Editorial Board Member",
     organization: "Neville Wadia Institute of Management Studies and Research, Pune",
+    address:
+      "Ness Wadia College of Commerce, Nowrosjee Wadia College, Sangamvadi, Pune, Maharashtra 411001",
+    department: "Director / Research",
+    country: "India",
     academicDesignation: "Director and Professor",
-    email: "director@newillewadia.com",
+    email: "director@nevillewadia.com",
     linkedin: "https://www.linkedin.com/in/dr-anandrao-dadas-b0499b1b/",
     photo: "/assets/editorial/anand-dadas.jpg",
   },
@@ -322,20 +328,53 @@ export const editorialBoard: EditorialBoardMember[] = [
     name: "Dr. Vinayak Shitole",
     editorialDesignation: "Editorial Board Member",
     organization: "Arihant Institute of Business Management, Pune",
+    address:
+      "Arihant Institute of Business Management, Sr. No. 276/1/2, 277/1/2, 278/2, Mumbai Highway, near Crystal Honda Showroom, Uttam Nagar, Bhunde Vasti, Bavdhan, Pune, Maharashtra 411021",
+    department: "Finance & Marketing",
+    country: "India",
     academicDesignation: "Assistant Professor",
     email: "vinayak@arihantacs.edu.in",
     linkedin: "https://www.linkedin.com/in/vinayak-shitole/",
     photo: "/assets/editorial/vinayak-shitole.jpg",
   },
   {
+    id: "eb-kathane",
+    name: "Dr. Arpita Pankaj Kathane",
+    editorialDesignation: "Editorial Board Member",
+    organization: "Idealizeer Content Solutions Pvt. Ltd., Pune",
+    department: "Manager / Content Writer",
+    address: "211, City Centre, Hinjwadi Phase 1, Pune, Maharashtra",
+    country: "India",
+    academicDesignation: "Director",
+    email: "arpita@idealizeer.in",
+    linkedin: "https://www.linkedin.com/in/dr-arpita-kathane-8683461a1/",
+    photo: "/assets/editorial/arpita-kathane.jpg",
+  },
+  {
     id: "eb-gupta",
     name: "Dr. Rajeev Gupta",
     editorialDesignation: "International Editorial Board Member",
     organization: "Barnsley Hospital NHS Foundation Trust",
+    address: "Gawber Road, Barnsley, South Yorkshire, S75 2EP, United Kingdom",
+    department: "Paediatrics (Paediatric Gastroenterology and Nutrition)",
+    country: "United Kingdom",
     academicDesignation: "Consultant Paediatrician",
     email: "Rajeev.gupta@nhs.net",
     linkedin: "https://www.linkedin.com/in/rajeev2000/",
     photo: "/assets/editorial/rajeev-gupta.jpg",
+  },
+  {
+    id: "eb-berk",
+    name: "Dr. Ulrich Berk",
+    editorialDesignation: "International Editorial Board Member",
+    organization: "German Association of Homa Therapy",
+    department: "Logic and Methodology of Sciences",
+    address: "Haldenhof, 78357 Mühlingen",
+    country: "Germany",
+    academicDesignation: "President",
+    email: "dr.ulrich.berk@homatherapie.de",
+    website: "https://www.homatherapie.de/en",
+    photo: "/assets/editorial/ulrich-berk.jpg",
   },
 ];
 

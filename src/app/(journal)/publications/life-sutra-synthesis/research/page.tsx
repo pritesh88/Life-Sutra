@@ -1,12 +1,20 @@
 import { PaperCard } from "@/components/site/PaperCard";
-import { Container, PageHero, Section, SectionHeading, Tag } from "@/components/site/primitives";
+import {
+  Action,
+  Container,
+  PageHero,
+  Section,
+  SectionHeading,
+  Tag,
+} from "@/components/site/primitives";
 import { domains, papers } from "@/data/content";
+import { issueLabel, issuePath, journalIssues } from "@/data/journal";
 import { researchMeta } from "@/data/pages";
 
 export const metadata = researchMeta;
 
 export default function ResearchPage() {
-  const issues = Array.from(new Set(papers.map((p) => p.issue)));
+  const issues = journalIssues.filter((issue) => papers.some((p) => p.issueId === issue.id));
 
   return (
     <>
@@ -28,11 +36,19 @@ export default function ResearchPage() {
       <Section>
         <Container>
           {issues.map((issue) => (
-            <div key={issue} className="mb-14 last:mb-0">
-              <SectionHeading eyebrow="Issue" title={issue} />
+            <div key={issue.id} className="mb-14 last:mb-0">
+              <SectionHeading
+                eyebrow="Issue"
+                title={issueLabel(issue)}
+                action={
+                  <Action to={issuePath(issue)} variant="outline" size="sm">
+                    Issue contents
+                  </Action>
+                }
+              />
               <ul className="grid gap-5">
                 {papers
-                  .filter((p) => p.issue === issue)
+                  .filter((p) => p.issueId === issue.id)
                   .map((p) => (
                     <PaperCard key={p.id} paper={p} />
                   ))}

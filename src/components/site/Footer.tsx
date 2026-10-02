@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FOUNDATION, foundationAddress } from "@/data/foundation";
+import { JOURNAL } from "@/data/journal";
+import { IMPRINT_BASE } from "@/lib/routes";
 import { footerGroups } from "@/data/navigation";
 import { ASSETS, SITE_EMAIL } from "@/lib/site";
 import { Container, Eyebrow, Ornament } from "./primitives";
-import { AssessmentWidget } from "./AssessmentWidget";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -20,7 +22,7 @@ export function SiteFooter() {
               width={280}
               height={280}
             />
-            <p className="mt-3 text-md">Life Sutra Systhesis</p>
+            <p className="mt-3 text-md">{JOURNAL.title}</p>
             <p className="mt-3 text-sm leading-relaxed text-earth-foreground/75">
               A scholarly research publication for Indian Knowledge Systems — publishing
               peer-reviewed scholarship and building the infrastructure that connects it.
@@ -44,33 +46,50 @@ export function SiteFooter() {
               </ul>
             </nav>
           ))}
-          <div className="max-w-sm md:col-start-4 md:row-start-2">
-            <Link href={`http://manasyog.life/`} target="_blank">
+          <div className="flex flex-col gap-5 rounded-md border border-earth-foreground/15 bg-earth-foreground/[0.04] p-6 sm:flex-row sm:items-center md:col-span-4">
+            <Link href="/" className="shrink-0" aria-label={`${FOUNDATION.name} — publisher home`}>
               <Image
                 src={ASSETS.ismartlifelogo}
-                alt="Life Sutra Synthesis — Journal of Mind, Consciousness Studies, and Synthesis of Indian Knowledge Systems"
-                className="h-28 w-auto rounded-md bg-white/95 p-2 zoom-125"
+                alt={`${FOUNDATION.name} logo`}
+                className="h-20 w-auto rounded-md bg-white/95 p-2"
                 width={280}
                 height={280}
-              /></Link>
-            <p className="mt-3 text-md">I Smart Life Foundation</p>
-            <p className="mt-3 text-sm leading-relaxed text-earth-foreground/75">
-              I Smart Life Foundation, a Section 8 Company, is founded on the guiding Mahavakya from the
-              Upanishads, Ayam Atma Brahma—"This Self is Brahman."
-            </p>
-            <p className="mt-5 text-xs tracking-wide text-earth-foreground/60">ismart@manasyog.com</p>
-          </div>
-          <div className="md:col-span-3 md:col-start-1 md:row-start-2 md:self-stretch">
-            <AssessmentWidget />
+              />
+            </Link>
+            <div className="flex-1">
+              <Eyebrow className="text-earth-foreground/60">Publisher</Eyebrow>
+              <p className="mt-2 text-md">{FOUNDATION.publishingBody}</p>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-earth-foreground/75">
+                {FOUNDATION.name}, a {FOUNDATION.legalForm}, is founded on the guiding Mahavakya
+                from the Upanishads, {FOUNDATION.mahavakya.transliteration} — &ldquo;
+                {FOUNDATION.mahavakya.translation}&rdquo; It also publishes{" "}
+                <Link href={IMPRINT_BASE} className="link-underline text-earth-foreground">
+                  Life Sutra
+                </Link>
+                , a forthcoming book publication.
+              </p>
+              <p className="mt-3 text-xs tracking-wide text-earth-foreground/60">
+                {FOUNDATION.contact.email} · {FOUNDATION.contact.phone} · {foundationAddress()}
+              </p>
+            </div>
+            <Link
+              href="/"
+              className="link-underline shrink-0 text-sm font-semibold text-earth-foreground"
+            >
+              Visit the foundation →
+            </Link>
           </div>
         </div>
 
         <Ornament className="my-10 opacity-60" />
         <div className="flex flex-col gap-3 text-xs text-earth-foreground/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Life Sutra Synthesis. Published quarterly. ISSN: Coming Soon.</p>
+          <p>
+            © {year} {JOURNAL.title}. {JOURNAL.format} journal, published{" "}
+            {JOURNAL.frequency.toLowerCase()} by {JOURNAL.publisher.name}. ISSN: To Be Issued.
+          </p>
           <p>Open abstracts · Double-anonymous peer review · Content licensed CC BY-NC 4.0</p>
         </div>
       </Container>
-    </footer >
+    </footer>
   );
 }
