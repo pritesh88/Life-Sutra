@@ -2,7 +2,7 @@ export const SITE_NAME = "Life Sutra Synthesis";
 export const SITE_TAGLINE = "Scholarly Research Publication for Indian Knowledge Systems";
 export const SITE_DESCRIPTION =
   "Life Sutra Synthesis is a peer-reviewed scholarly research publication for Indian Knowledge Systems.";
-export const SITE_EMAIL = "editorial@lifesutra.co.in";
+export const SITE_EMAIL = "info@lifesutra.co.in";
 
 /** Canonical origin used for metadata, sitemap, and robots. */
 export function getSiteUrl() {

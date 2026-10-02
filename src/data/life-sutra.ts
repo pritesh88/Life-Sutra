@@ -26,7 +26,8 @@ export const IMPRINT = {
     format: null as string | null,
     language: null as string | null,
     firstPublicationDate: LIFE_SUTRA_FIRST_ISSUE as string | null,
-    editorialContact: FOUNDATION.contact.email,
+    /** Life Sutra journal email. */
+    editorialContact: "ismart@manasyog.com",
   },
 } as const;
 
