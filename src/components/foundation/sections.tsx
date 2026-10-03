@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Globe, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Globe, Mail, MapPin, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   FOUNDATION,
@@ -51,7 +51,7 @@ export function FSection({
       id={id}
       aria-labelledby={labelledBy}
       className={cn(
-        "scroll-mt-24 py-20 sm:py-28",
+        "scroll-mt-32 py-20 sm:py-28",
         tone === "ivory" && "bg-islf-ivory",
         tone === "paper" && "bg-islf-paper",
         tone === "mist" && "bg-islf-mist",
@@ -208,16 +208,19 @@ export function Hero() {
             <span className="islf-spectrum h-0.5 w-8" aria-hidden="true" />
             {FOUNDATION.tagline}
           </p>
-          <p className="mt-7 max-w-lg text-[1.05rem] leading-relaxed text-islf-ivory/80">
-            The publishing body of two journals — <em>Life Sutra Synthesis</em>, an
-            interdisciplinary research journal, and <em>Life Sutra</em>.
-          </p>
           <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
             <Link
               href={`${FOUNDATION_ROUTES.home}#publications`}
               className="inline-flex h-12 items-center gap-2 bg-islf-paper px-6 text-sm font-semibold text-islf-indigo transition-colors hover:bg-islf-glow"
             >
               Explore Publications <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
+            <Link
+              href={`${FOUNDATION_ROUTES.home}#assessment`}
+              className="inline-flex h-12 items-center gap-2 bg-islf-magenta px-6 text-sm font-semibold text-white transition-colors hover:bg-islf-magenta-text"
+            >
+              <ClipboardCheck className="size-4.5" aria-hidden="true" />
+              Take the 5P Assessment
             </Link>
             <TextLink href={`${FOUNDATION_ROUTES.home}#about`} onDark>
               About the Foundation
@@ -824,14 +827,14 @@ export function InitiativesSection() {
 
 export function AssessmentSection() {
   return (
-    <FSection id="assessment" tone="mist" labelledBy="assessment-title">
+    <FSection id="assessment" tone="mist" labelledBy="assessment-title" className="print:py-0">
       <Wrap className="grid gap-12 lg:grid-cols-12 lg:items-start">
-        <div className="lg:col-span-4 lg:pt-6">
+        <div className="lg:col-span-4 lg:pt-6 print:hidden">
           <FHeading
             id="assessment-title"
             kicker="Smart Assessment"
             title="How balanced is your life today?"
-            lede="A one-minute reflection across five dimensions — people, planet, prosperity, peace and partnership."
+            lede="The 5P Harmony & Agency assessment: twenty-five questions across five dimensions — people, planet, prosperity, peace and partnership — followed by a short reflection on what you want and what you have realized."
           />
           <p className="mt-8 flex items-start gap-3 text-sm leading-relaxed text-islf-muted">
             <TriadMark className="mt-0.5 size-4 shrink-0 text-islf-indigo" />

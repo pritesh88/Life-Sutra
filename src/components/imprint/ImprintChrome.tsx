@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { Home } from "lucide-react";
 import { Wrap } from "@/components/foundation/Wrap";
 import { FOUNDATION } from "@/data/foundation";
 import { IMPRINT, IMPRINT_EMAIL } from "@/data/life-sutra";
@@ -22,8 +22,9 @@ export function ImprintHeader() {
             href="/"
             className="inline-flex items-center gap-1.5 text-imprint-muted hover:text-imprint-ink"
           >
-            <ArrowLeft className="size-3" aria-hidden="true" />
-            {FOUNDATION.name}
+            <Home className="size-3.5" aria-hidden="true" />
+            <span className="font-semibold">Home</span>
+            <span className="hidden sm:inline">· {FOUNDATION.name}</span>
           </Link>
           <span className="hidden text-imprint-muted sm:inline">
             A publication of {FOUNDATION.publishingBody}

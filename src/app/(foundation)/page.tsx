@@ -26,6 +26,7 @@ export default function FoundationHomePage() {
     <>
       <Hero />
       <AboutSection />
+      <AssessmentSection />
       <PublicationsSection />
       <ParticularsSection />
       <BooksSection />
@@ -34,7 +35,6 @@ export default function FoundationHomePage() {
       <CultureSection />
       <ApproachSection />
       <KamdhenuSection />
-      <AssessmentSection />
     </>
   );
 }

@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, ClipboardCheck, Menu, X } from "lucide-react";
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { Wrap } from "./Wrap";
 import { type Book, publishedBooks, upcomingBooks } from "@/data/books";
 import { FOUNDATION, publications } from "@/data/foundation";
@@ -19,6 +20,17 @@ const NAV = [
   { label: "Vision & Mission", to: FOUNDATION_ROUTES.visionMission },
   { label: "Our Approach", to: FOUNDATION_ROUTES.approach },
 ] as const;
+
+/** The 5P assessment lives on the homepage. */
+const ASSESSMENT_HREF = `${FOUNDATION_ROUTES.home}#assessment`;
+
+/** Journal actions (membership, submissions, sign-in), in the foundation's colours. */
+const ACTIONS = {
+  upgrade: { label: "Upgrade", to: "/membership" },
+  submit: { label: "Submit Research", to: "/submit-research" },
+  login: { label: "Get Started", to: "/auth/login" },
+  profile: { label: "Profile", to: "/profile" },
+} as const;
 
 function isActive(pathname: string, to: string) {
   return to === "/" ? pathname === "/" : pathname === to || pathname.startsWith(`${to}/`);
@@ -170,7 +182,7 @@ function DropdownMenu({
       {open ? (
         <div
           id={panelId}
-          className="absolute top-full left-1/2 z-50 mt-3 max-h-[calc(100dvh-7rem)] w-[25rem] -translate-x-1/2 overflow-y-auto border border-islf-stone bg-islf-paper p-2 whitespace-normal shadow-[0_24px_60px_-28px_rgb(38_68_58/0.45)]"
+          className="absolute top-full left-1/2 z-50 mt-3 max-h-[calc(100dvh-10rem)] w-[25rem] -translate-x-1/2 overflow-y-auto border border-islf-stone bg-islf-paper p-2 whitespace-normal shadow-[0_24px_60px_-28px_rgb(38_68_58/0.45)]"
         >
           <p className="islf-kicker px-3 pt-2 pb-3 text-[0.62rem] text-islf-muted">{heading}</p>
           <ul>
@@ -246,11 +258,50 @@ const BOOKS_GROUP: GroupProps = {
 export function FoundationHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, loading } = useAuth();
+  const account = loading ? null : user ? ACTIONS.profile : ACTIONS.login;
 
   useEffect(() => setMobileOpen(false), [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-islf-stone bg-islf-ivory/94 backdrop-blur">
+      <div className="bg-islf-indigo-deep text-islf-ivory">
+        <Wrap className="flex h-12 items-center justify-between gap-3 text-xs font-semibold">
+          <Link
+            href={ASSESSMENT_HREF}
+            className="inline-flex h-9 items-center gap-2 bg-islf-glow px-3.5 text-[0.82rem] whitespace-nowrap text-islf-indigo-deep transition-colors hover:bg-islf-paper sm:px-4 sm:text-sm"
+          >
+            <ClipboardCheck className="size-5" aria-hidden="true" />
+            <span>
+              <span className="hidden sm:inline">Take the </span>5P Assessment
+            </span>
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <Link
+              href={ACTIONS.upgrade.to}
+              className="hidden h-9 items-center bg-islf-magenta px-3 text-white transition-colors hover:bg-islf-magenta-text sm:inline-flex"
+            >
+              {ACTIONS.upgrade.label}
+            </Link>
+            <Link
+              href={ACTIONS.submit.to}
+              className="hidden h-9 items-center bg-islf-paper px-3 text-islf-indigo transition-colors hover:bg-islf-glow sm:inline-flex"
+            >
+              {ACTIONS.submit.label}
+            </Link>
+            {account ? (
+              <Link
+                href={account.to}
+                className="inline-flex h-9 items-center border border-islf-ivory/40 px-3 transition-colors hover:border-islf-ivory hover:bg-islf-ivory/10"
+              >
+                {account.label}
+              </Link>
+            ) : null}
+          </div>
+        </Wrap>
+      </div>
+
       <Wrap className="flex h-20 items-center justify-between gap-6">
         <FoundationLogo />
 
@@ -316,9 +367,17 @@ export function FoundationHeader() {
         <nav
           id="islf-mobile-nav"
           aria-label="Foundation mobile"
-          className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-islf-stone bg-islf-paper xl:hidden"
+          className="max-h-[calc(100dvh-8rem)] overflow-y-auto border-t border-islf-stone bg-islf-paper xl:hidden"
         >
           <Wrap className="grid gap-1 py-4">
+            <Link
+              href={ASSESSMENT_HREF}
+              onClick={() => setMobileOpen(false)}
+              className="mb-2 inline-flex h-12 items-center justify-center gap-2.5 bg-islf-magenta px-5 text-sm font-semibold text-white"
+            >
+              <ClipboardCheck className="size-5" aria-hidden="true" />
+              Take the 5P Assessment
+            </Link>
             {[...NAV, { label: "Contact", to: FOUNDATION_ROUTES.contact }].map((item) => (
               <Link
                 key={item.to}
@@ -339,6 +398,20 @@ export function FoundationHeader() {
             >
               Explore Publications <ArrowRight className="size-4" aria-hidden="true" />
             </Link>
+            <div className="mt-2 grid grid-cols-2 gap-2 sm:hidden">
+              <Link
+                href={ACTIONS.upgrade.to}
+                className="inline-flex h-11 items-center justify-center bg-islf-magenta px-3 text-sm font-semibold text-white"
+              >
+                {ACTIONS.upgrade.label}
+              </Link>
+              <Link
+                href={ACTIONS.submit.to}
+                className="inline-flex h-11 items-center justify-center border border-islf-indigo px-3 text-sm font-semibold text-islf-indigo"
+              >
+                {ACTIONS.submit.label}
+              </Link>
+            </div>
           </Wrap>
         </nav>
       ) : null}
