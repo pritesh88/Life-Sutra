@@ -91,6 +91,14 @@ export function FoundationFooter() {
               <a href={`mailto:${contact.email}`} className="hover:text-islf-ivory">
                 {contact.email}
               </a>
+              <a
+                href={FOUNDATION.legacyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-islf-ivory"
+              >
+                {FOUNDATION.legacyWebsiteLabel}
+              </a>
               <a href={contact.phoneHref} className="hover:text-islf-ivory">
                 {contact.phone}
               </a>

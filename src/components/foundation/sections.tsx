@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Globe, Mail, MapPin, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   FOUNDATION,
@@ -446,6 +446,18 @@ export function ParticularsSection() {
               ["Email", contact.email],
               ["Phone", contact.phone],
               ["Website", FOUNDATION.website],
+              [
+                "Earlier Website",
+                <a
+                  key="w"
+                  href={FOUNDATION.legacyWebsite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-islf-indigo underline-offset-4 hover:underline"
+                >
+                  {FOUNDATION.legacyWebsiteLabel}
+                </a>,
+              ],
             ]}
           />
           <div className="grid gap-12">
@@ -840,6 +852,13 @@ export function ContactDetails({ className }: { className?: string | undefined }
   const { contact } = FOUNDATION;
   const rows = [
     { icon: Mail, label: "Email", value: contact.email, href: `mailto:${contact.email}` },
+    {
+      icon: Globe,
+      label: "Website",
+      value: FOUNDATION.legacyWebsiteLabel,
+      href: FOUNDATION.legacyWebsite,
+      external: true,
+    },
     { icon: Phone, label: "Phone", value: contact.phone, href: contact.phoneHref },
     { icon: MapPin, label: "Location", value: foundationAddress() },
   ];
@@ -860,6 +879,7 @@ export function ContactDetails({ className }: { className?: string | undefined }
             {r.href ? (
               <a
                 href={r.href}
+                {...(r.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-[0.98rem] break-all text-islf-indigo underline-offset-4 hover:underline"
               >
                 {r.value}
