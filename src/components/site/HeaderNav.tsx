@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Clock, Menu, X } from "lucide-react";
+import { Clock, Home, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { actionNav, primaryNav } from "@/data/navigation";
@@ -27,12 +27,14 @@ export function HeaderActions() {
   return (
     <>
       <div className="flex items-center gap-2">
-        <Action to="/membership" variant="saffron" size="sm" className="hidden sm:inline-flex">
-          Upgrade
-        </Action>
-        <Action to="/submit-research" variant="primary" size="sm" className="hidden sm:inline-flex">
-          Submit Research
-        </Action>
+        <Link
+          href="/"
+          aria-label="Home — I Smart Life Foundation"
+          title="Home"
+          className="grid size-10 place-items-center rounded-md bg-primary text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          <Home className="size-5" aria-hidden="true" />
+        </Link>
         {!loading && !user ? (
           <Action to="/auth/login" variant="outline" size="sm" className="hidden sm:inline-flex">
             Get Started
@@ -71,6 +73,14 @@ export function HeaderActions() {
           aria-label="Mobile"
         >
           <Container className="grid gap-1 py-4">
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 rounded-md px-3 py-2.5 text-sm font-semibold transition-colors hover:bg-muted"
+            >
+              <Home className="size-4" aria-hidden="true" />
+              Home
+            </Link>
             {[...primaryNav, ...actionNav].map((item) => {
               const active = pathname === item.to;
               return (

@@ -82,8 +82,8 @@ export const publishedBooks: Book[] = [
       height: 1083,
     },
     link: {
-      href: "https://excelindiapublishers.com/shop/spirituality-happiness-and-global-well-being-insights-from-the-indian-knowledge-systems/",
-      label: "View at Excel India Publishers",
+      href: "/assets/books/spirituality-happiness-global-well-being.pdf",
+      label: "Read the eBook (PDF)",
     },
   },
   {

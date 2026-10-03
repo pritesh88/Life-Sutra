@@ -47,7 +47,7 @@ function BookCard({ book, upcoming }: { book: Book; upcoming?: boolean }) {
   return (
     <li
       id={book.slug}
-      className="group grid scroll-mt-28 grid-cols-[7.5rem_1fr] gap-5 border-t border-islf-stone pt-7 sm:grid-cols-[10rem_1fr] sm:gap-7"
+      className="group grid scroll-mt-36grid-cols-[7.5rem_1fr] gap-5 border-t border-islf-stone pt-7 sm:grid-cols-[10rem_1fr] sm:gap-7"
     >
       <div>
         {book.link ? (
