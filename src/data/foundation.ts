@@ -31,6 +31,8 @@ export const FOUNDATION = {
   website: "https://lifesutra.co.in",
   /** The foundation's own website; the foundation's name links here. */
   legacyWebsite: "https://manasyog.life/",
+  /** Display form of `legacyWebsite`, shown alongside the contact details. */
+  legacyWebsiteLabel: "manasyog.life",
   contact: {
     person: "Mahesh Lohar",
     designation: "Principal Integrator",

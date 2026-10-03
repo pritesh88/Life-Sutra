@@ -47,6 +47,7 @@ export default function PublicationsPage() {
                   ["Email", contact.email],
                   ["Phone", contact.phone],
                   ["Website", FOUNDATION.website],
+                  ["Earlier website", FOUNDATION.legacyWebsite],
                 ].map(([label, value]) => (
                   <tr key={label} className="border-b border-islf-stone">
                     <th
