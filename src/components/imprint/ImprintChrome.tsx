@@ -9,7 +9,7 @@ export const IMPRINT_NAV = [
   { label: "Overview", href: `${IMPRINT_BASE}#overview` },
   { label: "The Imprint", href: `${IMPRINT_BASE}#imprint` },
   { label: "Forthcoming", href: `${IMPRINT_BASE}#forthcoming` },
-  { label: "Editorial", href: `${IMPRINT_BASE}#editorial` },
+  { label: "Editorial Board", href: `${IMPRINT_BASE}/editorial-board` },
   { label: "Publication Details", href: `${IMPRINT_BASE}#details` },
 ];
 

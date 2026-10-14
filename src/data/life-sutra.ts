@@ -7,6 +7,7 @@
  * still empty, so no layout change is needed. Never fill these with guesses —
  * in particular, do not add an ISSN until one has actually been assigned.
  */
+import { editorialBoard } from "@/data/content";
 import { FOUNDATION, LIFE_SUTRA_FIRST_ISSUE, foundationAddress } from "@/data/foundation";
 
 /** Life Sutra journal email. */
@@ -53,7 +54,12 @@ export type ImprintEditor = {
 
 export const imprintBooks: ImprintBook[] = [];
 
-export const imprintEditorial: ImprintEditor[] = [];
+/** Life Sutra shares the foundation's Editorial Board (full details: /publications/life-sutra/editorial-board). */
+export const imprintEditorial: ImprintEditor[] = editorialBoard.map((m) => ({
+  name: m.name,
+  role: m.editorialDesignation,
+  affiliation: m.organization,
+}));
 
 export const NOT_ANNOUNCED = "To be announced";
 

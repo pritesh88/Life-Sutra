@@ -14,6 +14,11 @@ export const primaryNav: NavItem[] = [
     description: "Mission, editorial standards, governance",
   },
   {
+    label: "Editorial Board",
+    to: journalPath("/editorial-board"),
+    description: "Members, designations and institutional details",
+  },
+  {
     label: "Research Publications",
     to: journalPath("/research"),
     description: "Peer-reviewed papers and journal issues",
@@ -83,6 +88,7 @@ export const footerGroups: { title: string; items: NavItem[] }[] = [
     items: [
       { label: "Journal Home", to: journalPath() },
       { label: "About LifeSutra Synthesis", to: journalPath("/about") },
+      { label: "Editorial Board", to: journalPath("/editorial-board") },
       { label: "Research Publications", to: journalPath("/research") },
       { label: "Archive", to: journalPath("/archive") },
       { label: "Research Abstracts", to: journalPath("/research-abstracts") },

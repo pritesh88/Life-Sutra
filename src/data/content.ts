@@ -424,6 +424,20 @@ export const editorialBoard: EditorialBoardMember[] = [
   },
 ];
 
+/**
+ * The board split the way every Editorial Board page shows it: Editor-in-Chief,
+ * members based in India, then international members.
+ */
+export function editorialBoardGroups() {
+  const chief = editorialBoard.filter((m) => m.editorialDesignation === "Editor-in-Chief");
+  const rest = editorialBoard.filter((m) => !chief.includes(m));
+  return {
+    chief,
+    national: rest.filter((m) => m.country === "India"),
+    international: rest.filter((m) => m.country !== "India"),
+  };
+}
+
 export const editorialPrinciples = [
   {
     title: "Evidence before assertion",

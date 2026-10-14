@@ -102,6 +102,11 @@ export default function HomePage() {
               <EditorialBoardCard key={member.id} member={member} />
             ))}
           </ul>
+          <div className="mt-10 flex justify-center">
+            <Action to={journalPath("/editorial-board")} variant="outline">
+              View the full Editorial Board <ArrowRight className="size-4" aria-hidden="true" />
+            </Action>
+          </div>
         </Container>
       </Section>
 

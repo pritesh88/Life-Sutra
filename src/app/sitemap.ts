@@ -3,7 +3,7 @@ import { papers } from "@/data/content";
 import { publications } from "@/data/foundation";
 import { articlePath, issuePath, journalIssues } from "@/data/journal";
 import { actionNav, primaryNav } from "@/data/navigation";
-import { FOUNDATION_ROUTES, journalPath } from "@/lib/routes";
+import { FOUNDATION_ROUTES, IMPRINT_BASE, journalPath } from "@/lib/routes";
 import { getSiteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const paths = new Set<string>([
     ...Object.values(FOUNDATION_ROUTES),
     ...publications.map((p) => p.href),
+    `${IMPRINT_BASE}/editorial-board`,
     journalPath(),
     ...primaryNav.map((n) => n.to),
     ...actionNav.map((n) => n.to),

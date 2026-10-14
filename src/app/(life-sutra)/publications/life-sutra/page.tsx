@@ -284,7 +284,13 @@ export default function LifeSutraPage() {
         <Wrap className="grid gap-14 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Chapter n="III." label="Editorial" />
-            <Title id="editorial-title">Editors &amp; contributors</Title>
+            <Title id="editorial-title">Editorial Board</Title>
+            <Link
+              href={`${IMPRINT_BASE}/editorial-board`}
+              className="mt-8 inline-flex items-center gap-2 border border-imprint-burgundy px-5 py-2.5 text-sm font-semibold text-imprint-burgundy transition-colors hover:bg-imprint-burgundy hover:text-imprint-paper"
+            >
+              View full details <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
           </div>
           <div className="lg:col-span-7 lg:col-start-6 lg:pt-16">
             {imprintEditorial.length ? (

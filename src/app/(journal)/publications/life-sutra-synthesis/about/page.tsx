@@ -1,4 +1,4 @@
-import { FOUNDATION_ROUTES, journalPath } from "@/lib/routes";
+import { journalPath } from "@/lib/routes";
 import {
   Action,
   Card,
@@ -65,7 +65,7 @@ export default function AboutPage() {
               All review decisions are recorded with a public summary of their basis.
             </p>
             <div className="mt-6">
-              <Action to={FOUNDATION_ROUTES.editorialBoard} variant="outline" size="sm">
+              <Action to={journalPath("/editorial-board")} variant="outline" size="sm">
                 View Editorial Board
               </Action>
             </div>

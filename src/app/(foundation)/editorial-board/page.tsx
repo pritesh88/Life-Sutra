@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { BadgeCheck, ExternalLink, GraduationCap, Linkedin, Mail } from "lucide-react";
 import { FHeading, FSection, PageIntro } from "@/components/foundation/sections";
 import { Wrap } from "@/components/foundation/Wrap";
-import { type EditorialBoardMember, editorialBoard } from "@/data/content";
+import { type EditorialBoardMember, editorialBoardGroups } from "@/data/content";
 import { FOUNDATION } from "@/data/foundation";
 import { JOURNAL } from "@/data/journal";
 import { foundationMeta } from "@/lib/foundation-meta";
@@ -14,11 +14,7 @@ export const metadata = foundationMeta({
   path: "/editorial-board",
 });
 
-const isInternational = (m: EditorialBoardMember) => m.country !== "India";
-
-const chief = editorialBoard.filter((m) => m.editorialDesignation === "Editor-in-Chief");
-const national = editorialBoard.filter((m) => !chief.includes(m) && !isInternational(m));
-const international = editorialBoard.filter((m) => !chief.includes(m) && isInternational(m));
+const { chief, national, international } = editorialBoardGroups();
 
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
