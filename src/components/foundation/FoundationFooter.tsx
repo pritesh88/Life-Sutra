@@ -9,6 +9,7 @@ const FOUNDATION_LINKS = [
   { label: "About the Foundation", to: FOUNDATION_ROUTES.about },
   { label: "Vision & Mission", to: FOUNDATION_ROUTES.visionMission },
   { label: "Our Approach", to: FOUNDATION_ROUTES.approach },
+  { label: "Editorial Board", to: FOUNDATION_ROUTES.editorialBoard },
   { label: "Books", to: FOUNDATION_ROUTES.books },
   { label: "Smart Assessment", to: "/#assessment" },
   { label: "Contact", to: FOUNDATION_ROUTES.contact },
@@ -109,7 +110,7 @@ export function FoundationFooter() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-islf-ivory/15 pt-6 text-xs text-islf-ivory/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {FOUNDATION.name}. Publisher of Life Sutra Synthesis and Life Sutra.
+            © {year} {FOUNDATION.name}. Publisher of LifeSutra Synthesis and Life Sutra.
           </p>
           <p>
             Founded on {FOUNDATION.mahavakya.transliteration} — &ldquo;

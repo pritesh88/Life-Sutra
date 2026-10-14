@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: `%s — ${FOUNDATION.name}`,
   },
   description: FOUNDATION.summary,
-  // I Smart Life Foundation icon; the Life Sutra Synthesis pages override this
+  // I Smart Life Foundation icon; the LifeSutra Synthesis pages override this
   // with the journal's own icon in (journal)/layout.tsx.
   icons: {
     icon: [

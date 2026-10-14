@@ -373,7 +373,7 @@ export function PublicationsSection({ asPage = false }: { asPage?: boolean }) {
               id="publications-title"
               kicker="Publications"
               title="Our Publications"
-              lede="Two journals published by I Smart Life Foundation: Life Sutra Synthesis, an interdisciplinary research journal, and Life Sutra."
+              lede="Two journals published by I Smart Life Foundation: LifeSutra Synthesis, an interdisciplinary research journal, and Life Sutra."
               className="lg:col-span-7"
             />
             <div className="border-l-2 border-islf-magenta pl-5 lg:col-span-4 lg:col-start-9">

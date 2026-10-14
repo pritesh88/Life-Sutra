@@ -110,7 +110,7 @@ export function ImprintFooter() {
             </li>
             <li>
               <Link href={JOURNAL_BASE} className="hover:text-imprint-burgundy hover:underline">
-                Life Sutra Synthesis — Research Journal
+                LifeSutra Synthesis — Research Journal
               </Link>
             </li>
             <li>

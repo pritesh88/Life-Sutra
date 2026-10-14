@@ -17,7 +17,7 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Image
               src={ASSETS.logo}
-              alt="Life Sutra Synthesis — Journal of Mind, Consciousness Studies, and Synthesis of Indian Knowledge Systems"
+              alt="LifeSutra Synthesis — Journal of Mind, Consciousness Studies, and Synthesis of Indian Knowledge Systems"
               className="h-28 w-auto rounded-md bg-white/95 p-2"
               width={280}
               height={280}

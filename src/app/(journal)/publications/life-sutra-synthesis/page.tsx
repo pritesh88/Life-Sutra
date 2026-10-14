@@ -31,7 +31,7 @@ export default function HomePage() {
         <Container className="relative grid gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-24">
           <div>
             <p className="font-display text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-              Life Sutra Synthesis
+              LifeSutra Synthesis
             </p>
             <Eyebrow className="mt-3">
               Global Research &amp; Knowledge Platform for Indian Knowledge Systems (IKS)
@@ -41,7 +41,7 @@ export default function HomePage() {
               <span className="block text-primary">Synthesize. Connect.</span>
             </h1>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-relaxed text-muted-foreground">
-              Life Sutra Synthesis is a scholarly research publication for Indian Knowledge Systems
+              LifeSutra Synthesis is a scholarly research publication for Indian Knowledge Systems
               and contemporary interdisciplinary research. It connects studies, knowledge claims,
               methodology and researchers so that scattered work becomes a shared body of evidence.
             </p>
@@ -95,7 +95,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Governance"
             title="Editorial Board"
-            description="The scholars and practitioners who set editorial policy and review standards for Life Sutra Synthesis."
+            description="The scholars and practitioners who set editorial policy and review standards for LifeSutra Synthesis."
           />
           <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {editorialBoard.map((member) => (
@@ -110,9 +110,9 @@ export default function HomePage() {
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="What is Life Sutra Synthesis?"
+            eyebrow="What is LifeSutra Synthesis?"
             title="More than a journal — a research ecosystem"
-            description="Life Sutra Synthesis publishes peer-reviewed scholarship, and also builds the connective infrastructure around it: the claims being studied, the methods used, the people doing the work, and the synthesis that follows."
+            description="LifeSutra Synthesis publishes peer-reviewed scholarship, and also builds the connective infrastructure around it: the claims being studied, the methods used, the people doing the work, and the synthesis that follows."
           />
           <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {homeContent.ecosystem.map((e) => (
@@ -149,7 +149,7 @@ export default function HomePage() {
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="The Life Sutra Synthesis knowledge model"
+            eyebrow="The LifeSutra Synthesis knowledge model"
             title="Knowledge Claim → Evidence → Research → Synthesis"
             description="A knowledge claim carried by a text or a living practice can be documented on its own terms, then examined against the forms of evidence that are actually appropriate to it — and connected to the studies that already speak to it."
             action={
@@ -180,7 +180,7 @@ export default function HomePage() {
               "Method should respond to the nature of the knowledge claim."
             </blockquote>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Life Sutra Synthesis does not propose a single universal methodology. It works with a
+              LifeSutra Synthesis does not propose a single universal methodology. It works with a
               plural, pramāṇa-sensitive approach: a textual claim, a historical claim and a clinical
               claim call for different evidence and different designs. What is asked of every study
               is that the reasoning behind the chosen method is stated openly.
@@ -210,7 +210,7 @@ export default function HomePage() {
               How a question becomes published research
             </h2>
             <p className="mt-3 text-[0.95rem] leading-relaxed text-earth-foreground/75">
-              The pathway Life Sutra Synthesis is building, from an initial idea through to
+              The pathway LifeSutra Synthesis is building, from an initial idea through to
               synthesis. Stages beyond publication are being developed.
             </p>
           </div>
@@ -242,7 +242,7 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="In development"
-            title="Life Sutra Synthesis Research Observatory"
+            title="LifeSutra Synthesis Research Observatory"
             description="A long-term effort to map the IKS research ecosystem — who is working on what, where, and how the studies relate. The observatory is still being built."
             action={
               <Action to={journalPath("/research-impact")} variant="outline" size="sm">
@@ -256,7 +256,7 @@ export default function HomePage() {
       <Section>
         <Container>
           <SectionHeading
-            eyebrow="Life Sutra Synthesis Journal"
+            eyebrow="LifeSutra Synthesis Journal"
             title="Open access · Peer reviewed · Interdisciplinary"
             description="The publishing standards the journal holds itself to."
             action={
@@ -286,7 +286,7 @@ export default function HomePage() {
               Global Research &amp; Knowledge Platform for Indian Knowledge Systems (IKS)
             </h2>
             <p className="mt-5 text-[0.98rem] leading-relaxed text-muted-foreground">
-              Life Sutra Synthesis is an academic e-journal and future research platform focused on
+              LifeSutra Synthesis is an academic e-journal and future research platform focused on
               documenting, publishing, connecting and synthesizing research related to Indian
               Knowledge Systems. The initial website establishes a professional, credible academic
               identity, and will evolve into a fully dynamic research platform.
@@ -320,7 +320,7 @@ export default function HomePage() {
       <Section tone="parchment">
         <Container>
           <div className="rounded-md border border-border bg-card p-8 text-center sm:p-12">
-            <Eyebrow className="justify-center">The Life Sutra Synthesis pathway</Eyebrow>
+            <Eyebrow className="justify-center">The LifeSutra Synthesis pathway</Eyebrow>
             <h2 className="mx-auto mt-4 max-w-3xl text-2xl leading-snug sm:text-3xl">
               From knowledge claim → research → evidence → synthesis → new knowledge
             </h2>

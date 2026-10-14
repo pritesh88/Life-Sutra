@@ -185,7 +185,7 @@ export default function LifeSutraPage() {
                   href={JOURNAL_BASE}
                   className="text-imprint-ink underline decoration-imprint-copper underline-offset-4 hover:text-imprint-burgundy"
                 >
-                  Life Sutra Synthesis
+                  LifeSutra Synthesis
                 </Link>
                 , as a separate publication with its own editorial identity. Its first issue will be
                 released on {LIFE_SUTRA_FIRST_ISSUE}; titles, contributors and publication details
@@ -392,7 +392,7 @@ export default function LifeSutraPage() {
                   {FOUNDATION.publishingBody}
                 </h2>
                 <p className="mt-1 text-sm text-imprint-muted">
-                  Also the publisher of Life Sutra Synthesis, an interdisciplinary research journal.
+                  Also the publisher of LifeSutra Synthesis, an interdisciplinary research journal.
                 </p>
               </div>
             </div>

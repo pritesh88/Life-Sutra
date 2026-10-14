@@ -113,7 +113,7 @@ export function citation(
  * Educational Institutions) Regulations, 2018, which ISSN India refers to.
  */
 export const JOURNAL_ABOUT =
-  "Life Sutra Synthesis is a scholarly, peer-reviewed online journal of mind, consciousness studies and Indian Knowledge Systems (IKS), published by I Smart Life Foundation. It publishes rigorous interdisciplinary research that documents knowledge claims from Indian intellectual traditions precisely and examines them with methods appropriate to the kind of evidence available.";
+  "LifeSutra Synthesis is a scholarly, peer-reviewed online journal of mind, consciousness studies and Indian Knowledge Systems (IKS), published by I Smart Life Foundation. It publishes rigorous interdisciplinary research that documents knowledge claims from Indian intellectual traditions precisely and examines them with methods appropriate to the kind of evidence available.";
 
 export const JOURNAL_AIMS = [
   "Publish original, peer-reviewed research on Indian Knowledge Systems and on mind, emotion and consciousness studies.",

@@ -1,7 +1,7 @@
-export const SITE_NAME = "Life Sutra Synthesis";
+export const SITE_NAME = "LifeSutra Synthesis";
 export const SITE_TAGLINE = "Scholarly Research Publication for Indian Knowledge Systems";
 export const SITE_DESCRIPTION =
-  "Life Sutra Synthesis is a peer-reviewed scholarly research publication for Indian Knowledge Systems.";
+  "LifeSutra Synthesis is a peer-reviewed scholarly research publication for Indian Knowledge Systems.";
 export const SITE_EMAIL = "info@lifesutra.co.in";
 
 /** Canonical origin used for metadata, sitemap, and robots. */
@@ -17,7 +17,7 @@ export const ASSETS = {
   ismartlifelogo: "/assets/ismartlifelogo.jpeg",
 } as const;
 
-/** Life Sutra Synthesis's own browser-tab icon (the foundation uses /islf/). */
+/** LifeSutra Synthesis's own browser-tab icon (the foundation uses /islf/). */
 export const JOURNAL_ICONS = {
   icon: [
     { url: "/favicon.svg", type: "image/svg+xml" },

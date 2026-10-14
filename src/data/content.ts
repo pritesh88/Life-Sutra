@@ -40,6 +40,10 @@ export type EditorialBoardMember = {
   email?: string;
   linkedin?: string;
   website?: string;
+  /** Link text for `website`; defaults to "Institutional Profile". */
+  websiteLabel?: string;
+  googleScholar?: string;
+  orcid?: string;
   photo: string;
 };
 
@@ -286,13 +290,14 @@ export const editorialBoard: EditorialBoardMember[] = [
     name: "Dr. Mahesh Lohar",
     editorialDesignation: "Editor-in-Chief",
     organization: "I Smart Life Foundation",
-    address: "4, Sanjog 1, Aundh, Pune 411007",
-    department: "Research",
+    address: "4, Sanjog 1, Aundh, Pune 411007, Maharashtra, India",
+    department: "Consciousness Studies and Mind Coaching",
     country: "India",
     academicDesignation: "Chairman; Founder, Consciousness Scientist",
     email: "ismart@manasyog.com",
     linkedin: "https://www.linkedin.com/in/dr-mahesh-lohar-316407a/",
     website: "https://manasyog.life/#absolute",
+    googleScholar: "https://scholar.google.com/citations?user=_PzVCG4AAAAJ&hl=en",
     photo: "/assets/editorial/mahesh-lohar.jpg",
   },
   {
@@ -308,6 +313,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     email: "shrikant@arihantacs.edu.in",
     linkedin: "https://www.linkedin.com/in/drshrikantwaghulkar/",
     website: "https://arihantmbainstitute.ac.in/teaching-staff/",
+    googleScholar: "https://scholar.google.com/citations?user=PhE28G8AAAAJ&hl=en",
     photo: "/assets/editorial/shrikant-waghulkar.jpg",
   },
   {
@@ -317,7 +323,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     organization: "Neville Wadia Institute of Management Studies and Research, Pune",
     address:
       "Neville Wadia Institute of Management Studies and Research, 19, Late Prin. V.K. Joag Path, Wadia College Campus, Pune, Maharashtra 411001",
-    department: "Director / Research",
+    department: "Management Studies (Human Resource Management)",
     country: "India",
     academicDesignation: "Director and Professor",
     email: "director@nevillewadia.com",
@@ -338,6 +344,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     email: "vinayak@arihantacs.edu.in",
     linkedin: "https://www.linkedin.com/in/vinayak-shitole/",
     website: "https://arihantmbainstitute.ac.in/teaching-staff/",
+    googleScholar: "https://scholar.google.com/citations?user=vou-vLQAAAAJ&hl=en",
     photo: "/assets/editorial/vinayak-shitole.jpg",
   },
   {
@@ -345,14 +352,44 @@ export const editorialBoard: EditorialBoardMember[] = [
     name: "Dr. Arpita Pankaj Kathane",
     editorialDesignation: "Editorial Board Member",
     organization: "Idealizeer Content Solutions Pvt. Ltd., Pune",
-    department: "Manager / Content Writer",
+    department: "Design Thinking and Experience-Based Learning",
     address: "211, City Centre, Hinjwadi Phase 1, Pune, Maharashtra 411057",
     country: "India",
     academicDesignation: "Director",
     email: "arpita@idealizeer.com",
     linkedin: "https://www.linkedin.com/in/dr-arpita-kathane-8683461a1/",
     website: "https://idealizeer.com/icsglobal/",
+    orcid: "https://orcid.org/0009-0001-0083-1432",
     photo: "/assets/editorial/arpita-kathane.jpg",
+  },
+  {
+    id: "eb-satam",
+    name: "Dr. Neha Satam",
+    editorialDesignation: "Editorial Board Member",
+    organization: "I Smart Life Foundation",
+    address: "I Smart Life Foundation, 4, Sanjog 1, Aundh, Pune 411007, Maharashtra, India",
+    department: "Indian Knowledge Systems (IKS)",
+    country: "India",
+    academicDesignation: "Research Scientist",
+    email: "info@lifesutra.co.in",
+    linkedin: "https://www.linkedin.com/in/nehacorporatemonk/",
+    website: "https://topmate.io/neha_satam",
+    websiteLabel: "Personal Profile",
+    googleScholar: "https://scholar.google.com/citations?user=xhg4qHkAAAAJ&hl=en",
+    orcid: "https://orcid.org/0009-0008-6274-7931",
+    photo: "/assets/editorial/neha-satam.jpg",
+  },
+  {
+    id: "eb-purohit",
+    name: "Dr. Kuldeep Purohit",
+    editorialDesignation: "Editorial Board Member",
+    organization: "Shri Shankaracharya Abhinava Sacchidananda Teertha Sanskrit Mahavidyalaya",
+    address: "I Smart Life Foundation, 4, Sanjog 1, Aundh, Pune 411007, Maharashtra, India",
+    department: "Sanskrit",
+    country: "India",
+    academicDesignation: "Principal",
+    email: "info@lifesutra.co.in",
+    photo: "/assets/editorial/kuldeep-purohit.jpg",
   },
   {
     id: "eb-gupta",
@@ -363,8 +400,11 @@ export const editorialBoard: EditorialBoardMember[] = [
     department: "Paediatrics (Paediatric Gastroenterology and Nutrition)",
     country: "United Kingdom",
     academicDesignation: "Consultant Paediatrician",
-    email: "Rajeev.gupta@nhs.net",
+    email: "rajeev.gupta@nhs.net",
     linkedin: "https://www.linkedin.com/in/rajeev2000/",
+    website: "https://rajeevgupta.co.uk/",
+    websiteLabel: "Personal Profile",
+    orcid: "https://orcid.org/0000-0003-0529-3239",
     photo: "/assets/editorial/rajeev-gupta.jpg",
   },
   {
@@ -373,11 +413,13 @@ export const editorialBoard: EditorialBoardMember[] = [
     editorialDesignation: "International Editorial Board Member",
     organization: "German Association of Homa Therapy",
     department: "Logic and Methodology of Sciences",
-    address: "Haldenhof, 78357 Mühlingen",
+    address: "Haldenhofweg 51, Bonndorf, 88662 Überlingen, Germany",
     country: "Germany",
     academicDesignation: "President",
     email: "dr.ulrich.berk@homatherapie.de",
     website: "https://www.homatherapie.de/en/contact.html",
+    websiteLabel: "Association Website",
+    orcid: "https://orcid.org/0000-0002-3774-4199",
     photo: "/assets/editorial/ulrich-berk.jpg",
   },
 ];

@@ -82,7 +82,7 @@ export const footerGroups: { title: string; items: NavItem[] }[] = [
     title: "Journal",
     items: [
       { label: "Journal Home", to: journalPath() },
-      { label: "About Life Sutra Synthesis", to: journalPath("/about") },
+      { label: "About LifeSutra Synthesis", to: journalPath("/about") },
       { label: "Research Publications", to: journalPath("/research") },
       { label: "Archive", to: journalPath("/archive") },
       { label: "Research Abstracts", to: journalPath("/research-abstracts") },

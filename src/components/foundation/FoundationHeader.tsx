@@ -19,6 +19,7 @@ const NAV = [
   { label: "About the Foundation", to: FOUNDATION_ROUTES.about },
   { label: "Vision & Mission", to: FOUNDATION_ROUTES.visionMission },
   { label: "Our Approach", to: FOUNDATION_ROUTES.approach },
+  { label: "Editorial Board", to: FOUNDATION_ROUTES.editorialBoard },
 ] as const;
 
 /** The 5P assessment lives on the homepage. */
@@ -306,7 +307,7 @@ export function FoundationHeader() {
         <FoundationLogo />
 
         <nav aria-label="Foundation" className="hidden xl:block">
-          <ul className="flex items-center gap-6 whitespace-nowrap">
+          <ul className="flex items-center gap-5 whitespace-nowrap 2xl:gap-6">
             {NAV.map((item) => {
               const active = isActive(pathname, item.to);
               return (
@@ -346,7 +347,7 @@ export function FoundationHeader() {
         <div className="flex items-center gap-2">
           <Link
             href={FOUNDATION_ROUTES.publications}
-            className="hidden h-11 items-center gap-2 bg-islf-indigo px-5 text-sm font-semibold whitespace-nowrap text-islf-paper transition-colors hover:bg-islf-indigo-deep sm:inline-flex"
+            className="hidden h-11 items-center gap-2 bg-islf-indigo px-5 text-sm font-semibold whitespace-nowrap text-islf-paper transition-colors hover:bg-islf-indigo-deep sm:inline-flex xl:hidden 2xl:inline-flex"
           >
             Explore Publications <ArrowRight className="size-4" aria-hidden="true" />
           </Link>

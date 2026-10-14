@@ -9,7 +9,7 @@
 export const JOURNAL_BASE = "/publications/life-sutra-synthesis";
 export const IMPRINT_BASE = "/publications/life-sutra";
 
-/** Path inside the Life Sutra Synthesis journal, e.g. journalPath("/archive"). */
+/** Path inside the LifeSutra Synthesis journal, e.g. journalPath("/archive"). */
 export function journalPath(path = "") {
   return `${JOURNAL_BASE}${path}`;
 }
@@ -19,6 +19,7 @@ export const FOUNDATION_ROUTES = {
   about: "/about",
   visionMission: "/vision-mission",
   approach: "/approach",
+  editorialBoard: "/editorial-board",
   publications: "/publications",
   books: "/books",
   contact: "/contact",

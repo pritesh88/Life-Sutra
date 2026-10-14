@@ -19,7 +19,7 @@ const securityHeaders = [
     : []),
 ];
 
-// Life Sutra Synthesis moved from the site root to /publications/life-sutra-synthesis
+// LifeSutra Synthesis moved from the site root to /publications/life-sutra-synthesis
 // when I Smart Life Foundation became the root site. Keep every old URL working.
 // Mirrors JOURNAL_BASE in src/lib/routes.ts.
 const JOURNAL_BASE = "/publications/life-sutra-synthesis";

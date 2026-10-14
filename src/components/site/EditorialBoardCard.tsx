@@ -1,7 +1,22 @@
 import Image from "next/image";
-import { Linkedin, ExternalLink } from "lucide-react";
+import type { ReactNode } from "react";
+import { BadgeCheck, ExternalLink, GraduationCap, Linkedin } from "lucide-react";
 import type { EditorialBoardMember } from "@/data/content";
 import { Card, Tag } from "@/components/site/primitives";
+
+function ProfileLink({ href, icon, label }: { href: string; icon: ReactNode; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+    >
+      {icon}
+      {label}
+    </a>
+  );
+}
 
 function Field({ label, value }: { label: string; value: string }) {
   return (
@@ -40,29 +55,35 @@ export function EditorialBoardCard({ member }: { member: EditorialBoardMember })
           {member.email ? <Field label="Official Email" value={member.email} /> : null}
         </div>
 
-        {member.linkedin || member.website ? (
+        {member.googleScholar || member.orcid || member.website || member.linkedin ? (
           <div className="mt-4 grid gap-2 border-t border-rule pt-4">
+            {member.googleScholar ? (
+              <ProfileLink
+                href={member.googleScholar}
+                icon={<GraduationCap className="size-3.5" aria-hidden="true" />}
+                label="Google Scholar"
+              />
+            ) : null}
+            {member.orcid ? (
+              <ProfileLink
+                href={member.orcid}
+                icon={<BadgeCheck className="size-3.5" aria-hidden="true" />}
+                label="ORCID"
+              />
+            ) : null}
             {member.website ? (
-              <a
+              <ProfileLink
                 href={member.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-              >
-                <ExternalLink className="size-3.5" aria-hidden="true" />
-                Institutional Profile
-              </a>
+                icon={<ExternalLink className="size-3.5" aria-hidden="true" />}
+                label={member.websiteLabel ?? "Institutional Profile"}
+              />
             ) : null}
             {member.linkedin ? (
-              <a
+              <ProfileLink
                 href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-              >
-                <Linkedin className="size-3.5" aria-hidden="true" />
-                LinkedIn Profile
-              </a>
+                icon={<Linkedin className="size-3.5" aria-hidden="true" />}
+                label="LinkedIn Profile"
+              />
             ) : null}
           </div>
         ) : null}

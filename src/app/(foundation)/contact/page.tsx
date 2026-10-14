@@ -33,7 +33,7 @@ export default function ContactPage() {
               <div className="border-b border-islf-stone py-5">
                 <dt className="font-islf-serif text-xl">
                   <Link href={JOURNAL_BASE} className="hover:underline">
-                    Life Sutra Synthesis
+                    LifeSutra Synthesis
                   </Link>
                 </dt>
                 <dd className="mt-1.5 text-sm text-islf-muted">

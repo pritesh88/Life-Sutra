@@ -17,7 +17,7 @@ import { foundationMeta } from "@/lib/foundation-meta";
 export const metadata = foundationMeta({
   title: "Home",
   absoluteTitle: `${FOUNDATION.name} — Publishing Body`,
-  description: `${FOUNDATION.publishingBody}: publisher of two journals — Life Sutra Synthesis, an interdisciplinary research journal, and Life Sutra.`,
+  description: `${FOUNDATION.publishingBody}: publisher of two journals — LifeSutra Synthesis, an interdisciplinary research journal, and Life Sutra.`,
   path: "/",
 });
 

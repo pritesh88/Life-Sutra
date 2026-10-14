@@ -4,19 +4,19 @@ import { pageMeta } from "@/lib/seo";
 
 export const homeMeta: Metadata = pageMeta({
   title: "Home",
-  absoluteTitle: "Life Sutra Synthesis — Discover, Research, Synthesize, Connect",
+  absoluteTitle: "LifeSutra Synthesis — Discover, Research, Synthesize, Connect",
   description:
-    "Life Sutra Synthesis is a scholarly research publication for Indian Knowledge Systems, connecting research, knowledge, methodology and researchers.",
+    "LifeSutra Synthesis is a scholarly research publication for Indian Knowledge Systems, connecting research, knowledge, methodology and researchers.",
   path: journalPath(),
-  ogTitle: "Life Sutra Synthesis — Discover, Research, Synthesize, Connect",
+  ogTitle: "LifeSutra Synthesis — Discover, Research, Synthesize, Connect",
 });
 
 export const aboutMeta: Metadata = pageMeta({
   title: "About",
   description:
-    "Life Sutra Synthesis's mission, editorial standards, review process and governance for Indian Knowledge Systems research.",
+    "LifeSutra Synthesis's mission, editorial standards, review process and governance for Indian Knowledge Systems research.",
   path: journalPath("/about"),
-  ogTitle: "About Life Sutra Synthesis",
+  ogTitle: "About LifeSutra Synthesis",
 });
 
 export const researchMeta: Metadata = pageMeta({
@@ -50,7 +50,7 @@ export const dialogueMeta: Metadata = pageMeta({
 export const whitePapersMeta: Metadata = pageMeta({
   title: "White Papers",
   description:
-    "Life Sutra Synthesis white papers on research integrity, metadata standards and policy frameworks are in preparation.",
+    "LifeSutra Synthesis white papers on research integrity, metadata standards and policy frameworks are in preparation.",
   path: journalPath("/white-papers"),
 });
 
@@ -64,42 +64,42 @@ export const opportunitiesMeta: Metadata = pageMeta({
 export const methodologyMeta: Metadata = pageMeta({
   title: "Research Methodology",
   description:
-    "The Life Sutra Synthesis methodology framework and editorial principles for Indian Knowledge Systems research.",
+    "The LifeSutra Synthesis methodology framework and editorial principles for Indian Knowledge Systems research.",
   path: journalPath("/methodology"),
 });
 
 export const researchersMeta: Metadata = pageMeta({
   title: "Researcher Directory",
   description:
-    "A directory of scholars publishing Indian Knowledge Systems research with Life Sutra Synthesis is in preparation.",
+    "A directory of scholars publishing Indian Knowledge Systems research with LifeSutra Synthesis is in preparation.",
   path: journalPath("/researchers"),
 });
 
 export const institutionsMeta: Metadata = pageMeta({
   title: "Partner Institutions",
   description:
-    "A directory of universities, research centres, archives and policy institutes collaborating with Life Sutra Synthesis is in preparation.",
+    "A directory of universities, research centres, archives and policy institutes collaborating with LifeSutra Synthesis is in preparation.",
   path: journalPath("/institutions"),
 });
 
 export const impactMeta: Metadata = pageMeta({
   title: "Research Impact & Observatory",
   description:
-    "The planned Life Sutra Synthesis research observatory for measuring progress in Indian Knowledge Systems scholarship.",
+    "The planned LifeSutra Synthesis research observatory for measuring progress in Indian Knowledge Systems scholarship.",
   path: journalPath("/research-impact"),
 });
 
 export const submitMeta: Metadata = pageMeta({
   title: "Submit Research",
   description:
-    "Submission requirements, review timeline and author guidance for publishing Indian Knowledge Systems research with Life Sutra Synthesis.",
+    "Submission requirements, review timeline and author guidance for publishing Indian Knowledge Systems research with LifeSutra Synthesis.",
   path: "/submit-research",
 });
 
 export const membershipMeta: Metadata = pageMeta({
   title: "Membership",
   description:
-    "Reader, researcher and institutional membership options for the Life Sutra Synthesis Indian Knowledge Systems research community.",
+    "Reader, researcher and institutional membership options for the LifeSutra Synthesis Indian Knowledge Systems research community.",
   path: "/membership",
 });
 

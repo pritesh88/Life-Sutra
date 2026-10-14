@@ -37,7 +37,7 @@ export const FOUNDATION = {
     person: "Mahesh Lohar",
     designation: "Principal Integrator",
     /** I Smart Life Foundation (publisher) email. */
-    email: "drmahesh@manasyog.life",
+    email: "info@lifesutra.co.in",
     phone: "+91 9422770563",
     /** tel: href form of `phone`. */
     phoneHref: "tel:+919422770563",
@@ -71,7 +71,7 @@ export const aboutFacts = [
   { label: "Constituted as", value: "Section 8 company" },
   { label: "Founding principle", value: "Ayam Atma Brahma" },
   { label: "Based in", value: "Aundh, Pune, India" },
-  { label: "Publishing body for", value: "Life Sutra Synthesis · Life Sutra" },
+  { label: "Publishing body for", value: "LifeSutra Synthesis · Life Sutra" },
 ];
 
 /** The founding Mahavakya, explained as on the foundation's site. */
@@ -286,7 +286,7 @@ export type Publication = {
 export const publications: Publication[] = [
   {
     slug: "life-sutra-synthesis",
-    title: "Life Sutra Synthesis",
+    title: "LifeSutra Synthesis",
     category: "Interdisciplinary Research Journal",
     designation: "Research Journal",
     description:

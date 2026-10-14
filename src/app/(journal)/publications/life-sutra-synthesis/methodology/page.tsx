@@ -17,7 +17,7 @@ export default function MethodologyPage() {
       <PageHero
         eyebrow="Standards"
         title="Methodology"
-        lede="Life Sutra Synthesis does not propose a single universal methodology. It works with a plural, pramāṇa-sensitive approach: method should respond to the nature of the knowledge claim. The full stage-by-stage protocol document is in preparation; the principles below already govern every editorial decision."
+        lede="LifeSutra Synthesis does not propose a single universal methodology. It works with a plural, pramāṇa-sensitive approach: method should respond to the nature of the knowledge claim. The full stage-by-stage protocol document is in preparation; the principles below already govern every editorial decision."
         meta={["In preparation"]}
       />
 

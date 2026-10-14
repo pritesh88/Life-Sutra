@@ -10,7 +10,7 @@ const journal = publications.find((p) => p.slug === "life-sutra-synthesis")!;
 const imprint = publications.find((p) => p.slug === "life-sutra")!;
 
 /*
- * The journal cover previews Life Sutra Synthesis in its own palette and type
+ * The journal cover previews LifeSutra Synthesis in its own palette and type
  * (Spectral, Karla, parchment, earth). Values mirror the journal's :root
  * tokens; they are written inline so nothing here touches the journal itself.
  */
@@ -21,7 +21,7 @@ const J = {
   muted: "oklch(0.47 0.021 62)",
 };
 
-/** Life Sutra Synthesis drawn as a journal issue. */
+/** LifeSutra Synthesis drawn as a journal issue. */
 export function JournalCover({ className }: { className?: string | undefined }) {
   const current = journalIssues[0];
   return (
@@ -49,7 +49,7 @@ export function JournalCover({ className }: { className?: string | undefined }) 
           className="mt-auto text-[1.65rem] leading-[1.02]"
           style={{ fontFamily: "var(--font-spectral)", fontWeight: 500 }}
         >
-          Life Sutra
+          LifeSutra
           <br />
           Synthesis
         </p>
@@ -126,7 +126,7 @@ const ISSUE_PLUM =
 const GOLD = "#d9ae62";
 
 /**
- * Life Sutra drawn as a journal issue — the same layout as the Life Sutra
+ * Life Sutra drawn as a journal issue — the same layout as the LifeSutra
  * Synthesis cover (header rule, mark, title, footer rule), in Life Sutra's
  * own plum and gold with the sutra ornament.
  */
@@ -259,7 +259,7 @@ export function BookCover({
 /**
  * The two publications presented as objects on one shelf: same structure,
  * different material — each an issue in its own colours: parchment for
- * Life Sutra Synthesis, plum and gold for Life Sutra. Both sit side by side
+ * LifeSutra Synthesis, plum and gold for Life Sutra. Both sit side by side
  * on the same baseline.
  */
 export function PublicationShelf({ headingLevel = "h3" }: { headingLevel?: "h2" | "h3" }) {

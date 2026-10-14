@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { JOURNAL_ICONS, SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
-/** Life Sutra Synthesis — the journal keeps its own header, footer and theme. */
+/** LifeSutra Synthesis — the journal keeps its own header, footer and theme. */
 export const metadata: Metadata = {
   title: {
     default: `${SITE_NAME} — ${SITE_TAGLINE}`,

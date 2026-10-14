@@ -1,5 +1,5 @@
 """
-Stamp Life Sutra Synthesis article PDFs with their bibliographic details.
+Stamp LifeSutra Synthesis article PDFs with their bibliographic details.
 
 ISSN India asks for the journal name, volume, issue, month/year and page
 numbers on each article (and the ISSN on the first page once assigned).
@@ -30,7 +30,7 @@ SOURCE = ROOT / "research-papers-source"
 OUT = ROOT / "public" / "research-papers"
 
 ISSUE = {
-    "journal": "Life Sutra Synthesis",
+    "journal": "LifeSutra Synthesis",
     "volume": 1,
     "issue": 1,
     "period": "October–December 2026",

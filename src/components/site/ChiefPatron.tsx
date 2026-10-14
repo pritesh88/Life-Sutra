@@ -51,13 +51,16 @@ export function ChiefPatron() {
             <ul className="mt-5 grid gap-2 border-t border-rule pt-5 sm:grid-cols-2">
               {chiefPatron.highlights.map((item) => (
                 <li key={item} className="flex gap-2 text-sm leading-relaxed text-ink">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                  <span
+                    className="mt-2 size-1.5 shrink-0 rounded-full bg-primary"
+                    aria-hidden="true"
+                  />
                   {item}
                 </li>
               ))}
             </ul>
             <p className="mt-6 rounded-md border border-gold/40 bg-gold/10 px-4 py-3 text-sm leading-relaxed text-ink">
-              The inaugural issue of Life Sutra Synthesis will be released on{" "}
+              The inaugural issue of LifeSutra Synthesis will be released on{" "}
               <strong>11 October 2026</strong>, marking the 80th birthday of Dr. Vijay Bhatkar.
             </p>
             <a

@@ -1,4 +1,4 @@
-import { journalPath } from "@/lib/routes";
+import { FOUNDATION_ROUTES, journalPath } from "@/lib/routes";
 import {
   Action,
   Card,
@@ -20,7 +20,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About the platform"
         title="Building credible research infrastructure for Indian Knowledge Systems"
-        lede="Life Sutra Synthesis exists because the study of Indian intellectual traditions has abundant sources and scattered scholarship. We publish rigorous research and, over time, connect it into an ecosystem that can be searched, synthesised and measured."
+        lede="LifeSutra Synthesis exists because the study of Indian intellectual traditions has abundant sources and scattered scholarship. We publish rigorous research and, over time, connect it into an ecosystem that can be searched, synthesised and measured."
         meta={[
           `Since ${JOURNAL.startingYear}`,
           JOURNAL.frequency,
@@ -37,7 +37,7 @@ export default function AboutPage() {
             <div className="grid gap-5 text-[0.98rem] leading-relaxed text-muted-foreground">
               <p>
                 Indian Knowledge Systems research sits between disciplines: philology, history,
-                anthropology, clinical science, mathematics, architecture and policy. Life Sutra
+                anthropology, clinical science, mathematics, architecture and policy. LifeSutra
                 Synthesis is built for that overlap. We accept work from any of these traditions
                 provided the knowledge claim is stated precisely and matched to an appropriate
                 evidence standard.
@@ -57,15 +57,15 @@ export default function AboutPage() {
           <aside className="rounded-md border border-border bg-parchment p-7">
             <p className="eyebrow">Governance</p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Our Editorial Board sets review standards and editorial policy. See the current board
-              on the homepage.
+              Our Editorial Board sets review standards and editorial policy. See the full board,
+              with each member's institutional details, on its dedicated page.
             </p>
             <Ornament className="my-7" />
             <p className="text-sm leading-relaxed text-muted-foreground">
               All review decisions are recorded with a public summary of their basis.
             </p>
             <div className="mt-6">
-              <Action to={journalPath("#editorial-board")} variant="outline" size="sm">
+              <Action to={FOUNDATION_ROUTES.editorialBoard} variant="outline" size="sm">
                 View Editorial Board
               </Action>
             </div>

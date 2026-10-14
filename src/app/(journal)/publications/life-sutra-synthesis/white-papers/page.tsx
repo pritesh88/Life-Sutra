@@ -27,7 +27,7 @@ export default function WhitePapersPage() {
           />
           <div className="mt-8 flex justify-center">
             <Action to={journalPath("/about")} variant="outline" size="sm">
-              About Life Sutra Synthesis
+              About LifeSutra Synthesis
             </Action>
           </div>
         </Container>

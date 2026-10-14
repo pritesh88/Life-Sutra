@@ -10,7 +10,7 @@ export default function ConferencesPage() {
       <PageHero
         eyebrow="Convenings"
         title="Conferences"
-        lede="Life Sutra Synthesis will convene and co-host academic gatherings where research in progress can be tested before publication. This section is being prepared by the editorial team."
+        lede="LifeSutra Synthesis will convene and co-host academic gatherings where research in progress can be tested before publication. This section is being prepared by the editorial team."
         meta={["In preparation"]}
       >
         <Action to="/submit-research" variant="primary" size="sm">
