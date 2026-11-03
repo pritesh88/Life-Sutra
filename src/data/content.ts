@@ -356,7 +356,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     address: "211, City Centre, Hinjwadi Phase 1, Pune, Maharashtra 411057",
     country: "India",
     academicDesignation: "Director",
-    email: "arpita@idealizeer.com",
+    email: "arpita.kathane.vf@sitpune.edu.in",
     linkedin: "https://www.linkedin.com/in/dr-arpita-kathane-8683461a1/",
     website: "https://idealizeer.com/icsglobal/",
     orcid: "https://orcid.org/0009-0001-0083-1432",
