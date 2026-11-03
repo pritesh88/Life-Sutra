@@ -388,7 +388,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     department: "Sanskrit",
     country: "India",
     academicDesignation: "Principal",
-    email: "info@lifesutra.co.in",
+    email: "2009purohit.1@gmail.com",
     photo: "/assets/editorial/kuldeep-purohit.jpg",
   },
   {
