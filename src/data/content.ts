@@ -415,7 +415,7 @@ export const editorialBoard: EditorialBoardMember[] = [
     department: "Orthopaedics (Spine) and Medico-Legal Expert Witness, CMATS",
     country: "United Kingdom",
     academicDesignation: "Consultant Orthopaedic Surgeon",
-    email: "akdgoswami@gmail.com",
+    email: "Anukul.Goswami@wales.nhs.uk",
     linkedin: "https://www.linkedin.com/in/a-goswami-36b271a0/",
     website: "https://mlas.co.uk/Expert/mr-anukul-goswami/",
     websiteLabel: "Expert Profile",
